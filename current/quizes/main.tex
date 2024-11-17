@@ -1,0 +1,89 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{Quiz 4 questions}
+\author{yawnbo}
+\date{\today}
+
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\paragraph{Question 1}
+\[
+  \tan^{-1}(2x)dx
+\]
+Start by letting $u=\tan^{-1}(2x)$ and $dv=dx$, so $du=\frac{2}{1+4x^2}$ and $v=x$ \\
+We can rewrite the integral as
+\[
+x\tan^{-1}(2x)-\int_{}^{} \frac{2}{1+4x^2}\cdot xdx
+.\]
+Where we can now work on the inner integral. Let
+\begin{gather*}
+  u=1+4x^2 \implies du=8xdx \\
+  dx= \frac{1}{8x}du\\
+\end{gather*}
+The $x$ 's will cancel out and leave us with
+\[
+-\frac{2}{8}\int_{}^{} \frac{1}{u}du 
+.\] 
+Which simplifies to
+\[
+\frac{1}{4}(\ln(1+4x^2))+C
+.\] 
+At which point we can plug it back into the original expression
+\[
+x\tan^{-1}(2x)-\frac{1}{4}(\ln(1+4x^2))+C
+.\]
+\newpage
+\paragraph{Question 2}
+\[
+\int_{0}^{t} e^{8} \sin^{}(t-s)ds
+.\]
+
+Begin by simplifying the inside of sin and the exponent of e
+\begin{gather*}
+  w=t-s \implies dw=-ds \\
+  s=t-w \\
+  t-0=t \text{ & } t-t=0
+\end{gather*}
+We need to change the limits and rewrite as
+\[
+  \int_{t}^{0} e^{t-w}\sin^{}(w)\cdot -dw&= \int_{0}^{t} e^{t-w}\sin^{}(w)dw  \\ 
+.\] 
+Now we begin to integrate by parts
+\begin{gather*}
+  u=\sin^{}(w) \implies du=\cos^{}(w)dw \\
+  dv=e^{t-w} \implies v=-e^{t-w} 
+\end{gather*}
+Which gets us to the equation
+\[
+-\sin^{}(t)-\int_{0}^{t}-e^{t-w}\cos^{}(w)dw
+.\]
+Doing another IBP will get us to the final step of cyclic equations, so,
+\begin{gather*}
+  \text{For }\int_{0}^{t} -e^{t-w}\cos^{}(w)dw \\
+  u=\cos^{}(w)\implies du=-\sin^{}(w)dw \\
+  dv=-e^{t-w}\implies v=e^{t-w} \\
+  \cos^{}(t) - e^{t}-\int_{0}^{t} e^{t-w}\cdot -\sin^{}(w)dw =\cos^{}(t)+\int_{0}^{t} e^{t-w}\sin^{}(w)dw \\
+\end{gather*}
+Which we set equal to the original equation,
+\begin{align*}
+  \int_{0}^{t} e^{t-w} \sin^{}(w)dw &= -\sin^{}(t)-\cos^{}(t)-e^{t}-\int_{0}^{t} e^{t-w}\sin^{}(w)dw \\
+  2\int^{t}_{0}e^{t-w}\sin^{}(w)dw &= -\sin^{}(t)-\cos^{}(t)-e^{t}
+\end{align*}
+Which finally gets us
+\begin{gather*}
+  \int_{0}^{t} e^{t-w}\sin^{}(w)dw= \frac{-\sin^{}(t)-\cos^{}(t)-e^{t}}{2} \\
+  \text{Or} \\
+\int_{0}^{t} e^{t-w}\sin^{}(w)dw= -\frac{\sin^{}(t)+\cos^{}(t)+e^{t}}{2}
+\end{gather*}
+\newpage
+\paragraph{Question 3}
+
+\end{document}
