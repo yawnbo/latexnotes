@@ -1,0 +1,182 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{Partials}
+\author{yawnbo}
+\date{\today}
+
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Partials}%
+\label{sec:Partials}
+\subsection{Begin}%
+\label{sub:Begin}
+
+Partials work when you have two polynomails in a proper fraction. It starts with factoring the denomintor into linear factors that can then be used to break apart the numerator. 
+
+\subsubsection{Ex.}%
+\label{sub:Ex.}
+
+\[
+\frac{1}{x^2-1}=\frac{1}{(x-1)(x+1)}=\frac{A}{x-1}+\frac{B}{x+1}
+.\] 
+In this example A would be $\frac{1}{2}$ and B would be $-\frac{1}{2}$ 
+
+This can be proven by 
+\begin{gather*}
+\frac{1}{2(x-1)}-\frac{1}{2(x+1)} \\
+\frac{2(x+1)-2(x-1)}{4(x-1)(x+1)} \\
+\frac{x+1-x+1}{2(x-1)(x+1)} \\
+\frac{1}{x^2-1}
+\end{gather*}
+
+\section{Partial integration}%
+\label{sec:Partial integration}
+
+\subsection{Evaluate $\int_{}^{} \frac{dx}{x^2-7x+10} $}%
+
+We would just start by completing the square on a normal version,
+\[
+\frac{1}{x^2-7x+10}=\frac{1}{(x-5)(x-2)}
+.\] 
+Now using partial decomp we can use something like 
+\[
+  \frac{A}{x-5}+\frac{B}{x-2}
+.\] 
+Start by cancelling the denominators by multiplying by the LCD (least common denominator) or (x-5)(x-2)
+\newpage
+\[
+  \to 1=A(x-2)+B(x-5)
+.\] 
+We can now sub in numbers that would get use 0 for the variables. When we put in 2 we get
+\[
+B(-3) \to B=-\frac{1}{3}
+.\] 
+And the opposite can be done to figure out the A which in this case would be $A=\frac{1}{3}$ 
+
+\subsubsection{Onto the integral}
+Now that we know that the polynomial is equal to 
+\[
+\frac{1}{3\left( x-5 \right)} -\frac{1}{3\left( x-2 \right)}
+.\] 
+
+Which can each be integrated by themselves using
+\[
+\frac{1}{k}\cdot \ln^{}(\|kx+b\|)+C
+.\] 
+So we can rewrite the integral as
+\[
+  \frac{1}{3}\ln^{}(\|x-5\|)-\frac{1}{3}\ln^{}(\|x-2\|)+C
+.\] 
+
+\section{Integrals again}%
+\label{sec:}
+
+\paragraph{Evaluate $\int_{}^{} \frac{x^2+2}{(x-1)(2x-8)(x+2)} $}
+We can start by pulling out a 2 from 2x-8
+\[
+\frac{1}{2}\int_{}^{} \frac{x^2+2}{(x-1)(x-4)(x+2)} 
+.\] 
+Because this is proper we can start off our partial. 
+\[
+  \frac{1}{2}\left[\frac{A}{x-1}+\frac{B}{x-4}+\frac{C}{x+2}\right]
+.\] 
+Do the same thing and wipe out denominators while setting equal to original expression
+\[
+x^2+2=A(x-4)(x+2)+B(x-1)(x+2)+C(x-1)(x-4)
+.\] 
+Again make values disappear using an x value that cancels the others. Use 1 to start,
+\[
+3=A(-3)(3) \to A = \frac{-1}{3}
+.\] 
+Use $x=4$ to find B,
+\[
+18=B(3)(6) \to B=1
+.\] 
+Use $x=-2$ to find C,
+\[
+6=C(-3)(-6) \to C=\frac{1}{3}
+.\] 
+
+\newpage
+
+\section{Integrate ex.}%
+\label{sec:Integrate ex.}
+
+\subsection{$\int_{}^{} \frac{x^3+1}{x^2-4} $}%
+Because this is improper we can use long division which simpilfies to 
+\[
+\int_{}^{} (x+ \frac{4x+1}{x^2-4}) dx
+.\] 
+Check paper version for the long division. 
+\subsubsection{Partial decomp}
+
+Now we can decompose the fraction
+\[
+\frac{4x+1}{x^2-4}=\frac{A}{x-2}+\frac{B}{x+2}
+.\] 
+\[
+4x+1=A(x+2)+B(x-2)
+.\] 
+This get us 
+\begin{align*}
+  a&= \frac{9}{4} \\
+  b&= \frac{7}{4} \\
+\end{align*}
+
+Rewrite the integral as a partial now,
+\[
+\int_{}^{} \frac{9}{4(x-2)}+\frac{7}{4(x+2)}dx 
+.\] 
+Which can again be solved using the ln rule
+\[
+=\frac{9}{4}\ln^{}(\|x-2\|)+\frac{7}{4}\ln^{}(\|x+2\|)
+.\] 
+This can be brought down into the greater integral now so
+\[
+\frac{x^2}{2}+ \frac{9}{4}\ln^{}(\|x-2\|)+\frac{7}{4}\ln^{}(\|x+2\|)+C
+.\] 
+
+\section{Repeated Linear Factors}%
+\label{sec:Repeated Linear Factors}
+
+If we were to have somthing like $x^2+6x+9$ this would get us x+3 repeated twice. This can be canceled out by letting the exponents increase to their highest degree.
+\subsection{Example Eval $\int_{}^{} \frac{3x-9}{(x-1)(x+2)} $}%
+
+This would be decompose as
+\[
+\frac{A}{x-1}+\frac{B_{1}}{x+2}+\frac{B_{2}}{(x+2)^2}
+.\] 
+\newpage
+
+Decoposing this would get us to 
+\[
+3x-9=A(x+2)^2+B(x+2)(x-1)+C(x-1)
+.\] 
+Finding A can be done by letting $x=1$, so 
+\[
+-6=9A \to A=-\frac{2}{3}
+.\] 
+Worry about B in a second, for C let $x=-2$ so,
+\[
+-12=-3C \to C=4
+.\] 
+Now we need to find the B. For this we just let x equal ANYTHING ELSE. In this example we can use 0 because its not used yet.
+\[
+-9=A\cdot 4 + B(-2)+C(-1)
+.\] 
+Because we already know what A and C have to be we just plug those values in.
+This just simplifies to 
+\[
+-9=-\frac{2}{3}\cdot 4 - 2B- 4 \to B=\frac{7}{6}
+.\] 
+
+This just sets up what we integrate for tomorrow. Long ass equation time
+\end{document}
