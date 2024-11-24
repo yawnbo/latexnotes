@@ -1,0 +1,127 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{Partials cont.}
+\author{yawnbo}
+\date{\today}
+
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Cont of previous example}
+\subsection{Example Eval $\int_{}^{} \frac{3x-9}{(x-1)(x+2)} $}%
+
+This would be decompose as
+\[
+\frac{A}{x-1}+\frac{B_{1}}{x+2}+\frac{B_{2}}{(x+2)^2}
+.\] 
+\newpage
+
+Decoposing this would get us to 
+\[
+3x-9=A(x+2)^2+B(x+2)(x-1)+C(x-1)
+.\] 
+Finding A can be done by letting $x=1$, so 
+\[
+-6=9A \to A=-\frac{2}{3}
+.\] 
+Worry about B in a second, for C let $x=-2$ so,
+\[
+-12=-3C \to C=4
+.\] 
+Now we need to find the B. For this we just let x equal ANYTHING ELSE. In this example we can use 0 because its not used yet.
+\[
+-9=A\cdot 4 + B(-2)+C(-1)
+.\] 
+Because we already know what A and C have to be we just plug those values in.
+This just simplifies to 
+\[
+-9=-\frac{2}{3}\cdot 4 - 2B- 4 \to B=\frac{7}{6}
+.\] 
+
+This just sets up what we integrate for tomorrow. Long ass equation time
+
+Again, $A=-\frac{2}{3}$ ; $B=\frac{3}{2}$ ; $C=5$ 
+
+Go back to integral of
+\[
+\int_{}^{} \frac{3x-9}{(x-1)(x+2)^2}dx=\frac{A}{x-1}+\frac{B}{x+2}+\frac{C}{(x+2)^2} 
+.\] 
+
+\section{Another example}%
+\label{sec:Another example}
+\[
+\int_{}^{} \frac{18}{(x+3)(x^2+9)}dx 
+.\] 
+Start with the usual and create partials. 
+\[
+18=A(x^2+9)+(Bx+C)(x+3)
+.\] 
+Now we use the method of undeterminated Coefficients. This means that we foil and distribute everything giving us
+\[
+18=Ax^2+9+Bx^2+3Bx+Cx+3c
+.\] 
+Where we can now gather like terms, so,
+\[
+=(A+B)x^2+(3B+C)x+9a+3c
+.\] 
+Which gives us a nicer quadratic. We now make the left side also quadratic
+\[
+0x^2+0x+18 = (A+B)x^2+(3B+C)x+9a+3c
+.\] 
+
+Where we can now set coefficients equal to each other,
+\[
+0=(A+B) = 3B+C \text{ and }9A+3C = 18
+.\] 
+\newpage
+Which can be solved using a matrix that i have no idea how to put in using tex which is something with the mat snippet but idk
+
+\subsection{Harder way of doing this}%
+\label{sub:Harder way of doing this}
+Given
+\begin{gather*}
+A+B=0 \\
+3B+C=0\\
+9A+3C=18 \\
+\end{gather*}
+We can just sub in B for everything by setting things equal but takes longer
+
+\subsection{Back to normal integral}%
+\label{sub:Back to normal integral}
+Subbing in the values we just got gets us to 
+\[
+\int_{}^{} \frac{18}{(x+3)(x^2+9)}dx \int_{}^{} \frac{1}{x+3}dx+ \frac{-x+3}{x^2+9} 
+.\] 
+The first integral is simple and is just $\ln^{}(\|x+3\|)$ 
+
+For the second one we can split it into
+\[
+\int_{}^{} -\frac{x}{x^2+9} + \int_{}^{} \frac{3}{x^2+9}  
+.\] 
+Wchich can be done by letting $U=x^2+9 \text{ and } \frac{du}{2}=xdx$
+which gets us 
+\[
+-\frac{1}{2}\ln^{}(x^2+9)
+.\] 
+Where we can now work on teh other trig integral
+\[
+  \int_{}^{} \frac{3}{x^2+9}dx 
+.\] 
+Where we let $x=3tan\theta$ and  $dx=3 \sec^2\thetad\theta$
+so
+\[
+\int_{}^{} d\theta = \theta 
+.\] 
+We can do the inverse of $x=3\tan\theta$ to find  $\theta = tan^{-1}\frac{x}{3}$ \\
+So we can bring these back into the main integral to get
+\[
+\ln^{}(\|x+3\|)-\frac{1}{2}\ln^{}(\|x^2+9\|)+ \tan^{-1}(\frac{x}{3}) + C
+.\] 
+\end{document}

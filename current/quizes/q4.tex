@@ -70,12 +70,12 @@ Doing another IBP will get us to the final step of cyclic equations, so,
   \text{For }\int_{0}^{t} -e^{t-w}\cos^{}(w)dw \\
   u=\cos^{}(w)\implies du=-\sin^{}(w)dw \\
   dv=-e^{t-w}\implies v=e^{t-w} \\
-  \cos^{}(t) - e^{t}-\int_{0}^{t} e^{t-w}\cdot -\sin^{}(w)dw =\cos^{}(t)+\int_{0}^{t} e^{t-w}\sin^{}(w)dw \\
+  \cos^{}(t) - e^{t}-\int_{0}^{t} e^{t-w}\cdot -\sin^{}(w)dw =\cos^{}(t) - e^{t} +\int_{0}^{t} e^{t-w}\sin^{}(w)dw \\
 \end{gather*}
 Which we set equal to the original equation,
 \begin{align*}
-  \int_{0}^{t} e^{t-w} \sin^{}(w)dw &= -\sin^{}(t)-\cos^{}(t)-e^{t}-\int_{0}^{t} e^{t-w}\sin^{}(w)dw \\
-  2\int^{t}_{0}e^{t-w}\sin^{}(w)dw &= -\sin^{}(t)-\cos^{}(t)-e^{t}
+  \int_{0}^{t} e^{t-w} \sin^{}(w)dw &= -\sin^{}(t)-\cos^{}(t)+e^{t}-\int_{0}^{t} e^{t-w}\sin^{}(w)dw \\
+  2\int^{t}_{0}e^{t-w}\sin^{}(w)dw &= -\sin^{}(t)-\cos^{}(t)+e^{t}
 \end{align*}
 Which finally gets us
 \begin{gather*}
