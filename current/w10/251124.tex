@@ -1,0 +1,142 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{Improper Integrals}
+\author{yawnbo}
+\date{\today}
+
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\paragraph{Need to review above sections still and quiz will open tmrw with exam 3 being on the wednesday after that. December 2nd will be the last lecture and reviews will take place on the tuesday before test. Day after exam will have no class for grading reasons}
+
+\paragraph{Friday will have a class that will be used for review, and will be the last day for class before 12/10. Prof will be here on 12/9 day before final but not needed to come in.}
+\paragraph{Quiz 6 will be 10 points and due on day before the exam.}
+
+\section{Final details}%
+\label{sec:Final details}
+
+\paragraph{Will be from 1130 to 120, giving a total of 2 hours for whatever you need to retake. Other notes on it can be found pretty early on in the markdown notes. }
+
+\paragraph{Skipping 7.6 and 7.8 due to time reasons, but 7.5 should be reviewed for examples.}
+
+\section{Sec 7.8 improper Integrals}%
+\label{sec:Sec 7.8 improper Integrals}
+\paragraph{The two types of impropers we will look at}
+\subsection{Type 1: One or both limits of integration are infinite.}%
+\label{sub:Type 1: One or both limits of integration are infinite.}
+\[
+\int_{a}^{\infty} \text{ or } \int_{-\infty}^{a} \text{ or }\int_{-\infty}^{\infty}
+.\] 
+\paragraph{If we have something like }
+\[
+  \int_{a}^{\infty} f(x)dx=\lim_{R \to \infty} \text{ will be }\int_{a}^{R} f(x)dx  
+.\] 
+\paragraph{This happens because based on FTC, we need real numbers for our integrals. Giving R the limit of infinity will just apply a real value to it. This also happens in reverse}
+\newpage
+\[
+\int_{-\infty}^{a} f(x)dx=\lim_{L \to -\infty} \text{ will be }\int_{L}^{a} f(x)dx  
+.\] 
+\paragraph{L and R are good arbitrary values to indicate which side you are approaching from. }
+\[
+\int_{-\infty}^{\infty} f(x)dx=\int_{-\infty}^{c} f(x)dx+\int_{c}^{\infty} f(x)dx   
+.\] 
+
+
+\subsection{idk vocab words}%
+\label{sub:idk vocab words}
+\paragraph{Converge: If a finite answer is the result}
+\paragraph{Diverge: if a integral doesn't approach a finite answer}
+
+\subsection{Examples}%
+\label{sub:Examples}
+Show that
+\[
+\int_{2}^{\infty} \frac{dx}{x^3}\text{ converges and compujte its value} 
+.\] 
+We can rewrite it using the limit
+\[
+=\lim_{R \to \infty} \int_{2}^{R} \frac{dx}{x^3} 
+.\] 
+We just start with integrating normally so
+\[
+  \lim_{R \to \infty} \frac{x^{-2}}{-2}|_{2}^{R}=\lim_{R \to \infty} \left[-\frac{1}{2R}+\frac{1}{2(2)^2}\right]
+.\] 
+which converges to 1/8 because one side will cancel as it approches infinity.
+
+\subsubsection{Example 2}
+\[
+  \int_{-\infty}^{-1} \frac{dx}{z} 
+.\] 
+\[
+=\lim_{L \to - \infty} \int_{L}^{-1} \frac{dx}{x}
+.\] 
+\[
+  \lim_{L \to \infty} [\ln^{}( \mid x)]
+.\] 
+\[
+  \lim_{L \to -\infty}\left[\ln^{}( \mid -1\mid)-\ln^{}( \mid L\mid)\right]
+.\] 
+\paragraph{Which will end up diverging because $\ln^{}(  \mid -1)$ will be 0 but $\ln^{}( \mid L)$ will be infinity. }
+\paragraph{This leads to another thing which tells us that the faster a funciton approaches something the more likely it is to converge.}
+\newpage
+\paragraph{This can be figured out using some letters idk}
+\section{Ex. For what P-value will $\int_{a}^{\infty} \frac{dx}{x^{p}} $ where a $a>0$ converge?}%
+We can start it by using the limit rule for now,
+\[
+\int_{a}^{\infty} \frac{dx}{yP}=\int_{a}^{\infty} x^{-p}dx=\lim_{R \to \infty} \int_{a}^{R} x^{-P}dx   
+.\] 
+\[
+\frac{x^{-p+1}}{-p+1} \text{ which shows us why p \neq 1}
+.\]
+
+\[
+\lim_{R \to \infty} \frac{R^{1-p}}{1-p}-\frac{a^{1-p}}{1-p} 
+.\] 
+
+\paragraph{Lets just look at the one with the limit for now}
+
+which tells us that we have two cases, $p<1$ and $p>1$.  
+\paragraph{Looking at this shows that our numerator is positive and our denominator is also positive. This tells us that}
+
+\[
+\lim_{R \to \infty} \frac{R^{1-p}}{1-p} \text{ is infinite because the top is infinite. }
+.\] 
+
+\paragraph{While the other one will be 0 because both the exponent and denom are negative and approach 0.}
+\paragraph{So now}
+\[
+\text{If p > 1} 0-\frac{a^{1-p}}{1-p}= \frac{a^{1-p}}{p-1} \text{ which is finite. }
+.\] 
+
+\section{Summary: P-test}%
+\label{sec:Summary: P-test}
+
+The equation,
+\[
+\int_{a}^{\infty} \frac{dx}{x^{P}} 
+.\] 
+will diverge if $p\le 1$ or turn into $\frac{a^{1-p}}{p-1}$ if larger than that. Side note, this also works for $\int_{-\infty}^{a} f(x)dx $ as long as a IS negative. The problem is that another negative is needed so instead of $p-1$ the denominator will need to be $1-p$ 
+
+\paragraph{The above ust says that we really cant cross over the axis because crossing 0 means that our original function will be undefined, so we need the second formula. This is a type two integral and will be the second type that will be talked about tomorrow. This is just because the integral is not continuous.}
+
+\paragraph{Going back to, }
+
+\[
+\int_{2}^{\infty} \frac{dx}{x^3} 
+.\] 
+We can easily find this using the formula
+\[
+  \frac{2^{1-3}}{3-1}= \frac{2^{-2}}{2}=\frac{1}{8}
+.\] 
+\paragraph{This formula can be used whenever we have something of this sort and not have to do the work.  }
+
+\newpage
+
+\end{document}
