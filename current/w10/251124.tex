@@ -7,7 +7,7 @@
 \usepackage{amsmath, amssymb}
 \title{Improper Integrals}
 \author{yawnbo}
-\date{\today}
+\date{\today \& November 25th 2024}
 
 \maketitle
 
@@ -93,7 +93,7 @@ We can start it by using the limit rule for now,
 \int_{a}^{\infty} \frac{dx}{yP}=\int_{a}^{\infty} x^{-p}dx=\lim_{R \to \infty} \int_{a}^{R} x^{-P}dx   
 .\] 
 \[
-\frac{x^{-p+1}}{-p+1} \text{ which shows us why p \neq 1}
+\frac{x^{-p+1}}{-p+1}\text{ which shows us why p cannot equal 1 }
 .\]
 
 \[
@@ -124,7 +124,7 @@ The equation,
 .\] 
 will diverge if $p\le 1$ or turn into $\frac{a^{1-p}}{p-1}$ if larger than that. Side note, this also works for $\int_{-\infty}^{a} f(x)dx $ as long as a IS negative. The problem is that another negative is needed so instead of $p-1$ the denominator will need to be $1-p$ 
 
-\paragraph{The above ust says that we really cant cross over the axis because crossing 0 means that our original function will be undefined, so we need the second formula. This is a type two integral and will be the second type that will be talked about tomorrow. This is just because the integral is not continuous.}
+\paragraph{The above just says that we really cant cross over the axis because crossing 0 means that our original function will be undefined, so we need the second formula. This is a type two integral and will be the second type that will be talked about tomorrow. This is just because the integral is not continuous.}
 
 \paragraph{Going back to, }
 
@@ -137,6 +137,83 @@ We can easily find this using the formula
 .\] 
 \paragraph{This formula can be used whenever we have something of this sort and not have to do the work.  }
 
+\section{\today}%
+\label{sec:\today}
+\subsection{Type 2 improper integrals}%
+\label{sub:Type 2 improper integrals}
+\paragraph{This happens when we cannot obey the part of FTC that states that the function is cont. on the interval. ie. the function is discontinuous on the interval}
+
+\subsubsection{Example}
+\[
+\int_{0}^{1} \frac{1}{x}dx
+.\] 
+\paragraph{This example cannot be done normally because it cannot be defined at 0 because it approaches infinity at this point. This can still be done using limits by rewriting the integral as}
+
+\[
+ =\lim_{l \to 0^{+}} \int_{l}^{1} \frac{1}{x}dx
+.\] 
+\[
+  =\lim_{L \to 0^{+}}\ln^{}(x)|_{L}^{1}=\lim_{L \to 0^{+}} \left[\ln^{}(1)-\ln^{}(L)\right]
+.\] 
+\[
+=\lim_{L \to 0^{+}} -\ln^{}(L)
+.\] 
+\paragraph{Which can be evaluated as $\infty$ because ln approaches negative $\infty$ but the negatives can cancel and give us $\infty$. as the area under the curve for our integral.}
+
+\subsubsection{Example 2}
+\[
+\int_{0}^{1} \frac{1}{x^3}dx
+.\] 
+\paragraph{Which is basically the same as the last example because its a type 2 with a one sided lim}
+\[
+  \lim_{L \to 0^{+}} \frac{-1}{2x^2}|_{L}^{1}=\lim_{L \to 0^{+}} \left[-\frac{1}{2}+\frac{1}{2L^2}\right]
+.\] 
+\paragraph{Which will also diverge because the denominator will become infinitly smaller which makes the fraction go to infinity.}
 \newpage
+
+\susubssection{Example 3}
+\[
+\int_{0}^{1} \frac{1}{\sqrt{x}}dx
+.\] 
+\paragraph{Type II because $x=0$ cannot exist. Again use a one sided limit}
+\[
+=\lim_{L \to 0^{+}} \int_{L}^{1} x^{-\frac{1}{2}}dx=\lim_{L \to 0^{+}} 2\sqrt{x}|_{L}^{1}
+.\] 
+\[
+  \lim_{L \to 0^{+}} \left[2-2\sqrt{L}\right]
+.\] 
+\paragraph{Because $2\sqrt{L}$ goes to 0, we can cancel it and be left with just 2 which gives us a convergent example. }
+
+\section{Generalization of distcontinuous integrals}%
+\label{sec:Generalization of distcontinuous integrals}
+
+\paragraph{Looking back at the P equations from yesterday, this is very similar but with different conditions.}
+\paragraph{With the equation, }
+
+\[
+\int_{0}^{a>0} \frac{1}{x^{P}}dx
+.\] 
+\paragraph{If $P\ge 1$ the equation will diverge but this and the other condition need to be proven with the below. Look at the }
+\section{BONUS QUESTION FOR EXAM 3}%
+\label{sec:BONUS QUESTION FOR EXAM 3}
+\paragraph{Prove in general that when $p\ge 1$ the equation will diverge and when $p<1$ the equation will converge.}
+\paragraph{This should be turned in by tuesday next week the day before exam and will be worth another 3 exp.}
+
+\paragraph{Start with}
+\[
+\int_{0}^{a} \frac{dx}{x^{P}}
+.\] 
+\paragraph{and work everything out in terms of A and B to find the generalization}
+
+\section{Practice problems in general}%
+\label{sec:Practice problems in general}
+\subsection{Determine the type of improper, then evaluate}%
+\label{sub:Determine the type of improper, then evaluate}
+\begin{gather}
+\int_{1}^{\infty} \frac{dx}{x^{\frac{19}{20}}} \\
+\int_{1}^{\infty} \frac{dx}{x^{\frac{20}{19}}} \\
+\int_{0}^{\infty} \frac{dx}{\left(x+1\right)^3} \\
+\int_{1}^{\infty} \frac{dx}{x^2+x} \text{ think partials for this one }
+\end{gather}
 
 \end{document}
