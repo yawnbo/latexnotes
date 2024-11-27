@@ -1,0 +1,130 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{More impropers}
+\author{yawnbo}
+\date{\today}
+
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{7.8 Improper Integrals p.2}%
+\label{sec:7.8 Improper Integrals p.2}
+\subsection{Ex.}%
+\label{sub:Ex.}
+\[
+\int_{2}^{\infty} xe^{-3x}dx
+.\] 
+\paragraph{Apply integration by parts}
+\paragraph{Let $u=x$ and $du=dx$}
+\paragraph{Then let $dv=e^{-3x}dx$ and $v=-\frac{1}{3}e^{-3x}$}
+\paragraph{Go back to lims from type 1 yesterday}
+
+\[
+\lim_{R \to \infty} -\frac{1}{3}e^{-3x}x |_{2}^{R}+\int_{2}^{R} \frac{1}{3}e^{-3x}dx
+.\] 
+\paragraph{Which we simplify to }
+\[
+\lim_{R \to \infty} -\frac{1}{3}xe^{-3x}-\frac{1}{9}e^{-3x}|_{2}^{R}
+.\] 
+\paragraph{Now just integrate}
+\[
+  \lim_{R \to \infty} \left[-\frac{x}{3e^{3R}}-\frac{1}{9}\cdot \frac{1}{e^{3R}}-\left(-\frac{1}{3}(2)e^{-3(2)} - \frac{1}{9}e^{-3(2)}\right)\right]
+.\] 
+
+\paragraph{Evaulating the first half, we find that $-\frac{R}{3e^{3R}}$ is interminate so we take the derivative of the top and bottom with respect to R. This leaves us with}
+\[
+\lim_{R \to \infty} -\frac{1}{9e^{3R}}=0
+.\] 
+\paragraph{Now we look at the right side to just simplify constants. }
+\[
+-\frac{1}{3}(2)e^{-3(2)} - \frac{1}{9}e^{-3(2)} = \frac{7}{9e^{6}}
+.\] 
+\newpage
+
+\subsection{Another ex.}%
+\label{sub:Another ex.}
+\paragraph{Double improper integral.}
+\[
+\int_{-\infty}^{\infty} 5xe^{-x^2}
+.\] 
+\paragraph{This is a symmetric Interval. Something like, $\left[-a,a\right]$ and we can simplify the limits in the function is even or odd. So try,}
+\[
+5(-x)e^{-x^2}
+.\] 
+\paragraph{Which shows us that this function is odd because $f(-x) =-f(x)$}
+\paragraph{But when we integrate an odd function over a symmetric interval it is just 0 because both sides will cancel each other out. }
+\subsection{Even functions ex.}%
+\label{sub:Even functions ex.}
+\[
+\int_{-\infty}^{\infty} 5x^2e^{-x^2}dx
+.\] 
+\paragraph{Test if its an even function}%
+\label{par:Test if its an even function}
+\paragraph{Which it is but im not writing that}
+
+\paragraph{Because this is even we can rewrite as}
+\[
+  2 \int_{0}^{\infty} 5x^2e^{-x^2}
+.\]
+\paragraph{For this we cant integrate because $e^{-x^2}$ is not possible to evaluate. }
+
+\section{Convergent Vs. Divergent.}%
+\label{sec:Convergent Vs. Divergent.}
+\paragraph{This is just saying that divergent can be infinite or doesn't go to a single value. }
+\paragraph{This can happen for something like }
+
+\[
+\int_{0}^{\infty} \sin^{2}(x)dx
+.\] 
+\paragraph{Forgot to write down steps just know this goes to }
+\[
+\int_{0}^{\infty} \left( \frac{1}{2}-\frac{1}{2}\cos^{}(2x) \right) dx
+.\] 
+\[
+\lim_{R \to \infty} \frac{1}{2}R-\frac{1}{4}\sin^{}(2R)
+.\] 
+\newpage
+\paragraph{This creates a problem because the graph of sin fluctuates between -1 and 1. So the limit is not going to a single value. }
+\paragraph{This creates a weird situation because the first eq because infinite but the second part DNE. This just lets it be infnite because one of them goes to infinity and calcels the DNE. }%
+\label{par:This creates a weird situation because the first eq because infinite but the second part DNE. This just lets it be infnite because one of them goes to infinity and calcels the DNE. }
+
+\section{Convergence and divergence without doing integrals (Comparison Theorum)}%
+\label{sec:Convergence and divergence without doing integrals (Comparison Theorum)}
+
+\subsection{Ex.}%
+\label{sub:Ex.}
+\[
+\int_{1}^{\infty} \frac{e^{-x}}{x}dx
+.\] 
+\paragraph{This integral is one that cannot be done using any technique. This is called a non-elementary function/integral.}
+\paragraph{Even though we can't solve it we can still figure out if its convergent or divergent. }
+\paragraph{For this one he drew and graph and told us to find a function that sits above the original. }
+
+\paragraph{Start with finding your interval as $[1,\infty)$ where $x\ge 1$, then rewrite the condition as $\frac{1}{x}\le 1$}
+\paragraph{Now we can multiply both sides by $e^{-x}$ to find that $\frac{e^{-x}}{x}\le e^{-x}$}
+\paragraph{This tells us that }
+\[
+\int_{1}^{\infty} \frac{e^{-x}}{x}dx \le \int_{1}^{\infty} e^{-x}dx
+.\] 
+\paragraph{Which tells us that}
+\[
+=\lim_{R \to \infty} -e^{-x}|_{1}^{R}=\lim_{R \to \infty} 0+e^{-1}=\frac{1}{e}
+.\] 
+
+\paragraph{This just proved to us that the answer for the original integral has to be less than or equal to $\frac{1}{e}$}
+\paragraph{This is just everything that comparison does and for this example it proves the }
+\[
+\int_{1}^{\infty} \frac{e^{-x}}{x}dx
+.\] 
+\paragraph{Converges due to our comparison function. }
+
+\paragraph{One more lecture on monday}
+
+\end{document}
