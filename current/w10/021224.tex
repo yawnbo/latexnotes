@@ -1,0 +1,115 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{Comparison 2}
+\author{yawnbo}
+\date{\today}
+
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Comparison theorum}%
+\label{sec:Comparison theoorum}
+\paragraph{This is used to just argue if something is convergent or divergent. }
+\paragraph{This happens mostly in calc 3 }
+\subsection{Idea }%
+\label{sub:Idea }
+\paragraph{If we have a decreasing function f(x), we need to find}
+
+\[
+\text{ is  }\int_{a}^{\infty} f(x) < \infty \text{ finite? }
+.\] 
+\paragraph{This is done by finding another function that sits above it and that is integratable because with that function, we can find that if it's value is above the function, then the function is convergent. }
+\subsection{Divergence}%
+\label{sub:Divergence}
+\paragraph{For proving,}
+\[
+\text{ is } \int_{a}^{\infty} f(x)dx=\infty \text{ ? }
+.\] 
+\paragraph{If we can find a function that is smaller than f(x) and we can prove that it has infinite area, we can also assume that the larger function is infinite which proves our statement. }
+\paragraph{Esentially, proving divergence needs a smaller function and convergence needs a larger}
+
+\section{Examples}%
+\label{sec:Examples}
+\paragraph{Last weeks example was}
+
+\[
+\int_{1}^{\infty} \frac{e^{-x}}{x}dx
+.\] 
+\paragraph{Which can't be integrated because it isn't possible so we just find if it's convergent or divergent. }
+\newpage
+\paragraph{For this example we showed that }
+\[
+\frac{e^{-x}}{x}\le e^{-x}
+.\] 
+\paragraph{And then integrated to find}
+\[
+\int_{1}^{\infty} \frac{e^{-x}}{x}dx \le \int_{1}^{\infty} e^{-x}=\frac{1}{e}<\infty
+.\] 
+\paragraph{Which shows that it must converge;.}
+
+\subsection{Show that}%
+\label{sub:Show that}
+\[
+\int_{2}^{\infty} \frac{\cos^{2}(x)}{x^3} \text{ converges }
+.\] 
+\paragraph{Which can be found using squeeze theorum}
+\[
+0\le \frac{\cos^{2}(x)}{x^3}\le \frac{1}{x^3}
+.\] 
+\paragraph{So we can write this as our normal inequality}
+\[
+\int_{2}^{\infty} \frac{\cos^{2}(x)}{x^3}\le \int_{2}^{\infty} \frac{1}{x^3}dx
+.\] 
+\paragraph{Which goes to our p integral that shows its convergence.}
+
+\subsection{Show that }%
+\label{sub:Show that }
+\[
+\int_{3}^{\infty} \frac{1}{x-e^{-x}}dx \text{ diverges }
+.\] 
+\paragraph{Because we are trying to prove divergence, we need to find something smaller than our f(x) to prove divergence.  }
+\paragraph{Because we are working with $x\ge 3$, we can also assume that $x\ge x-e^{-x}$. At this point we can take the reciprocal of both sides to get}
+
+\[
+\frac{1}{x}\le \frac{1}{x-e^{-x}}
+.\] 
+\paragraph{And because $\frac{1}{x}$ is a p integral, we can find that it is divergent and this proves that the bigger function must also do the same. }
+\newpage
+\subsection{Show that}%
+\label{sub:Show that}
+\[
+  \int_{1}^{\infty} \frac{dx}{\sqrt{x^3+1}} \text{ converges }
+.\]
+\paragraph{Get something bigger becausethis converges}
+\[
+x\le x+1 \to x^3\le x^3+1 
+.\]   
+\paragraph{This can be done in this case because $x\ge 1$}
+\[
+\sqrt{x^3}\le \sqrt{x^3+1}
+.\] 
+\[
+  \to \int_{1}^{\infty} \frac{1}{\sqrt{x^3}}\ge \int_{1}^{\infty} \frac{dx}{\sqrt{x^3+1}}
+.\] 
+\paragraph{Simplifying the easier function gets us to our p value comparison again which shows that p is larger than 1 and proves our convergence. }
+\section{Practice problem list}%
+\label{sec:Practice problem list}
+\paragraph{Decive convergence or Divergence}%
+\label{par:Decive convergence or Divergence}
+
+\begin{align*}
+ &\int_{1}^{\infty} \frac{dx}{\sqrt{x}+e^{3x}} \\
+ &\int_{0}^{0.5} \frac{dx}{x^{8}+x^2} \\
+ &\int_{1}^{\infty} \frac{dx}{\sqrt{x^{5}+2}} \\
+ &\int_{0}^{5} \frac{dx}{x^{\frac{1}{3}}+x^3} \\
+ &\int_{0}^{\infty} \frac{dx}{\sqrt{x^{\frac{1}{3}+x^3}}} \\
+ &\int_{1}^{\infty} \frac{dx}{x^{4}+e^{x}}\\
+.\end{align*}
+\end{document}
