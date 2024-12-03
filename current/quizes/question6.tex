@@ -1,0 +1,35 @@
+\section{Gamma function question 1}%
+\label{sec:Gamma function question 1}
+\[
+\Gamma\left( n \right) =\int_{0}^{\infty} t^{n-1}e^{-t}dt
+.\] 
+\subsection{Use IBP to prove $\Gamma\left( n+1 \right) =n\Gamma\left( n \right) $}%
+Rewrite our integral with $n+1$
+\[
+  \lim_{p \to \infty} \int_{0}^{p} t^{n}e^{-t}dt
+.\] 
+Let our variables for IBP be 
+\begin{align*}
+  u =t^{n} &\implies du=nt^{n-1}dt \\
+  v= -e^{-t}&\implies dv =e^{-t}dt \\
+\end{align*}
+so,
+\[
+-e^{-t}t^{n}-\int_{0}^{p} -e^{-t}nt^{n-1}dt
+.\] 
+Simplifying the left side and the integral gets us to
+\[
+0+n\int_{0}^{p}e^{-t}t^{n-1}dt 
+.\] 
+Which can be rewritten in terms of the gamma function as 
+\[
+\Gamma\left( n+1 \right) =n\Gamma\left( n \right) 
+.\] 
+\subsection{Show that if you assume $n$ is an integer,\\ then $\Gamma\left( n+1 \right) =n!$}%
+Let's assume $n=1$.
+\[
+\Gamma\left( 2 \right) =1! = 1
+\] 
+\[
+\Gamma\left( 2 \right) =\int_{0}^{\infty} t^{0}e^{-t}dt = \int_{0}^{\infty} e^{-t}dt \implies \left( -e^{-\infty} \right) -\left( -e^{0} \right) =1
+\]

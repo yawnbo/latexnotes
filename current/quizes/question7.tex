@@ -1,0 +1,10 @@
+\section{Find the exact value of $\Gamma\left( \frac{1}{2} \right) $. Guess what power of $\pi$ matches this approximation.}%
+We can approximate this at 100 for the upper limit to find the equation,
+\[
+  \lim_{L \to 0^{+}} \int_{L}^{100} \frac{1}{\sqrt{t}}e^{-t}dt
+.\] 
+Using some wizardry this becomes 
+\[
+\sqrt{\pi^{}}\int_{}^{} \frac{2e^{-u^2}}{\sqrt{\pi}} \to \sqrt{\pi}\text{erf}\left( 100\right) 
+.\] 
+Which when plugged into a calculator returns $\approx 1.772$ which is the exact value of $\sqrt{\pi}$ because the error function evaluates to 1 as it approaches infinity. 

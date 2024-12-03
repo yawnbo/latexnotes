@@ -25,4 +25,60 @@
 \[
   -\frac{1}{50\left( x-1 \right) }+\frac{1}{10\left( x-1 \right) ^2}+ \frac{x-4}{50\left( x^2+9 \right) }
 .\] 
+\newpage
+\section{Evaluate the following integral}%
+
+\[
+  \int_{}^{} \frac{x^{4}+x^3-2x^2-x}{x^2+x-2}dx
+.\] 
+\subsection{Rewrite the improper rational function}%
+\label{sub:Rewrite the improper rational function}
+\[
+\int_{}^{} \left(   x^2-\frac{x}{x^2+x-2}\right)dx
+.\] 
+\subsection{Construct a partial on the remainder}%
+\label{sub:Construct a partial}
+\paragraph{Rewrite in an intermediate}
+\[
+\frac{x}{x^2+x-2}=\frac{A}{x+2}+\frac{B}{x-1}
+.\] 
+\paragraph{Get rid of denominators and evaluate}
+\[
+x=A(x-1)+B(x+2)
+.\] 
+\paragraph{Giving us $A=\frac{2}{3}$ and $B=\frac{1}{3}$ so our partial looks like,}
+\[
+\frac{2}{3\left( x+2 \right) }+\frac{1}{3\left( x-1 \right) }
+.\] 
+\subsection{Integrate}%
+\label{sub:Integrate}
+\[
+  \int_{}^{} \left(   x^2-\frac{2}{3\left( x+2 \right) }-\frac{1}{3\left( x-1 \right) }\right)dx
+.\] 
+\paragraph{Distribute and integrate}
+\begin{align*}
+  \int_{}^{} x^2dx &\implies \frac{x^3}{3} \\
+  -\int_{}^{} \frac{2}{3\left( x+2 \right) }dx&\implies -\frac{2}{3}\ln^{}( \left\| x+2 \right\| )\\
+  -\int_{}^{} \frac{1}{3\left( x-1 \right) }dx&\implies -\frac{1}{3}\ln^{}( \left\| x-1 \right\| )
+.\end{align*}
+\paragraph{Giving us,}
+
+\begin{gather*}
+  \frac{x^3}{3} -\frac{2}{3}\ln^{}( \left\| x+2 \right\| ) -\frac{1}{3}\ln^{}( \left\| x-1 \right\| )+C \\
+  \text{ or }\\
+  \frac{1}{3}\left( x^3-2\ln^{}( \left\| x+2 \right\| )-\ln^{}( \left\| x-1 \right\| ) \right) +C
+\end{gather*}
+\newpage
+\section{For which values of a will $\int_{0}^{\infty} e^{ax}dx$ converge?}%
+\paragraph{First just evaluate the integral}
+\[
+\lim_{L \to \infty} \int_{0}^{L} e^{ax}dx \implies \lim_{L \to \infty} \left( \frac{1}{a}e^{La} - \frac{1}{a}\right) 
+.\] 
+\paragraph{Start by noticing that $a\neq 0$ and that $\frac{1}{a}e^{La}$ goes to infinity when $a>0$, but when $a<0$, $e^{La}$ goes to 0 as L approaches $\infty$, so we get the finite value of $-\frac{1}{a}$ when $a<0$.}
+
+\include{question5}
+\include{question6}
+\include{question7}
+
+\include{bonusq}
 \end{document}

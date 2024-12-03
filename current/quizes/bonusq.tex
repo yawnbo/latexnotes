@@ -1,0 +1,17 @@
+\section*{Bonus question, generalization of type II integral.}%
+Starting with the general integral
+\[
+\int_{0}^{a>0} \frac{dx}{x^{p}}
+.\] 
+We can find that our denominator cannot be 0 so, our lower bound needs to be evaluated as a limit and we need to rewrite the integral.
+\[
+\lim_{T \to 0^{+}} \int_{T}^{a} x^{-p}dx \implies \lim_{T \to 0^{+}} \left( \frac{x^{-p+1}}{-p+1} \right) \Big|_{T}^{a}
+.\] 
+Now we plug in values and evaluate our new expression
+\[
+\lim_{R \to 0^{+}} \left( \frac{a^{-p+1}}{1-p}- \frac{R^{-p+1}}{1-p} \right) 
+.\] 
+The limit cancels one of our terms and we are left with
+\[
+\frac{a^{-p+1}}{1-p}
+.\] 

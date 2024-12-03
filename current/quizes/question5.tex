@@ -1,0 +1,54 @@
+\section{Find the Laplace transform for $f\left( x \right) =\cos^{}( ax )$}%
+these take WAY too long
+\paragraph{Start with our general Laplace transform}
+\[
+\int_{0}^{\infty} e^{-sx}\cos^{}( ax )dx
+.\] 
+Do our first IBP by letting
+\begin{align*}
+  u &= \cos^{}( ax ) \\
+  du &= -a\sin^{}( ax ) \\
+  v &= -\frac{1}{s}e^{-sx} \\
+  dv &= e^{-sx}dx \\
+\end{align*}
+Rewriting our integral we get
+\[
+\lim_{T \to \infty} \left(  -\frac{1}{s}e^{-sx}\cos^{}( ax )\big|^{T}_{0}-\int_{0}^{T} -\frac{1}{s}e^{-sx}a\sin^{}( ax )dx\right) 
+.\] 
+I don't want to clutter this so lets simplify the part before the integral and rewrite the integral by pulling out constants
+\begin{align*}
+  -\frac{1}{s}e^{-s\left( T \right) }\cos^{}( a\left( T \right) ) &\to \text{ DNE }\\
+  -\frac{1}{s}e^{-s\left( 0 \right) }\cos^{}( a\left( 0 \right)  ) &\to \frac{1}{s}
+\end{align*}
+\[
+  \lim_{T \to \infty} \left(  \frac{1}{s}+\int_{0}^{T}\frac{1}{s}e^{-sx}\sin^{}( ax )dx \right) 
+.\] 
+Again just go back to doing another IBP and rewrite
+\begin{align*}
+  u &= \sin^{}( ax ) \\
+  du &= a\cos^{}( ax ) \\
+  v &= -\frac{1}{s}e^{-sx} \\
+  dv &= e^{-sx}dx 
+\end{align*}
+\[
+\lim_{T \to \infty} \left( \frac{1}{s}-\frac{a}{s} \left( -\frac{1}{s}e^{-sx}\sin^{}( ax )\big|^{T}_{0}-\int_{0}^{T} -\frac{1}{s}e^{-sx}a\cos^{}( ax )dx \right)  \right) 
+.\] 
+Again, evaluate inner bounds to find
+\[
+-\frac{1}{s}e^{-sx}\sin^{}( ax )\big|^{T}_{0} = \text{ DNE }-0
+.\] 
+Simplify inner integral too and rewrite
+\newpage
+\[
+  \lim_{T \to \infty} \left( \frac{1}{s}-\frac{a}{s}\left( \frac{a}{s}\int_{0}^{T} e^{-sx}\cos^{}( ax )dx \right)  \right) 
+.\] 
+As a last step simplify the inside and set equal to original expression.
+\[
+\lim_{T \to \infty}\int_{0}^{T} e^{-sx}\cos^{}( ax )dx=\lim_{T \to \infty} \left( \frac{1}{s}-\frac{a^2}{s^2}\int_{0}^{T} e^{-sx}\cos^{}( ax )dx \right) 
+.\] 
+Limits cancel and we are left with simple algebra (let $L$ be our integral I'm not writing it 10 times)
+\begin{align*}
+  &L = \frac{1}{s}-\frac{a^2}{s^2}L \\
+  &L\left( 1+\frac{a^2}{s^2} \right) = \frac{1}{s} \\
+  &L = \frac{s}{s^2+a^2}.
+\end{align*}
