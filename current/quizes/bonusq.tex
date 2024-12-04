@@ -15,3 +15,14 @@ The limit cancels one of our terms and we are left with
 \[
 \frac{a^{-p+1}}{1-p}
 .\] 
+This is the generalization of the type II integral for when we have a valid value of p. But what are those values?
+We can now notice that $p\neq 1$ which creates two possibilities, $p>1$ or $p<1$.
+Testing for $p<1$ we can use $1-p>0$ so,
+\[
+\lim_{R \to 0^{+}} \left( - \frac{R^{-p+1}}{1-p} \right) 
+.\] 
+Evaluates to 0 which gives us the finite answer of $\frac{a^{-p+1}}{1-p}$. But in the case of $p>1$, we instead find that 
+\[
+\lim_{R \to 0^{+}} \left( - \frac{R^{-p+1}}{1-p} \right) = \infty
+.\] 
+Which shows us that we can use our generalization for when $p<1$ but not $p>1$ where the integral will be divergent.
