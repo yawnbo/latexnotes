@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{Review for exam 3}
+\author{yawnbo}
+\date{\today}
+
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\paragraph{Question 5}
+\[
+\int_{}^{} e^{\sqrt[3]{x}}dx \text{ using u sub  }
+.\] 
+\[
+u=x^{\frac{1}{3}} \text{ an } du=\frac{1}{3}x^{-\frac{2}{3}}dx
+.\] 
+Solving for dx gets 
+\[
+dx= \frac{3du}{x^{-\frac{2}{3}}}=3x^{\frac{2}{3}}du=3\left( x^{\frac{1}{3}} \right) ^2du=3u^2du
+.\] 
+Which can then be tabulated to
+\[
+3u^2e^{4}-6ue^{u}+6u+C
+.\] 
+and subbing back in x
+\[
+3x^{\frac{2}{3}}e^{\sqrt[3]{x}}-6^{\sqrt[3]{x}}e^{\sqrt[3]{x}}+6\sqrt[3]{x}+C
+.\] 
+\section{Comparison examples from yesterday}%
+\label{sec:Comparison examples from yesterday}
+
+\begin{align}
+ &\int_{1}^{\infty} \frac{dx}{\sqrt{x}+e^{3x}} \\
+ &\int_{0}^{0.5} \frac{dx}{x^{8}+x^2} \\
+ &\int_{1}^{\infty} \frac{dx}{\sqrt{x^{5}+2}} \\
+ &\int_{0}^{5} \frac{dx}{x^{\frac{1}{3}}+x^3} \\
+ &\int_{0}^{\infty} \frac{dx}{\sqrt{x^{\frac{1}{3}+x^3}}} \\
+ &\int_{1}^{\infty} \frac{dx}{x^{4}+e^{x}}\\
+\end{align}
+Generally guess which one we would assume we have, for one assume convergence, so we need somthing larger.
+\newpage
+\subsection{For number 5}%
+\label{sub:For number 5}
+\paragraph{This is a type 1 and two improper.}
+\[
+\int_{0}^{\infty} \frac{dx}{\sqrt{x^{\frac{1}{3}}+x^3}}
+.\] 
+becomes
+\[
+\int_{0}^{1} \frac{dx}{\sqrt{x^{\frac{1}{3}}+x^3}} + \int_{1}^{\infty} \frac{dx}{\sqrt{x^{\frac{1}{3}}+x^3}}
+.\] 
+By dominance theory we can look at the second integral of $x^3$ which converges by p theorem. 
+Now we look at the first one to establish its divergence so we need a function thats bigger
+\[
+x^{\frac{1}{3}}+x^3 \le 2x^{\frac{1}{3}}
+.\] 
+We choose that number because when testing $x^3+x^3$ we find that just one of them is smaller than $x^{\frac{1}{3}}$ which means that if we are finding a larger function we should take our x to the power of a fraction.
+Doing normal comparison we find that this converges instead and our analysis is wrong because we found a value that doesn't help us
+
+Now we want to try something like $x^{-1}$ to get a value that is 
+
+THiS ONE IS ON THE EXAM THIS NEEDS TO BE FIGURED OUT 
+\[
+\int_{0}^{\infty} \frac{dx}{\sqrt{x^{\frac{1}{3}}+x^3}}
+.\] 
+\end{document}
