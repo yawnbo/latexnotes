@@ -14,6 +14,9 @@
 *.pdf
 **.DS_Store
 
+## folder for aux files
+auxfiles/
+
 ## Intermediate documents:
 *.dvi
 *.xdv
