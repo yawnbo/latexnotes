@@ -1,0 +1,118 @@
+\section*{01/09/25 Continuation of sequences 2}%
+\label{sec:01/09/25 Continuation of sequences 2}
+
+\paragraph{Pre Lecture notes:}
+Room change may occur on 01/10 to L213 but not confirmed.
+
+\subsection{Example problems on the worksheets}%
+\label{sub:Example problems on the worksheets}
+
+\subsubsection{Question #1}
+\[
+\text{ Let }\left( a_k \right) _{ n=1 }^{ \infty } \text{ whose terms are  } \frac{1}{2}, \frac{1}{5}, \frac{1}{11}, \frac{1}{14}, \frac{1}{17}\ldots
+.\] 
+\paragraph{There is an explicit formula for $ a_k $ which works for all values of k is $ a_k = \left( b\left( k \right)  \right) ^{ -1 } $ where $ b\left( k \right)= $ }
+
+\paragraph{To start, we can notice that our denominators go up by a factor of 3, so we can write our sequence as $ y=3x+2 $, but this is in terms of $ x=0 $ where we instead want $ x=1 $. For this we plug in $ k-1 $ for our x to end with $ b\left( k \right) =3\left( k-1 \right) +2 $ and $ \left( a_k \right) _{ k=1 }^{ \infty }=\left( \left( 3\left( k-1 \right) +2 \right) ^{ -1 } \right)  $.}
+
+\subsubsection{Question #2}
+\[
+\text{ Find the }n^{ th }\text{  term of the sequence }\frac{1}{2},\frac{1}{4},\frac{1}{6}\ldots
+.\] 
+\paragraph{For even numbers we just use $ 2n $ so for this equation we would have $ a_n=\left{ \frac{1}{2n} \right} _{ n=1 } $. If instead we were looking at the odd equivelent for odd numbers we would generally use something like $ 2n+1 $. }
+
+\subsubsection*{3.2.4 Question 4}
+\[
+\text{ Find the sequence whose first few terms are }\frac{1}{2},\frac{1}{5},\frac{1}{10},\frac{1}{17}.
+.\] 
+
+\paragraph{This can be identified using $ \left{ \frac{1}{n^2+1} \right}_{ n=1 }  $ where n is going to be our term number starting at 1.}
+
+\paragraph{This shows that if we have something that is going up by odd increments it might be a square}
+
+\subsubsection*{3.2.5 Question 5 }
+
+\paragraph{This question contains something called a subsequence.}
+
+\[
+\left{ 1,5,1,5,1 \ldots \right} 
+.\] 
+
+\paragraph{Which can be defined as $ \left{ 3+2\left( -1 \right) ^{ n } \right} _{ n=1 } $. But we can also solve this as a piecewise function. This can be done by spliting the sequence into 2 such as, }
+
+\[
+a_n=\left{ 1 \right} \text{ if n odd }
+\] 
+\[
+a_n=\left{ 5 \right} \text{ if n even }
+.\] 
+
+\paragraph{With this we can also ask just the question, "What would all of the odd terms be?" which can be answered by our subsequences above}
+
+
+\section{Theorems}%
+\label{sec:Theorems}
+
+\subsection{Proving convergence as $ n\to \infty $.}
+
+\paragraph{Yesterday we had something like $ \lim_{ n \to \infty} \left\| a_n \right\|=0 $ then $ \lim_{ n \to \infty} a_n $ must also $ = $ 0. }
+
+\paragraph{Now, we can also say that $ \lim_{ n \to \infty} a_n=L $ if all subsequences also converge to L. This is useful to prove divergence by showing that one subsequence does not converge to L.}
+
+\subsubsection{Ex. Prove $ \left{ \left( -1 \right) ^{ n } \right} _{ n=1 } $ diverges.}
+
+\paragraph{We can write this as a subsection as $ \lim_{ n \to \infty} a_{ 2n }=1 $ and $ \lim_{ n \to \infty} a_{ 2n+1 }=-1 $. Because these two do NOT go to the same value of L we can conclude that these will diverge and we will not have a limit for this sequence.}
+
+\subsection{Factorials: $ n! $}%
+\label{sub:Factorials: $ n! $}
+
+\[
+	3! = 3 \cdot 2\cdot 1
+.\] 
+\paragraph{We also assume that $ 1! = 1 $ and $ 0! = 1 $. Which gives us the definition of a factorial as $ n! = n\left( n-1 \right) \left( n-2 \right)  \left( n-3 \right) \ldots$}
+\paragraph{A technique that will be useful for them is going to be }
+
+\[
+	\left( n+1 \right) n! = \left( n+1 \right) !
+.\] 
+
+\paragraph{This will be useful for something like}
+\[
+\frac{ 7! }{ 3! }
+.\] 
+
+\paragraph{Which can be rewritten as}
+\[
+\frac{ 7\cdot 6\cdot 5\cdot 4\cdot 3! }{ 3! }=7\cdot 6\cdot 5\cdot 4
+.\] 
+\paragraph{Due to the factorials cancelling each other in the end}
+
+\paragraph{If instead we had something negative like, $ \left( n-2 \right) ! $, we rewrite it as}
+
+\[
+\frac{ \left( n \right) \left( n-1 \right) \left( n-2 \right) ! }{ \left( n \right) \left( n-1 \right)  } = \frac{ n! }{ n\left( n-1 \right)  }
+.\] 
+
+\subsection{Back to sequences}%
+\label{sub:Back to sequences}
+
+\paragraph{If we have an increasing (monotonic increasing) sequence $ a_n $ then $ \frac{d}{dn}\left( a_n \right) >0 $. This is the same for decreasing sequences but with the opposite sign.}
+
+\subsubsection{Bounded Sequences}
+
+\paragraph{If we have $ M\le a_n $ for all n, we can say that the sequence is bounded below because it has a greatest lower bound. If instead we have $ a_n \le M $ for all n, we can say that the sequence is bounded above.}
+
+\paragraph{We can also have something bound above and below, such as $ \left{ \sin^{}\left( n \right) \right}  $ which is bound above and below. }
+
+\subsection{Theorem again}%
+\label{sub:Theorem again}
+
+\paragraph{Every decreasing sequence bounded below converges, and every increasing one bounded above, will also converge}
+\paragraph{While this is obvious, it's important to note and can be used for something like}
+
+\[
+\text{ Prove  }\left{ \frac{1}{ n }  \right} \text{ converges }
+.\] 
+
+\paragraph{For this we can take the derivative to find $ \frac{d}{ dn } -n^{ -2 } $ < 0 for all n which tells use that this is a decreasing sequence. We can also see that this is bounded below by 0. This tells us that this sequence will converge to 0.}
+
