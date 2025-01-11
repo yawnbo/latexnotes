@@ -1,0 +1,67 @@
+\section*{01/10/25 Proving things (last for this pdf)}%
+\paragraph{Pre class notes}%
+Quiz is open and is due in a week (1/17/25).
+
+\section{Examples of sequences}%
+\label{sec:Examples of sequences}
+
+\paragraph{Ex. show that $ \frac{ n }{ n+1 }  $ is increasing using $ \frac{ d }{ dx }  $ and algebra. \\}
+
+ We start by remembering that a positive $ \frac{ d }{ dx }  $ means that a function is increasing so, we take its derivative
+
+ \[
+ \frac{ \left( n+1 \right) \left( 1 \right) -\left( n \right) \left( 1 \right)  }{ \left( n+1 \right) ^2 } = \frac{ 1 }{ \left( n+1 \right) ^2 } >0
+ .\] 
+
+If we instead wanted to do this algebraically we could show that $ a_{ n+1 }>a_n $ for all n. So we,
+\[
+\frac{ \left( n+1 \right)  }{ \left( n+1 \right) +1 }>\frac{ n }{ \left( n+1 \right)  } \implies \left( n+1 \right) ^2 > n\left[ \left( n+2 \right)  \right] \to n^2+2n+1> n^2+2n \text{ or } 1>0
+.\] 
+Both of these methods get to the same place and neither is prefered over the other, but one might be easier to do than the other in certain situations.
+
+\paragraph{Again using $ \left\{ \frac{ n }{ n+1 }  \right\}  $, show that this sequence is bounded above. \\}
+
+To do this we can make an assumption that we are bounded somewhere like 1 in this case. We can then write out some of the terms of the sequence to see if we are proven correct, like in this case,
+\[
+\frac{ 1 }{ 2 } <1, \frac{ 2 }{ 3 } <1, \frac{ 3 }{ 4 } <1 \ldots
+.\] 
+
+This can also be proven using algebra by stating that $ n<n+1 $ which will always be valid for each term in the sequence proving that we are bounded at 1. 
+
+Going back to one of our theories from a few days ago, we know that a sequence converges if it's bounded above and increasing so we can say that this is convergent, but we still need to find the limit.
+
+First lets do the hard way of finding it by using algebra. 
+\[
+\lim_{ n \to \infty} \frac{ n }{ n+1 } \cdot \frac{ \frac{ 1 }{ n }  }{ \frac{ 1 }{ n }  }= \lim_{ n \to \infty} \frac{ 1 }{ 1+\frac{ 1 }{ n }  }= \frac{ 1 }{ 1+0 } =1
+.\] 
+
+The easy way can be done just by using Dominance Theory. This states that whenever we are dealing with a variable to the power of some constant ($ n^{ p } $ ) we can just ignore the constant and take the limit of the variable. So in this case we can just ignore the 1 and take the limit of $ \frac{ n }{ n } =1$.
+\newpage
+\paragraph{Question 24 worksheet}
+\[
+\lim_{ n \to \infty} \frac{ 2n }{ \sqrt[ 4 ]{ 256n^{ 4 }+81n^2+49 }  }
+.\] 
+With this we can just use dominance to rewrite our whole expression to be a lot simpler. 
+\[
+\lim_{ n \to \infty} a_n \approx \lim_{ n \to \infty} \frac{ 2n }{ \sqrt[ 4 ]{ 256n^{ 4 } }  } =\lim_{ n \to \infty} \frac{ 2n }{ 4n } =\frac{ 1 }{ 2 } 
+.\] 
+
+We take only the term with the highest power p when using dominance so we just worry about the $ n^{ 4 } $ for this case.
+
+\paragraph{Question 25 worksheet}
+\[
+\lim_{ n \to \infty} \int_{ \frac{ 2 }{ n }  }^{ \frac{ 1 }{ n }  } \frac{ x+1 }{ x^2+1 }dx
+.\] 
+
+Lets break the integral first using u sub where $ u=x^2+1 \text{ and }du=xdx $ 
+\[
+\int_{ -\infty }^{ \infty } \frac{ du }{ 2u } +\tan^{-1}\left( x \right) \Big|_{ \frac{ 2 }{ n }  }^{ \frac{ 1 }{ n }  } =\frac{ 1 }{ 2 } \ln\left( \left\| u \right\| \right) +\tan^{-1}\left( x \right) \Big|_{ \frac{ 2 }{ n }  }^{ \frac{ 1 }{ n }  }=
+.\] 
+Which simplifies to,
+\[
+\frac{ 1 }{ 2 } \ln^{  } \left( \left\| \left( \frac{ 1 }{ n }  \right) ^2 +1\right\| \right) + tan^{ -1 }\left( \frac{ 1 }{ n }  \right) -\frac{ 1 }{ 2 } \ln^{  } \left( \left\| \left( \frac{ 2 }{ n }  \right) ^2 +1\right\| \right) - tan^{ -1 }\left( \frac{ 2 }{ n }  \right) =0
+.\] 
+Looking at this we can see that each term just goes to 0 so we know that our whole thing would go to 0. 
+
+\paragraph{Next week will be geometric sequences}
+
