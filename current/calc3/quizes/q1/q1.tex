@@ -1,0 +1,66 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+
+\title{Quiz #1 Calculus 3}
+\author{yawnbo}
+\date{\today}
+\maketitle
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section*{Question #1 }%
+\label{sec:Question #1 }
+\begin{gather*}
+\text{ For a sequence, }a_n = \frac{ \left( -1 \right) ^{ n+1 }n }{ n+\sqrt{ n} } \\ 
+\text{ form an argument on whether the sequence converges or diverges. }
+\end{gather*}
+For this we can start by writing out the first few terms of the sequence to find a pattern, $ a_1 = \frac{1}{2}, a_2 = -\frac{2}{2+\sqrt{ 2}}, a_3 = \frac{3}{3+\sqrt{ 3}}, a_4 = -\frac{4}{6}  $. Which shows that we have an ossilation between evens and odds because of $ \left( -1 \right) ^{ n+1 } $. Because this happens on even intervals we can use subsequences to show that they will diverge. 
+To start, let our subsequences be
+\[
+\lim_{ n \to \infty} a_{ 2n } = L \text{ and } \lim_{ n \to \infty} a_{ 2n+1 }=L
+.\] 
+or
+\begin{align*}
+	a_{ 2n }=\frac{ \left( -1 \right) ^{ 2n+1 }2n }{ 2n+\sqrt{ 2n} } \text{ and } a_{ 2n+1 }=\frac{ \left( -1 \right) ^{ 2n+2 }2n+1 }{ 2n+1+\sqrt{ 2n+1} }
+.\end{align*}
+Because we set our terms to always be even or odd, we can predict how $ \left( -1 \right) ^{ f+1 } $ will behave. So when,
+\[
+f=2n \implies \left( -1 \right) ^{ 2n+1 }=-1 \text{ and } f=2n+1 \implies \left( -1 \right) ^{ 2n+2 }=1
+.\]
+Rewriting our equations we get,
+\[
+a_{ 2n }=\frac{ -2n }{ 2n+\sqrt{ 2n} } \text{ and } a_{ 2n+1 }=\frac{ 2n+1 }{ 2n+1+\sqrt{ 2n+1} }
+.\] 
+Where we can use Dominance Theory to find our limits.
+\[
+\lim_{ n \to \infty} a_{ 2n }\approx \lim_{ n \to \infty} \frac{ -2n }{ 2n }=-1 \text{ and } \lim_{ n \to \infty} a_{ 2n+1 }\approx \lim_{ n \to \infty} \frac{ 2n }{ 2n }=1
+.\] 
+Because these two limits do not converge to the same value, we can say that the sequence will diverge.
+
+\newpage
+\section*{Question 2}%
+\label{sec:Question 2}
+
+\begin{gather*}
+\text{ For a sequence, }a_n = \frac{ \left( 2n-1 \right) ! }{ \left( 2n+1 \right) ! }\\ 
+\text{ form an argument on whether the sequence converges or diverges. }
+\end{gather*}
+We can start to rewrite the sequence using factorial laws,
+\[
+	\left( 2n-1 \right) ! \to \frac{ 2n! }{ 2n } \text{ and } \left( 2n+1 \right) ! \to 2n!\left( 2n+1 \right) 
+.\] 
+Simplifying our sequence we get,
+\[
+\frac{ \frac{ 2n! }{ 2n } }{ 2n!\left( 2n+1 \right)  }\to \frac{ 2n! }{ 2n!\left( 2n+1 \right) \left( 2n \right)  }\to \frac{1}{\left( 2n+1 \right) \left( 2n \right) }
+.\] 
+Which we can now take the limit of. 
+\[
+\lim_{ n \to \infty} \frac{1}{\left( 2n+1 \right) \left( 2n \right) }= 0
+.\] 
+\end{document}
