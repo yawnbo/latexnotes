@@ -1,0 +1,159 @@
+Type on quiz, Question 6 should be 
+\[
+a_{ n+1 }=\sqrt{ 2+a_n} \text{ (same thing just without the root) }
+.\] 
+\section*{Sec 11.2 Series cont.}%
+
+\paragraph{Geometric: Partial sums}
+\[
+\sum_{ i=1 } ^{ \infty } ar^{ n-1 }=\frac{ a\left( 1-r^{ n } \right)  }{ 1-r }
+.\] 
+Now our goal is to find the answer to 
+$\lim_{ n \to \infty} \sum_{ i=1 } ^{ \infty } ar^{ n }=\lim_{ n \to \infty} S_n$
+\subsection{Ex.}%
+\label{sub:Ex.}
+\paragraph{Calculate}
+\[
+\sum_{ i=1 } ^{ 20 } 3\left( \frac{ 1 }{ 2 }  \right) ^{ n-1 }=\frac{ 3\left( 1-\frac{ 1 }{ 2 }^{ 20 }  \right)  }{ 1-\frac{ 1 }{ 2 }  }	\approx 5.999994278
+.\] 
+
+\section{Theorem of the result of }%
+\label{sec:Theorem of the result of }
+\[
+\sum_{ i=1 } ^{ \infty } ar^{ n-1 }=\lim_{ n \to \infty} S_n=\lim_{ n \to \infty} \frac{ a\left( 1-r^{ n } \right)  }{ 1-r }=\frac{ a }{ 1-r } ,r\epsilon\left( -1,1 \right) 
+.\] 
+
+\section{Examples}%
+\label{sec:Examples}
+\paragraph{Find the sum of }
+\[
+5-\frac{ 5 }{ 4 } +\frac{ 5 }{ 16 } -\frac{ 5 }{ 64 } + \ldots
+.\] 
+Our test should be $ a_{ n+1 } = r $ where r is our common ratio. In this case we would get $ \frac{ -\frac{ 5 }{ 4 }  }{ 5 } = -\frac{ 1 }{ 4 } $. So our sum would be
+
+\[
+\sum_{ i=1 } ^{ \infty } 5\left( -\frac{ 1 }{ 4 }  \right) ^{ n-1 }
+.\] 
+
+so we use our formula to get
+\[
+\frac{ a }{ 1-r } =\frac{ 5 }{ 1-\left( -\frac{ 1 }{ 4 }  \right)  } =4
+.\] 
+This is also one of the few infinite sums that we can actually compute with no issues. 
+
+\newpage
+\subsection{Ex}%
+\label{sub:Ex}
+\[
+3-4+\frac{ 16 }{ 3 } -\frac{ 64 }{ 9 } +\ldots \text{ is geometric, and Does it converge? }
+\] 
+
+Our ratio can be found to be $ -\frac{ 4 }{ 3 }  $ and if we check this value, we find it's outside our range of $ r\epsilon\left( -1,1 \right)  $. This means that sum will diverge and we will not have a finite value. 
+
+\subsection{Ex}%
+\label{sub:Ex}
+\[
+\text{ Given the sequence }-1\left( 2+\frac{ 2 }{ 3 } +\frac{ 2 }{ 9 } +\frac{ 2 }{ 27 } +\ldots \right) 
+.\] 
+We can find our r value to be $ \frac{ 1 }{ 3 }  $ and we can plug this into our equation of $ \frac{ a }{ 1-r } $ to find
+\[
+-\frac{ 2 }{ 1-\frac{ 1 }{ 3 }  } =-3
+.\]
+
+\subsection{Ex}%
+\label{sub:Ex}
+\paragraph{Compute}
+\[
+\sum_{ i=0 } ^{ \infty } \frac{ 1 }{ r^{ n+1 } }
+.\] 
+For this we can use something called a Reindex. This is just getting a dummy variable so we get our desired starting value. So for this we can change our equation to be $ m=n+1 $ and change our sum to be $ \sum_{ m=1 } ^{ \infty } \frac{ 1 }{ r^{ m } }  $. But now we need to adjust it to have an exponent that matches our formula so we take out a constant to leave us with
+\[
+\frac{ 1 }{ 3 } \cdot \frac{ 1 }{ 3^{ m-1 } } =\frac{ 1 }{ 3 } \sum_{ m=1 } ^{ \infty } \frac{ 1 }{ 3^{ m-1 } } =\frac{ 1 }{ 3 } \left( \frac{ 1 }{ 1-3 }  \right) 
+.\] 
+Now computing this we are left with
+\[
+\frac{ 1 }{ 3 } \left( \frac{ 3 }{ 2 }  \right) =\frac{ 1 }{ 2 } \text{ as our final limit. }
+\] 
+
+\subsection{Ex.}%
+\label{sub:Ex.}
+\paragraph{What if we instead started at $ i=5 $?}
+\paragraph{Compute}
+\[
+\sum_{ n=5 } ^{ \infty } 2\left( \frac{ 1 }{ 4 }  \right) ^{ n+3 }
+.\] 
+So we take our reindex to be $ m=n-4 $ and rewrite our sum. We need to remember to solve for $ n $ and replace it in our equation, so we get $ n=m+4 $. So,
+\[
+=\sum_{ m=1 } ^{ \infty } 2\left( \frac{ 1 }{ 4 }  \right) ^{ m+7 }=\sum_{ m=1 } ^{ \infty } 2\left( \frac{ 1 }{ 4 }  \right) ^{ m+7 }
+.\] 
+Now we need to adjust our exponent to be left with $ m-1 $, so we take out a $ \left( \frac{ 1 }{ 4 }  \right) ^{ 8 } $ and be left with 
+\[
+	\left( \frac{ 1 }{ 4 }  \right) ^{ 8 }\sum_{ m=1 } ^{ \infty } 2\left( \frac{ 1 }{ 4 }  \right) ^{ m-1 }=\left( \frac{ 1 }{ 4 }  \right) ^{ 8 }\cdot \frac{ 2 }{ 1-\frac{ 1 }{ 4 }  } = \left( \frac{ 1 }{ 4 }  \right) ^{ 8 }\cdot \frac{ 2\cdot 4 }{ 3 }=\frac{ 2 }{ 3\cdot 4^{ 7 } } \text{ or }\frac{ 2 }{ 49152 } 
+.\] 
+
+\section{Decimal system}%
+\label{sec:Decimal system}
+The Decimal System is an application of a geometric series. For example, given the number 542, we can think of this as $ 2\cdot 10^{ 2 }+4\cdot 10^{ 1 }+2\cdot 10^{ 0 } $.
+
+\paragraph{Ex. Write 0.345 as a sum of powers of 10. }
+
+For this we would just use negative powers so we would write 
+\[
+0.346 = 3\cdot 10^{ -1 }+4\cdot 10^{ -2 }+6 \cdot 10^{ -3 } \text{ which can also just be thought of as fractions }= \frac{ 3 }{ 10 } +\frac{ 4 }{ 10^2 } \ldots
+.\] 
+
+\subsection{Repeated decimals}%
+\label{sub:Repeated decimals}
+\paragraph{Write $ 3.1454545\ldots $ as a fraction. }
+Let's just tear it apart into power of -10
+\[
+=3.1 + \frac{ 45 }{ 10^{ 3 } } +\frac{ 45 }{ 10^{ 5 } } +\frac{ 45 }{ 10^{ 7 } } \ldots
+.\] 
+
+The last part of our fraction is what we can consider a geometric series, so let's set up our sum.
+\[
+3.1+\sum_{ n=1 } ^{ \infty } 45\left( \frac{ 1 }{ 10 }  \right) ^{ 2n+1 }
+.\] 
+Now we need to normalize our current sum to be in the form of $ \frac{ a }{ 1-r } $ so, we can find our exponent to be 
+\[
+\frac{ 1 }{ 10 } ^{ 2n+1 }=\left( \frac{ 1 }{ 10 }  \right) ^{ 2n }\cdot \left( \frac{ 1 }{ 10 }  \right) ^{ 1 }=\left( \frac{ 1 }{ 10^2 }  \right) ^{ n }\cdot \frac{ 1 }{ 10 } =\frac{ 1 }{ 10^3 } \left( \frac{ 1 }{ 10^2 }  \right)^{ n-1 }
+.\] 
+Now we rewrite our sum to be 
+\[
+3.1+\frac{ 1 }{ 10^3 } \sum_{ n=1 } ^{ \infty } 45\left( \frac{ 1 }{ 10^2 }  \right) ^{ n-1 }
+.\] 
+Time for awesome simplifications
+\[
+3.1+\frac{ 1 }{ 10^3 } \left( \frac{ 45 }{ 1-\frac{ 1 }{ 10^2 }  }  \right)=3.1+ \frac{ 45 }{ 990 } = \frac{ 173 }{ 55 }  
+.\] 
+
+\section{Power Series}%
+\label{sec:Power Series}
+\[
+\sum_{ n= 0 } ^{ \infty } x^{ n } = 1 + x + x^2+x^3+ \ldots
+.\] 
+The above is what we call a power series. Because this geometric we can write our new identity as 
+\[
+\sum_{ n=0 } ^{ \infty } x^{ n }=\sum_{ m=1 } ^{ \infty } 1\left( x \right) ^{ m-1 }=\frac{ 1 }{ 1-x } ,x\epsilon\left( -1,1 \right) 
+.\] 
+
+\subsection{Example}%
+\label{sub:Example}
+\[
+\sum_{ n=1 } ^{ \infty } \left( -3 \right) ^{ n }x^{ n }
+.\] 
+\paragraph{For what values, $ x $, will the series converge?}
+Because our power is too big on the x, we want to reindex and call $ m=n+1 $. With this we can rewrite our sum to be 
+\[
+\sum_{ m=0 } ^{ \infty } \left( -3x \right) ^{ m+1 }=\left( -3x \right) \sum_{ m=0 } ^{ \infty } \left( -3x \right) ^{ m }
+.\] 
+where we can now use our previous identity to find our sum to be equal to
+\[
+	\left( -3x \right) \cdot \frac{ 1 }{ 1-\left( -3x \right)  } = \frac{ -3x }{ 1+3x }
+.\] 
+Now that we found our final equation, we still need to rewrite our range. 
+\[
+-1<-3x<1 \implies \frac{ 1 }{ 3 } >x>-\frac{ 1 }{ 3 } 
+.\] 
+As a whole, this is just showing that if $ \frac{ 1 }{ 3 } >x>-\frac{ 1 }{ 3 }  $, we can use the equation $ \frac{ -3x }{ 1+3x } $ to find what our series would converge to. 
+
