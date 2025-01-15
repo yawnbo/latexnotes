@@ -1,0 +1,69 @@
+\section{Short class 01/15}%
+\label{sec:Short class 01/15}
+
+\subsection{Geometric and power series review}%
+\label{sub:Geometric and power series review}
+
+Geometric happens when we are using 
+\[
+\sum_{ n=1 } ^{ \infty } ar^{ n-1 }=\frac{ a }{ 1-r } 
+.\] 
+Power happens when we have 
+\[
+1+x+x^2+x^3+\ldots=\sum_{ n=0 } ^{ \infty } x^{ n }=\frac{ 1 }{ 1-x } ,\left\| x \right\|<1 \text{ or }-1<x<1
+.\] 
+
+\paragraph{Ex}%
+\label{par:Ex}
+\[
+\text{ For }\sum_{ n=0 } ^{ \infty } \left( -2x \right) ^{ n }\text{ Find the result, and the x-values it converges for }
+.\] 
+Just plug in values into our formula to get
+\[
+\frac{ 1 }{ 1-\left( -2x \right) ^{ n } }, \left\| -2x \right\|<1 \text{ or }\frac{ 1 }{ 2 } >x>-\frac{ 1 }{ 2 } \text{ which is our interval of convergence}
+.\] 
+This is basically the same thing as the geometric sequence but, we are solving for our r value instead of knowing it off the bat.
+
+\paragraph{Ex.}
+\[
+\text{ For }\sum_{ n=0 } ^{ \infty } \left( \frac{ 2 }{ x }  \right) ^{ n }
+.\]
+With our identity we get
+\[
+\frac{ 1 }{ 1-\frac{ 2 }{ x }  } =\frac{ x }{ x-2 } 
+.\] 
+For this we get a technical detail that $ x\neq 2 $. Now to find our interval of convergence we can find that we have $ \left\| \frac{ 2 }{ x }  \right\|<1 $ which gives us $ \left| \frac{ 1 }{ x }  \right|<\frac{ 1 }{ 2 }   $ which is basically saying that we can have an x value anywhere that isn't between -2 and 2 inclusive. 
+
+\section{Telescoping series}%
+\label{sec:Telescoping series}
+\paragraph{Ex.}%
+\label{par:Ex.}
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n\left( n+1 \right)  } 
+.\] 
+If we were to just start getting some terms we would have
+\[
+\frac{ 1 }{ 2 } +\frac{ 1 }{ 6 } +\frac{ 1 }{ 12 } +\ldots
+.\] 
+But what happens if we instead do a partial decomposition of our function?
+\begin{gather*}
+\frac{ 1 }{ n\left( n+1 \right)  } =\frac{ A }{ n } +\frac{ B }{ n+1 } \\
+1=A\left( n+1 \right) +B\left( n \right) \implies B = -1 \text{ and }A=1\\
+\end{gather*}
+
+Going back to the sum we can now rewrite it as
+\begin{gather*}
+\sum_{ n=1 } ^{ \infty } \left( \frac{ 1 }{ n } -\frac{ 1 }{ n+1 }  \right) \\
+=\left( \frac{ 1 }{ 1 } -\frac{ 1 }{ 2 }  \right) +\left( \frac{ 1 }{ 2 } -\frac{ 1 }{ 3 }  \right) +\left( \frac{ 1 }{ 3 } -\frac{ 1 }{ 4 }  \right) +\ldots+\left( \frac{ 1 }{ n-1 } -\frac{ 1 }{ n }  \right)  +\left( \frac{ 1 }{ n } -\frac{ 1 }{ n+1 }  \right) 
+\end{gather*}
+Looking at our terms, we can see that all of them cancel other than 
+\[
+1-\frac{ 1 }{ n+1 } 
+.\] 
+Which holds for all telescope series. Now we can easily take the limit to find 
+\[
+\lim_{ n \to \infty} S_n = \lim_{ n \to \infty} \left( 1-\frac{ 1 }{ n+1 }  \right) =1
+.\] 
+For all telescopic series' we can easily find the answer if we break the function into partials. While it's possible to do with the original function it's a lot harder and should usually be done with partials. 
+
+Harmonic series will be done tomorrow. 
