@@ -14,27 +14,49 @@
 \subsection*{(i) If $ a_n $ is bounded, then it converges.}%
 \subsection*{(ii) If $ a_n $ is not bounded, then it diverges.}%
 \subsection*{(iii) If $ a_n $ diverges, then it is not bounded.}%
-
 \section*{Question 5}%
 \[
 \text{ Let }b_n = \frac{ \sqrt[ n ]{ n! }  }{ n }. 
 .\] 
 \subsection*{(i) Show that $ \ln^{  } \left( b_n \right) =\frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( \frac{ i }{ n }  \right)$}%
+Start by taking the ln of $ b_n $,
+\[
+\ln^{  } \left( b_n \right) = \ln^{  } \left( \frac{ \sqrt[ n ]{ n! }  }{ n }  \right) = \ln^{  } \left( \sqrt[ n ]{ n! }  \right) - \ln^{  } \left( n \right) = \frac{ 1 }{ n } \ln^{  } \left( n! \right) -\ln^{  } \left( n \right) 
+.\] 
+Simplifying both of our terms gets us
+\[
+\ln^{  } \left( n! \right) = \ln^{  } \left( 1\cdot 2\cdot 3\cdot 4\cdot \ldots n \right) \to \ln^{  } \left( n! \right) = \ln^{  } \left( 1 \right) + \ln^{  } \left( 2 \right) + \ln^{  } \left( 3 \right) + \ldots + \ln^{  } \left( n \right) \text{ or } \sum_{ i=1 } ^{ n } \ln^{  } \left( i \right)
+.\] 
+and because we want to simplify in the sum at some point we can take the sum of the ln of $ i $ and divide by $ n $ to get
+\[
+\sum_{ i=1 } ^{ n }\ln^{  } \left( n \right) =n\ln^{  } \left( n \right) \implies \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( n \right) =\ln^{  } \left( n \right)  
+.\] 
+So, we have
+\[
+\frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( i \right) - \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( n \right) \implies \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \left( \ln^{  } \left( i \right) -\ln^{  } \left( n \right)  \right) \text{ or } \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( \frac{ i }{ n }  \right) 
+.\] 
 
 \subsection*{(ii) Show that $ \lim_{ n \to \infty} \ln^{  } \left( b_n \right) =\int_{ a }^{ b } f\left( x \right) dx$; decide what $ a,b,f\left( x \right)  $ should be. Hint: Think Riemann Sum.}%
 
 \subsection*{(iii) Deduce the exact result of $ \lim_{ n \to \infty} b_n $.}%
-
+\newpage
 \section*{Question 6}%
-\paragraph{For the recursive sequence, $ a_0 =0$ and for $ n\ge 1, a_{ n+1 }=\sqrt{ 2+\sqrt{ a_n}} $. Assume that the sequence converges. What will be the exact value of $ \lim_{ n \to \infty} a_{ n } $?}
+\paragraph{For the recursive sequence, $ a_0 =0$ and for $ n\ge 1, a_{ n+1 }=\sqrt{ 2+ a_n} $. Assume that the sequence converges. What will be the exact value of $ \lim_{ n \to \infty} a_{ n } $? \\ \\ }
+Because we can assume that our limit will exist, we can go straight to finding our limit. Assuming that $ L=\lim_{ n \to \infty} a_n $ and $ L=\lim_{ n \to \infty} a_{ n+1 } $, we can start to rewrite our sequence. 
+\[
+\lim_{ n \to \infty} a_{ n+1 } = \sqrt{ 2+a_n} \implies L = \sqrt{ 2+L } \implies L^2-L-2= 0 \to L=2 \text{ or } L=-1
+.\] 
+We ignore $ L=-1 $ because it is not possible for $ a_n $ to be negative, so, we are left with $ \lim_{ n \to \infty} a_n =2 $.
 
 \section*{Question 7}%
-\paragraph{Each layer of protective film blocks $ \frac{ 1 }{ 3 }  $ of the ultra violet rays reaching it. What portion of UV rays are transmitted through Layer1, Layer 2, Layer 3? Find a general rule to describe the portion of UV rays transmitted through n layers.}
-
+\paragraph{Each layer of protective film blocks $ \frac{ 1 }{ 3 }  $ of the ultra violet rays reaching it. What portion of UV rays are transmitted through Layer1, Layer 2, Layer 3? Find a general rule to describe the portion of UV rays transmitted through n layers. \\ \\}
+I first started with $ a_0 =1 \text{ and }a_n=a_{ n-1 }-\frac{ 1 }{ 3 } \left( a_{ n-1 } \right) \implies a_n= \frac{ 2a_{ n-1 } }{ 3 } $, but then wrote out a few terms and realized it could be written with just \[
+\left\{ a_n \right\} _{ n=0 }^{ \infty }= \frac{ 2^{ n } }{ 3^{ n } }\text{ where n is the number of layers}
+.\] 
 \section*{Question 8}%
 \paragraph{Give an example of divergent sequences $ \left\{ a_n \right\}  $ and $ \left\{ b_n \right\}  $ such that $ \left\{ a_n + b_n \right\}  $ converges. }
 \[
-	\left( -1 \right) ^{ n }\text{ and }\left( -1 \right) ^{ n }
+\left\{ a_n \right\} _{ n=1 }^{ \infty }=\left( -1 \right) ^{ n }\text{ and }\left\{ b_n \right\} _{ n=1 }^{ \infty }=\left( -1 \right) ^{ n+1 }
 .\] 
 
 
