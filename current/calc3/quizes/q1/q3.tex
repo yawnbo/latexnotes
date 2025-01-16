@@ -12,8 +12,12 @@
 
 
 \subsection*{(i) If $ a_n $ is bounded, then it converges.}%
+False, we can have sequences such as $ \left\{ a_n \right\} _{ n=1 }^{ \infty }=\left( -1 \right) ^{ n } $ that are bounded but occilate between values and do not converge. 
 \subsection*{(ii) If $ a_n $ is not bounded, then it diverges.}%
+True, if a sequence is unbounded then a limit does not exist and $ a_n $ will grow or fall without constraint. 
 \subsection*{(iii) If $ a_n $ diverges, then it is not bounded.}%
+True, if a sequence diverges then it will grow or fall without constraint and will not be bounded.
+
 \section*{Question 5}%
 \[
 \text{ Let }b_n = \frac{ \sqrt[ n ]{ n! }  }{ n }. 
@@ -24,9 +28,10 @@ Start by taking the ln of $ b_n $,
 \ln^{  } \left( b_n \right) = \ln^{  } \left( \frac{ \sqrt[ n ]{ n! }  }{ n }  \right) = \ln^{  } \left( \sqrt[ n ]{ n! }  \right) - \ln^{  } \left( n \right) = \frac{ 1 }{ n } \ln^{  } \left( n! \right) -\ln^{  } \left( n \right) 
 .\] 
 Simplifying both of our terms gets us
-\[
-\ln^{  } \left( n! \right) = \ln^{  } \left( 1\cdot 2\cdot 3\cdot 4\cdot \ldots n \right) \to \ln^{  } \left( n! \right) = \ln^{  } \left( 1 \right) + \ln^{  } \left( 2 \right) + \ln^{  } \left( 3 \right) + \ldots + \ln^{  } \left( n \right) \text{ or } \sum_{ i=1 } ^{ n } \ln^{  } \left( i \right)
-.\] 
+\begin{gather*}
+\ln^{  } \left( n! \right) = \ln^{  } \left( 1\cdot 2\cdot 3\cdot 4\cdot \ldots n \right) \to \ln^{  } \left( n! \right) = \ln^{  } \left( 1 \right) + \ln^{  } \left( 2 \right) + \ln^{  } \left( 3 \right) + \ldots + \ln^{  } \left( n \right) \\ 
+\text{ or } \sum_{ i=1 } ^{ n } \ln^{  } \left( i \right)
+\end{gather*}
 and because we want to simplify in the sum at some point we can take the sum of the ln of $ i $ and divide by $ n $ to get
 \[
 \sum_{ i=1 } ^{ n }\ln^{  } \left( n \right) =n\ln^{  } \left( n \right) \implies \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( n \right) =\ln^{  } \left( n \right)  
@@ -35,20 +40,24 @@ So, we have
 \[
 \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( i \right) - \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( n \right) \implies \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \left( \ln^{  } \left( i \right) -\ln^{  } \left( n \right)  \right) \text{ or } \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( \frac{ i }{ n }  \right) 
 .\] 
-
+\newpage
 \subsection*{(ii) Show that $ \lim_{ n \to \infty} \ln^{  } \left( b_n \right) =\int_{ a }^{ b } f\left( x \right) dx$; decide what $ a,b,f\left( x \right)  $ should be. Hint: Think Riemann Sum.}%
+Start with our previous sum, $  \frac{ 1 }{ n } \sum_{ i=1 } ^{ n } \ln^{  } \left( \frac{ i }{ n }  \right) $ and find that $ x_i =\frac{ i }{ n }  $. Looking at $ \frac{ i }{ n }  $ as $ n \to \infty $ we can see that we will at max have a $ x_i $ of 1 and a min of 0. We can use these as our bounds for the integral and find our f(x). Because we know our limits, we can find $ \Delta x $ to be $ \frac{ \left( 1-0 \right)  }{ n } $. This matches with our $ \frac{ 1 }{ n } $ in our sum. Using the definition of an integral we can rewrite our sum as
 
-Start with our previous expression and sum but instead of n we push it to infinity
 \[
-\lim_{ n \to \infty} \ln^{  } \left( \frac{ \sqrt[ n ]{ n! }  }{ n } \right) =\lim_{ n \to \infty} \sum_{ i=1 } ^{ n } \ln^{  } \left( \frac{ i }{ a }  \right) 
-
-
+\lim_{ n \to \infty} \sum_{ i=1 } ^{ n } \ln^{  } \left( x_i \right) \cdot \frac{ 1 }{ n } \to \int_{ 0 }^{ 1 } \ln^{  } \left( x \right) dx
 .\] 
+
 \subsection*{(iii) Deduce the exact result of $ \lim_{ n \to \infty} b_n $.}%
-Find 
+Because we already found what $ \lim_{ n \to \infty} \ln^{  } \left( b_n \right)  $ is, we can just simplify further and cancel the ln at the end. To start we can find the result of our integral,
 \[
-\lim_{ n \to \infty} \frac{ \sqrt[ n ]{ n! }  }{ n } \implies 
+\int_{ 0 }^{ 1 } \ln^{  } \left( x \right) dx = \left[ x\ln^{  } \left( x \right) -x \right] _{ 0 }^{ 1 } = 1\ln^{  } \left( 1 \right) -1-0\ln^{  } \left( 0 \right) = 0-1 = -1
 .\] 
+and now we can just raise $ e $ to the power of both sides to cancel our ln,
+\[
+\lim_{ n \to \infty} \ln^{  } \left( b_n \right) = -1 \implies \lim_{ n \to \infty} e^{ \ln^{  } \left( b_n \right)  }=e^{ -1 } \implies \lim_{ n \to \infty} b_n = e^{ -1 } = \frac{ 1 }{ e } 
+.\] 
+Leaving us with $ \frac{ 1 }{ e }  $ as the result of $ \lim_{ n \to \infty} b_n $.
 \newpage
 \section*{Question 6}%
 \paragraph{For the recursive sequence, $ a_0 =0$ and for $ n\ge 1, a_{ n+1 }=\sqrt{ 2+ a_n} $. Assume that the sequence converges. What will be the exact value of $ \lim_{ n \to \infty} a_{ n } $? \\ \\ }
