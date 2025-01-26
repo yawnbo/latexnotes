@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+
+\title{Quiz 2 Calculus 3}
+\author{yawnbo}
+\date{\today}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\maketitle
+\section{Question 1 Compute the total area of the (infinitely many) triangles.}%
+\label{sec:Question 1 Compute the total area of the (infinitely many) triangles.}
+
+Start by noticing that our points can be given by the sequence $ \frac{ 1 }{ n^2 }  $. Now, because want to find the area of all the triangles by these given points we can use the triangle area formula of $ \frac{ 1 }{ 2 } bh $ where $ h $ will equal a constant $ \frac{ 1 }{ 2 }  $ and $ b $ will be the length between $ n $ and $ n+1 $. Knowing this we can write our simplified sum as,
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ n^{ -2 }-\left( n+1 \right) ^{ -2 } }{ 4 } \implies \frac{ 1 }{ 4 } \left( \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^2 }  - \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ \left( n+1 \right) ^2 } \right) 
+.\] 
+Now we just have to solve for our inside sums (not fun),
+
+\end{document}
