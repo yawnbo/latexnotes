@@ -1,0 +1,86 @@
+\documentclass[a4paper]{article}
+
+\usepackage{cancel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+
+\title{W4 Notes}
+\author{yawnbo}
+\date{\today}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\maketitle
+\section*{11.5 Ratio/root test \& absolute convergence}%
+\label{sec:11.5 Ratio/root test}
+\paragraph{Def. Absolute convergence}
+A series $ \sum_{  } ^{  } a_n $ is absolutely convergent if $ \sum_{  } ^{  } \left\| a_n \right\| $ converges.
+\paragraph{Ex.}
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ -1^{ n } }{ n^{ 4 } } \to \sum_{  } ^{  } \left\| \frac{ -1^{ n } }{ n^{ 4 } } \right\| = \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^{ 4 } } 
+.\] 
+The above will converge because of p-test so this series will be absolutely convergent. All the definition is that the series will converge if the absolute value of the series converges. \\
+
+\paragraph{Def. Conditional convergence}
+$ \sum_{  } ^{  } a_n $ is conditionally convergent if $ \sum_{  } ^{  } \left\| a_n \right\| $ converges but $ \sum_{ } ^{  } a_n $ diverges. 
+
+\paragraph{Ex.}
+\[
+	\sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ n+1 } }{ n } \text{ is conditionally convergent.  }
+.\] 
+This is because if we put an absolute to make it $ \sum_{ n=1 } ^{ \infty } \left\| \frac{ \left( -1 \right) ^{ n+1 } }{ n } \right\| $ will equal $ \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n }  $ which is the harmonic series.
+
+\subsection*{11.5.1 Theorem}%
+\label{sub:11.5.1 Theorem}
+\paragraph{Def.}
+If $ \sum_{  } ^{  } \left\| a_n \right\| $ converges, then $ \sum_{  } ^{  } a_n $ converges. With the contrapositive being, if $ \sum_{  } ^{  } a_n $ diverges, then $ \sum_{  } ^{  } \left\| a_n \right\| $ also diverges. 
+\paragraph{Ex. Show that $ \sum_{  } ^{  } \frac{ \sin^{  } \left( n^2 \right)  }{ n^2 } $ converges or diverges.}
+Let's use the previously established theorem, consider 
+\[
+\sum_{ n=1 } ^{ \infty } \left\| \frac{ \sin^{  } \left( n^2 \right)  }{ n^2 } \right\|
+.\] As our new series and use squeeze theorem to show that it converges.
+
+\[
+\sum_{ n=1 } ^{ \infty } \left\| \frac{ \sin^{  } \left( n^2 \right)  }{ n^2 } \right\| \le \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^2 } 
+.\] 
+Which can now be found using direct comparison because our new series is larger than our sin. Know that we have a convergent series that is larger, we know that the smaller series must also converge by absolute test and comparison. 
+\subsection*{11.5.2 Examples}%
+\label{sub:11.5.2 Examples}
+
+\paragraph{For a) $ \sum_{ k=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ k+1 } }{ \sqrt{ k} } \text{ b)  }\sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ n+1 } }{ \sqrt{ n^3} } \text{ c)  } \sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ k }k }{ k+1 } $ }
+\paragraph{Which series converge absolutely, converge conditionally, or diverge?}
+Each of these become
+\begin{align*}
+a = \sum_{  } ^{  } \frac{ 1 }{ \sqrt{ k} } \text{ which diverges by p-test } \\
+b = \sum_{  } ^{  } \frac{ 1 }{ \sqrt{ n^3} } \text{ which converges by p-test } \\
+c = \sum_{  } ^{  } \frac{ k }{ k+1 } \text{ which diverges } \\
+.\end{align*}
+\paragraph{a will be conditionally convergent by AST because $ \frac{ 1 }{ \sqrt{ k} } $ is decreasing and $ \lim_{ k \to \infty } \frac{ 1 }{ \sqrt{ k} } = 0 $. b will be absolutely convergent because $ \frac{ 1 }{ \sqrt{ n^3} } $ is decreasing and $ \lim_{ n \to \infty } \frac{ 1 }{ \sqrt{ n^3} } = 0 $. c will diverge because $ \frac{ k }{ k+1 } $ is increasing and $ \lim_{ k \to \infty } \frac{ k }{ k+1 } = 1 $.}
+
+\subsection*{11.5.3 The ratio test}%
+\label{sub:11.5.3 The ratio test}
+(i) If $ \lim_{ n \to \infty} \left\| \frac{ a_{ n+1 } }{ a_n } \right\|<1 $ but not 0, then $ \sum_{  } ^{  } \left\| a_n \right\| $ converges. \\ \\
+(ii) If $ \lim_{ n \to \infty} \left\| \frac{ a_{ n+1 } }{ a_n } \right\| >1 $ then $ \sum_{  } ^{  } a_n $ is divergent. \\
+(iii) If $ \lim_{ n \to \infty} \left\| \frac{ a_{ n+1 } }{ a_n } \right\|=1 $ then the test is inconclusive
+\paragraph{Ex.}
+\[
+\text{ Test }\sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ n-1 }n }{ e^{ n } } \text{ for convergence or divergence }
+.\]
+Start by plugging in $ a_{ n+1 } $ as our value so,
+\[
+a_{ n+1 }= \frac{ \left( -1 \right) ^{ \left( n+1 \right) -1 } n+1}{ e^{ n+1 } } 
+.\] 
+And write it over the absolute to get rid of the $ -1^{ n } $,
+\[
+\left\| \frac{ a_{ n+1 } }{ a_n } \right\| = \frac{ \frac{ n+1 }{ e^{ n+1 } } }{ \frac{ n }{ e^{ n } }  } = \lim_{ n \to \infty} \frac{ n+1 }{ n }\cdot \frac{ e^{ n } }{ e^{ n } } = \frac{ e^{ n } }{ e^{ n }\cdot e } = \frac{ 1 }{ e } = 1\cdot \frac{ 1 }{ e } = \frac{ 1 }{ e } <1
+.\] 
+Which solves our (i) case and we know that the series converges. This can also be done with the integral test using
+\[
+\int_{ 1 }^{ \infty } \frac{ x }{ e^{ x } } dx
+.\] 
+and showing that it is finite. End of monday class.
+\end{document}
