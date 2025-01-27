@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
 
+\usepackage{cancel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -14,13 +15,34 @@
 
 \begin{document}
 \maketitle
-\section{Question 1 Compute the total area of the (infinitely many) triangles.}%
-\label{sec:Question 1 Compute the total area of the (infinitely many) triangles.}
+\section{Question 1 }%
+\paragraph{Compute the total area of the (infinitely many) triangles.\\}
 
-Start by noticing that our points can be given by the sequence $ \frac{ 1 }{ n^2 }  $. Now, because want to find the area of all the triangles by these given points we can use the triangle area formula of $ \frac{ 1 }{ 2 } bh $ where $ h $ will equal a constant $ \frac{ 1 }{ 2 }  $ and $ b $ will be the length between $ n $ and $ n+1 $. Knowing this we can write our simplified sum as,
+Start by noticing that our points can be given by the sequence $ \frac{ 1 }{ n^2 }  $. Now, because want to find the area of all the triangles by these given points we can use the triangle area formula of $ \frac{ 1 }{ 2 } bh $ where $ h $ will equal a constant $ \frac{ 1 }{ 2 }  $ and $ b $ will be the length between $ a_n $ and $ a_{ n+1 }$ at any given n, which is the same as $ \frac{ 1 }{ n^2 }  $ due to it being a telescoping series. Knowing this we can write our simplified sum as,
 \[
-\sum_{ n=1 } ^{ \infty } \frac{ n^{ -2 }-\left( n+1 \right) ^{ -2 } }{ 4 } \implies \frac{ 1 }{ 4 } \left( \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^2 }  - \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ \left( n+1 \right) ^2 } \right) 
+\sum_{ n=1 } ^{ \infty } \frac{ a_n-a_{ n+1 } }{ 4 } \implies \frac{ 1 }{ 4 } \left( \sum_{ n=1 } ^{ \infty } a_n  - \sum_{ n=1 } ^{ \infty } a_{ n+1 } \right) \implies \frac{ 1 }{ 4 } \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^2 } 
 .\] 
-Now we just have to solve for our inside sums (not fun),
+Knowing our sum is a p-series and is equal to $ \frac{ \pi^2 }{ 6 }$ we can write our final answer as $ \frac{ \pi^2 }{ 24 }  $.
 
+\section{Question 2 }%
+\paragraph{If $ \sum_{  } ^{  } a_n $ is a convergent series, prove, using any theorem presented in class so far, that $ \sum_{  } ^{  } \frac{ 1 }{ a_n }  $ diverges. \\}
+
+To start, we can use the theorem that states that if a sum $ \sum_{ n=1 } ^{ \infty } a_n $ converges, then $ \lim_{ n \to \infty} a_n=0 $. Knowing this, we can take the limit of $ \frac{ 1 }{ a_n }  $ to find that as $ n \to 0 $ our new series ($ b_n $) will have a limit of $ \lim_{ n \to \infty} b_n=\infty $ which is divergent and conflicts with our theorem that an infinite sum must have a series whose limit is 0.
+\newpage
+\section{Question 3 }%
+\paragraph{Prove whether $ \sum_{ n=1 } ^{ \infty } \ln^{  } \left( 1+\frac{ 1 }{ n }  \right)  $ is convergent or divergent. Hint: Try to use a similar argument that was used in class for the harmonic series \\ }
+We can start by rewriting the sum to simplify the terms as $ \sum_{ n=1 } ^{ \infty } \ln^{  } \left( n+1 \right) -\sum_{ n=1 } ^{ \infty } \ln^{  } \left( n \right)  $. Now taking a partial sum of the $ n^{ th } $ term and cancelling,
+\begin{align*}
+	S_n = \cancel{\ln^{  } \left( 2 \right)} + \cancel{ \ln^{  } \left( 3 \right)  } - \cancel{\ln^{  } \left( 2 \right)} \ldots \cancel{ \ln^{  } \left( n \right)  } - \cancel{ \ln^{  } \left( n-1 \right)  } + \ln^{  } \left( n+1 \right) - \cancel{ \ln^{  } \left( n \right)  }
+.\end{align*}
+We find that we are left with $ \ln^{  } \left( n+1 \right)  $ as our series goes to $ n $, and taking the limit of this gets us $ \lim_{ n \to \infty} \ln^{  } \left( n+1 \right) =\infty $ because $ \ln^{  } \left( n \right)  $ will grow without bound when going to infinity, proving that our series is divergent because it does not approach a finite number, nevertheless does it go to 0.
+\section{Question 4}%
+\paragraph{For the series $ \sum_{ n=1 } ^{ \infty } a_n $, its $ n^{ th } $ partial sum is given by $ S_n = \frac{ n-1 }{ n+1 } $. \\ \\ Provide an expression for $ a_n $ and compute $ \sum_{ n=1 } ^{ \infty } a_n $}
+TODO, prove this later but the last sum should be 
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ 2 }{ n\left( n+1 \right)  } 
+.\] 
+\section{Question 5}%
+\paragraph{Solve the equation $ \sum_{ n=0 } ^{ \infty } e^{ nc } =10 $ for c.}
+We can start by rewriting the sum as a geometric series, $ \sum_{ n=0 } ^{ \infty } e^{ nc } = \sum_{ n=0 } ^{ \infty } \left( e^{ c } \right)^n = \frac{ 1 }{ 1-e^{ c } } = 10 $. Now we can solve for $ c $ by isolating it, $ c = \ln^{  } \left( \frac{ 1 }{ 10 }  \right)  $.
 \end{document}
