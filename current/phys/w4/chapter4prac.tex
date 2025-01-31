@@ -1,0 +1,42 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+
+\title{Chapter 4 practice}
+\author{Yan Bogdanovskyy, Andrii Prykhodko }
+\date{\today}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\maketitle
+\section*{Question 1}%
+\label{sec:Question 1}
+\paragraph{a)} Since the golf balls reach the same peak, we can assume that they each have the same $ v_{ 0y } $. This assumption can be used to find the total airtime using $ 2 \cdot \frac{ v_{ 0y } }{ g } $ which only has constants that are the same for each golf ball so their air times will be identical. 
+\paragraph{b)} Looking at the paths of the golf balls we see that each one will have the same vertical component but a different horizontal component of the initial vector. This means that $ v_{ 0xb } > v_{ 0xa } $. Adding our common $ v_{ 0y } $ to each side, squaring and taking the root of both equations leaves us with
+\[
+\sqrt{ \left( v_{ 0xb }\right) ^2 + \left(v_{ 0y }^2 \right) } > \sqrt{ \left( v_{ 0xa } \right) ^2 + \left( v_{ 0y } \right) ^2 } 
+.\] 
+Which proves that $ v_{ 0b }> v_{ 0a }$. 
+\section*{Question 2}%
+\label{sec:Question 2}
+\paragraph{a)} Find our initial velocity to be $v_{ 0x }= v_0 \cdot \cos^{  } \left( \theta \right)  $ and the horizontal distance to be $ x=v_{ 0x }\cdot t $. Now using our known values, $ 10m = v_0 \cdot \cos^{  } \left( 40^{ \circ }\right) \cdot 1 $ which gives us the value $ v_0 = \frac{ 10m }{ \cos^{  } \left( 40^{ \circ } \right) \cdot 1.0s } \approx 13.054 \approx 13.1$.
+\paragraph{b)} We can find the vertical component of our velocity to be $ v_{ 0y }= v_0 \cdot \sin^{  } \left( \theta \right)  $ and the vertical position to be $ y=y_0 + v_{ 0y }t - \frac{ 1 }{ 2 } gt^2 $. Now using our known values, we find $ v_{ 0y }= 13.1 \cdot \sin^{  } \left( 40^{ \circ } \right) \approx 8.4 $ and our position to be $ 1.5m + 8.39m - 4.905 m \approx 4.985 \approx 5.0$. 
+\paragraph{c)} We can find the magnitude of our vector by taking the pythagorean of our two components, $ v_x = 10 \frac{ m }{ s }  $ and $ v_y = 8.39 \frac{ m }{ s } - 9.81 \frac{ m }{ s^2 } \cdot 1.0s \approx -1.42 \frac{ m }{ s } $. So, $ v= \sqrt{ \left( 10 \right) ^2+ \left( -1.42 \right) ^2 \approx 10.1} $. To find the $ \theta $ of the vector we can take the $ \arctan^{  }\left(  \right) $ of its components, so, $ -\tan^{ -1 } \left( \frac{ 1.42 }{ 10 }  \right) \approx -8.1 $. 
+
+\section*{Question 3}%
+\label{sec:Question 3}
+We can find our initial horizontal velocity as $ \frac{ 40.0 }{ 4.0 }= 10.0 \frac{ m }{ s }  $ and our vertical as, $ 0 = 10.0 \frac{ m }{ s } \cdot 4.00s -\frac{ 1 }{ 2 } g\left( 4.00 \right) ^2 \approx 19.62 \frac{ m }{ s } $. Now solving for magnitude, $ v_0 = \sqrt{ \left( 10.0 \right) ^2 + \left( 19.62 \right) ^2 \approx 22.0} $. Since we already know $ v_{ 0x } $ and $ v_{ 0y } $ we can find $ \theta $ to be $ \tan^{ -1 } \left( \frac{ 19.62 }{ 10.0 } \right) \approx 63^{ \circ } $. 
+
+\section*{Question 4}%
+\label{sec:Question 4}
+Our horizontal and vertical components of $ v_0 $ can be found as $ v_{ 0x }= 2.0 \cdot \cos^{  } \left( 30 \right) \approx 1.732 $ and $ v_{ 0y }= 2.0 \cdot \sin^{  } \left( -30 \right) = -1.0 \frac{ m }{ s }  $. Our time in air will be $ t= \frac{ 1.0 }{ 1.732 } \approx 0.577 $, and we can now plug it into our quadratic. $ 0 = h+ \left( -1.0 \right) \cdot 0.577 + \frac{ 1 }{ 2 } \left( -9.81 \right) \left( 0.577 \right) ^2 \approx 2.21m $.
+_
+\section*{Question 5}%
+\label{sec:Question 5}
+We can find our centripetal force to be $ F = \frac{ \left( 0.2kg \right) \left( 4.0 \frac{ m }{ s }  \right)^2  }{ 0.5m } = 6.4N  $. We can find our tension to be $ T_{ top } = F -mg $ because all our forces are acting downwards and we just need the absolute. a) Plugging in values, $ T_{ top }= 6.4 - \left( 0.2 \cdot 9.8 \right) = 4.44N $. The bottom is found in the same way but instead our F is acting upwards so, $ T_{ bottom } = F + mg $. b) Plugging in again, $ T_{ bottom }=6.4 + \left( 0.2 \cdot 9.8 \right) = 8.36N $. Taking the differences gets us $ T_{ diff  } = T_{ top } - T_{ bottom } = 4.44N - 8.36N = \left|-3.92\right| = 3.92N $. 
+\end{document}
