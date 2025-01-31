@@ -1,0 +1,104 @@
+\section*{Power series}%
+\label{sec:Power series}
+
+\paragraph{Def.}
+A power series is an infinite series of the form 
+\[
+\sum_{ n=0 } ^{ \infty } \underbrace{ c_n }_{ \text{ sequence } } \cdot  \underbrace{ x^{ n } }_{ \text{ var to an index power } } = c+ c_1x+ c_2x^2+ c_3x^3+ \ldots
+.\] 
+\paragraph{Ex. Power series}
+For what values x will $ \sum_{ n=0 } ^{ \infty } \frac{ nx^{ n } }{ 4^{ n } }$ converge? \\
+After defining our $ a_n $ to be $ \frac{ nx^{ n } }{ 4^{ n } } $, we can use the ratio test to find the convergence of the series, so,
+\[
+\lim_{ n \to \infty} \left\| \frac{ a_{ n+1 } }{ a_n } \right\| < 1 \to \lim_{ n \to \infty} \frac{ \left( n+1 \right) |x^{ n+1 }| }{ 4^{ n+1 } }\cdot \frac{ 4^{ n } }{ \left( n \right) |x|^{ n } }
+.\] 
+\[
+\lim_{ n \to \infty} \frac{ n+1 }{ n }\cdot \frac{ 1 }{ 4 } \cdot \left| x \right| < 1
+.\] 
+which becomes
+\[
+1\cdot \frac{ 1 }{ 4 } \cdot \left| x \right| < 1 \to -4 < x < 4
+.\] 
+However, even though our inequality is solved, we still need to test our values of 4 and -4. So first for -4, our sum becomes,
+\[
+\sum_{ n=0 } ^{ \infty } \frac{ n\left( -4 \right) ^{ n } }{ 4^{ n } }= \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\cdot n
+.\] 
+Which we can take the limit of and find that $ \lim_{ n \to \infty} a_n = \pm \infty $. Now testing for 4, 
+\[
+\sum_{  } ^{  } \frac{ n\left( r \right) ^{ n } }{ 4^{ n } }= \sum_{  } ^{  } n  = \infty
+.\] 
+which also diverges. Now we know our interval of convergence is $ -4 < x < 4 $ and our radius of convergence will be 4.
+
+\paragraph{Ex.}
+\[
+\sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n } \frac{ x^{ 2n+1 } }{ \left( 2n+1 \right) ! }
+.\] 
+\paragraph{Find the domain/interval of convergence.}
+\\ Start by applying our ratio test to find the interval of convergence.
+\[
+\lim_{ n \to \infty} \left| \frac{ a_{ n+1 } }{ a_n } \right|= \lim_{ n \to \infty} \left| \frac{ x^{ 2\left( n+1 \right) +1 } }{ \left( 2\left( n+1 \right) +1 \right) ! } \right| * \frac{ \left( 2n+1 \right) ! }{ \left| x^{ 2n+1 } \right| }
+.\] 
+\[
+\lim_{ n \to \infty} \left| x^2 \right|\cdot \frac{ \left( 2n+1 \right) !}{ \left( 2n+3 \right) \left( 2n+2 \right) \left( 2n+1 \right) ! } < 1 \implies \left| x^2 \right|\cdot 0< 1 
+.\] 
+Which means that our domain is all real numbers and our radius will be $ \infty $. Expect to commonly use ratio test
+
+\paragraph{Ex.}
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ x^{ n } }{ n }
+.\] 
+Instead using root test, we take the $ n^{ th }$ root and take the limit as its less than 1
+\[
+\lim_{ n \to \infty} \sqrt[ n ]{ \left| a_n \right| } < 1
+.\] 
+\[
+=\lim_{ n \to \infty} \sqrt[ n ]{ \left| \frac{ x^{ n } }{ n } \right| } = \lim_{ n \to \infty} \frac{ \left| x \right| }{ \sqrt[ n ]{ n }  } = \lim_{ n \to \infty} \frac{ 1 }{ \sqrt[ n ]{ n }  } \cdot \left| x \right| < 1
+.\] 
+Start by taking the limit of our root,
+\[
+\lim_{ n \to \infty} \sqrt[ n ]{ n } =L
+.\] 
+\[
+\lim_{ n \to \infty} \frac{ 1 }{ n } \ln^{  } \left( n \right) = \ln^{  } \left( L \right)
+.\] 
+And by L'hopital,
+\[
+\frac{ \frac{ 1 }{ n }  }{ 1 }\to 0
+.\] 
+\[
+0=\ln^{  } \left( L \right) \implies e^{ 0 }= L = 1
+.\] 
+Now going back to our original limit,
+\[
+	\underbrace{\lim_{ n \to \infty} \frac{ 1 }{ \sqrt[ n ]{ n }  } }_{1} \cdot \left| x \right|
+.\] 
+Meaning our domain will be $ \left( -1,1 \right)  $. Now testing our values of -1 and 1,
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ n } }{ n }
+.\] 
+Will converge by AST because $ b_n $ is monotonic decreasing and $ \lim_{ n \to \infty} b_n = 0 $. Now for 1,
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n } 
+.\] 
+Which will be the harmonic series and will be divergent because of p test, leading our interval to be $ \left[ -1,1 \right) $
+
+\paragraph{Ex.}
+\[
+\sum_{ n=0 } ^{ \infty } \frac{ x^{ 2n } }{ \left( -9 \right) ^{ n } }
+.\] 
+Start with root test,
+\[
+\lim_{ n \to \infty} \sqrt[ n ]{ \left| \frac{ x^{ 2n } }{ \left( -9 \right) ^{ n } } \right| } \to \lim_{ n \to \infty} \left| \frac{ x^2 }{ 9 }  \right| < 1
+.\] 
+\[
+\left| x^2 \right|<9 \to \left| x \right| < 3 \to -3< x < 3
+.\] 
+Where we can now test our endpoints. For -3,
+\[
+\sum_{ } ^{  } \frac{ \left( -3 \right)^{ 2n }  }{ \left( -9 \right) ^{ n } }= \sum_{  } ^{  } \left( -1 \right) ^{ n }\left( 1 \right) 
+.\] 
+Which will diverge by divergence test because the limit will not go to 0. Now for 3,
+\[
+\sum_{  } ^{  } \frac{ \left( -3 \right) ^{ 2n } }{ \left( -9 \right) ^{ n } }= \sum_{  } ^{  } \left( -1 \right) ^{ n }\left( 1 \right) 
+.\] 
+Which will also diverge leading our interval of convergence to be $ -3 < x < 3 $.
