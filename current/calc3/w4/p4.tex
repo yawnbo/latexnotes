@@ -1,0 +1,128 @@
+\section*{11.8 Power series cont}%
+\label{sec:11.8 Power series cont}
+\subsection*{11.8.1 Derivatives in calc 1}%
+\label{sub:11.8.1 Derivatives in calc 1}
+\paragraph{When we had} some thing like \[
+\frac{ d }{ dx } \left( f\left( x \right) \pm g\left( x \right)  \right) 
+.\] 
+we could distribute the $ \frac{ d }{ dx }  $ which shows linearity of the distribution function. So what happens when we take a $ \frac{ d }{ dx }  $ of the power series $ \sum_{ n=0 } ^{ \infty } C_n \left( x \right) ^{ n } $? This will become something like
+\[
+=\frac{ d }{ dx } \left( C_1 \cdot x^{ 0 }+c_2x^{ 1 }+c_2x^2+c_3x^3 \ldots c_nx^{ n }\right) 
+.\] 
+Where we can simplify it to 
+\[
+= c_1+2c_2x+3c_3x^2+4c_4x^3 \ldots nc_nx^{ n-1 } \implies \sum_{ n=1 } ^{ \infty } c_nx^{ n-1 }
+.\] 
+Or,
+\[
+\sum_{ n=1 } ^{ \infty } c_nn\left( x \right) ^{ n-1 }
+.\] 
+Note that this sholdn't start at $ n=0 $ because the first term will just be 0 thanks to our n multiplyer. 
+\paragraph{Power Series for the function $ e^{ x } $ \\}
+Start with the function $ y' = y\text{, } y\left( 0 \right) =1 $ whose solution will be $ y=e^{ x } $. Now we can call $ f'\left( x \right) = f\left( x \right)  $ or $ \sum_{ n=0 } ^{ \infty } a_nx^{ n } = a_{ 0 }+a_1x + a_2x^2 + a_3x^3 \ldots$ This sum can now be derived to get 
+\[
+f'\left( x \right) = \sum_{ n=1 } ^{ \infty } a_n \cdot nx^{ n-1 }= a_1\left( 1 \right) +a_2\left( 2x \right) +a_3\left( 3x^2 \right) \ldots
+.\] 
+Where we can now set terms equal to each other,
+\begin{align*}
+a_0 &= a_1 \\
+a_1x &=  a_2\left( 2x \right)  \\
+a_2x^2 &= a_3 3x^2 \\
+\ldots
+.\end{align*}
+Now we can use algebra on each term to find
+\[
+a_2 = \frac{ a_1 }{ 2 }, a_3 = \frac{ a_2 }{ 3 } = \frac{ a_1 }{ 2\cdot 3 }, a_4 = \frac{ a_3 }{ 4 } = \frac{ a_1 }{ 2\cdot 3\cdot 4 } \ldots a_n = \frac{ a_1 }{ n\cdot \left( n-1 \right) \ldots 3 \cdot 2\cdot 1 }
+.\] 
+which gives us the power series but we still want to find $ a_1 $, so we can find the sum to cancel all terms other than $ a_0 $ to find that our $ a_n = \frac{ 1 }{ n! }  $. Which gives us the final equation,
+\[
+e^{ x }= \sum_{ n=0 } ^{ \infty } \frac{ 1 }{ n! } x^{ n }
+.\] 
+Now that we have the summation we can look at our expansion, 
+\[
+\sum_{ n=0 } ^{ \infty } \frac{ x^{ n } }{ n! }= 1 + \frac{ x^{ 1 } }{ 1! }+ \frac{ x^{ 2 } }{ 2! }+ \frac{ x^{ 3 } }{ 3! }+ \ldots
+\] 
+Which can be graphed to approximate the function $ e^{ x } $. Questions can appear using this on the next quiz where we have to find an interval of x values that will give a certain range of error like $ 10^{ -3 } $. Note that these are called transedental functions ($ e^{ x }$) and we are converting them to simple ones with our summation. A common one in physics is using x to approximate $ \sin^{  } \left( x \right)  $ for values close to 0. 
+
+\paragraph{Ex.}
+\paragraph{Prove that}
+\[
+\ln^{  } \left( 1+x \right) = \sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n-1 }\frac{ x^{ n } }{ n } \text{ when } \left| x \right|<1
+.\] 
+Start with the function $ \sum_{ n=0 } ^{ \infty } x^{ n } $ which converges to $ \frac{ 1 }{ 1-x }  $ for the values of $ \left| x \right|< 1 $. We essentially want to build the function in order to get from $ \frac{ 1 }{ 1-x }  $ to the $ \ln^{  } \left( 1-x \right)  $. As our first step let's make the x negative,  $ \sum_{ n=0 } ^{ \infty } \left( -x \right) ^{ n } =\frac{ 1 }{ 1+x }  $. This doesn't really get us anywhere so what if we instead try something else. \\
+Let's instead make it $ \frac{ 1-x^2 }{ 1-x }= 1+x $. To get us here we need to simplify $ \left( 1-x^2 \right) \left( \sum_{ n=0 } ^{ \infty } x^{ n } \right)  $. So,
+\[
+=\left( 1-x^2 \right) \left( 1+x+x^2+x^3\ldots \right) 
+.\] 
+Now looking at our sequence we can see that each multiplication by one will give us a term in the sequence. So we can simplify this to 
+\[
+\sum_{ n=0 } ^{ \infty } x^{ n }+\left( -x^2-x^3-x^{ 4 }-x^{ 5 }\ldots \right) = 1+x
+.\] 
+This gives us the inside of our $ \ln^{  } \left( 1+x \right)  $, but we still need the rest which we will come back to later. 
+
+\subsection*{11.9}%
+\label{sub:11.9}
+\paragraph{The geometric series identity}
+\[
+\sum_{ n=0 } ^{ \infty } x^{ n }= \frac{ 1 }{ 1-x } 
+.\] 
+This is one of the most useful identities for making a power series because we can use it to build them easily. For example,
+\[
+\frac{ 1 }{ 1+2x } =\frac{ 1 }{ 1-\left( -2x \right)  } = \sum_{ n=0 } ^{ \infty } \left( -2x \right) ^{ n } = \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\left( 2x \right) ^{ n }
+.\] 
+\paragraph{Ex.}
+\paragraph{Make the below into a power series.}
+\[
+\frac{ 1 }{ 2+x^2 } 
+.\] 
+So let's start by factoring out our two,
+\[
+\frac{ 1 }{ 2\left( 1+\frac{ x^2 }{ 2 } \right)  } = \frac{ 1 }{ 2\left( 1-\left( -\frac{ x }{ 2 }  \right) ^2 \right)  } = \frac{ 1 }{ 2 } \left[ \frac{ 1 }{ 1-\left( -\frac{ x^2 }{ 2 }  \right)  }  \right] = \frac{ 1 }{ 2 } \sum_{ n=0 } ^{ \infty } \left( -\frac{ x^2 }{ 2 }  \right)^{ n } 
+.\] 
+\[
+= \frac{ 1 }{ 2 } \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\left( \frac{ x^2 }{ 2}  \right) ^{ n }
+.\] 
+What if we wanted to find our interval of convergence? We can start with the ratio test,
+\begin{gather*}
+\lim_{ n \to \infty} \left| \frac{ a_{ n+1 } }{ a_n } \right| < 1\\
+\left| \frac{ \left( \frac{ x^2 }{ 2 }  \right) ^{ n+1 } }{ \left( \frac{ x^2 }{ 2 }  \right) ^{ n } } \right|<1 \to \left| \left( \frac{ x^2 }{ 2 }  \right)  \right|<1 \to \left| x^2 \right|<2\\
+\end{gather*}
+Which gives the interval $ -\sqrt{ 2}<x<\sqrt{ 2} $ where we can now test our intervals and easily see that they will diverge because the function doesn't go to 0. 
+\paragraph{Ex.}
+\[
+\frac{ x }{ 16+2x^3 } 
+.\] 
+Lets start by removing an x and a 16,
+\[
+x\left( \frac{ 1 }{ 16+2x^3 }  \right) =\frac{ x }{ 16 } \left( \frac{ 1 }{ 1+\frac{ x^3 }{ 8 }  }  \right) = \frac{ x }{ 16 } \left( \frac{ 1 }{ 1-\left( -\frac{ x^3 }{ 8 }  \right)  }  \right) = \frac{ x }{ 16 } \sum_{ n=0 } ^{ \infty } \left( -\frac{ x^3 }{ 8 }  \right) ^{ n }
+.\] 
+Which can now be written as the alternating series,
+\[
+\frac{ x }{ \underbrace{ 16 }_{ 2^{ 4 } }  } \sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n }x^{ 3n } }{ \underbrace{ 8^{ n } }_{ 2^{ 3n } }  } = \sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n } x^{ 3n+1 }}{ 2^{ 3n+3 } }
+.\] 
+The IOC (interval of convergence) here is (-2,2) but wasn't proven in class because it would take a while. Just use ratio test if you want to prove it on our snow days. His quote not mine. Actually one more,\\
+\paragraph{Ex. $ \tan^{ -1 } \left( x \right)  $. }
+Using $ \int_{  }^{  } \frac{ 1 }{ 1+x^2 } dx= \tan^{ -1 } \left( x \right)  $, how can we make a power series of,
+\[
+\frac{ 1 }{ 1+x^2 } = \frac{ 1 }{ 1 - \left( -x^2 \right)  } = \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }x^{ 2n }
+.\] 
+Now we want to integrate both sides, remembering that integrals are linear as well,
+\[
+\int_{  }^{  } \frac{ 1 }{ 1+x^2 } = \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\int_{  }^{  } x^{ 2n }dx
+.\] 
+Note that this happens because n is constant with respect to x so there is no point in keeping it inside the integral in this case. Now,
+\[
+\int_{  }^{  } \left( 1-x^2 + x^{ 4 }- x^{ 6 } + x^{ 8 }\ldots\right) 
+.\] 
+Which becomes,
+\[
+C + x-x^3 + \frac{ x^5 }{ 5 } - \frac{ x^7 }{ 7 } + \frac{ x^9 }{ 9 } \ldots
+.\] 
+Which can be simplified to,
+\[
+C+ \sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n-1 }\frac{ x^{ 2n-1 } }{ 2n-1 } = \tan^{ -1 } \left( x \right) 
+.\] 
+And to find our initial condition we can plug in 0 to find that $ C=0 $ because $ \tan^{ -1 } \left( 0 \right) =0 $. Which proves that 
+\[
+\tan^{ -1 } \left( x \right) = \sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n }\frac{ x^{ 2n-1 } }{ 2n-1 }
+.\] 
