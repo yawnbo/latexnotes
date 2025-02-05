@@ -27,11 +27,114 @@ Which will be negative over our interval as ln is always positive. We know $ f\l
 .\] 
 Using u-sub, $ u = \ln^{  } \left( x \right)  $, $ du = \frac{ 1 }{ x } dx $,
 \[
-	\int_{ 2 }^{ \infty } \frac{ du }{ u } = \ln^{  } \left( u \right) = \ln^{  } \left( \ln^{  } \left( x \right)  \right) \big|_{ 2 }^{ \infty } = \underbrace{\ln^{  } \left( \ln^{  } \left( \infty \right)  \right) }_{\infty} - \ln^{  } \left( \ln^{  } \left( 2 \right)  \right) 
+	\int_{ 2 }^{ \infty } \frac{ du }{ u } = \ln^{  } \left( u \right) = \ln^{  } \left( \ln^{  } \left( x \right)  \right) \bigg|_{ 2 }^{ \infty } = \underbrace{\ln^{  } \left( \ln^{  } \left( \infty \right)  \right) }_{\infty} - \ln^{  } \left( \ln^{  } \left( 2 \right)  \right) 
 .\] 
 Which gives us an infinite value that proves our series will also diverge. 
 
 \section*{Question 2}%
 \label{sec:Question 2}
-For what values of p will $ \sum_{ n=2 } ^{ \infty } \frac{ 1 }{ n\left( \ln^{  } \left( n \right)  \right) ^{ p } }  $ converge?
+For what values of p will $ \sum_{ n=2 } ^{ \infty } \frac{ 1 }{ n\left( \ln^{  } \left( n \right)  \right) ^{ p } }  $ converge? \\ \\
+
+We can begin in the same way as the last problem by setting up our integral and adding a p exponent to the denominator, and changing limits. So,
+\[
+\sum_{ n=2 } ^{ \infty } \frac{ 1 }{ n\left( \ln^{  } \left( n \right)  \right) ^{ P } } \to \int_{ 2 }^{ \infty } \frac{ du }{ u^{ P } } \to \int_{ \ln^{  } \left( 2 \right)  }^{ \infty } \frac{ du }{ u^{ P } } 
+.\] 
+This is just a normal p integral with $ \ln^{  } \left( 2 \right)  $ as our lower bound, so we can conclude that our series will converge for $ P>1 $ and diverge otherwise. 
+
+\newpage
+\section*{Question 3}%
+\label{sec:Question 3}
+Apply the Remainder Estimate for the Integral Test to determine the number of terms necessary to add in the series $ \sum_{ n=2 } ^{ \infty } \frac{ 1 }{ n\left( \ln^{  } \left( n \right)  \right) ^{ 2 } }  $ so that the error in the approximation is no greater than $ 10^{ -7 } $. \\ \\ 
+
+We can find estimate the error in a series with the integral $ R_n = \int_{ N }^{ \infty } f\left( x \right) dx$ so using the same integral from before, 
+\[
+	\int_{ N }^{ \infty } \frac{ 1 }{ x\left( \ln^{  } \left( x \right)  \right) ^{ 2 } } \to \lim_{ t \to \infty} \int_{ N }^{ t } \frac{ 1 }{ u^2 } du = \lim_{ t \to \infty} \left( -\frac{ 1 }{ u } \right) \bigg|_{ \ln^{  } \left( n \right)  }^{ \ln^{  } \left( t \right)  } = - \cancel{\frac{ 1 }{ \ln^{  } \left( t \right)  } } + \frac{ 1 }{ \ln^{  } \left( n \right)  } = \frac{ 1 }{ \ln^{  } \left( n \right)  }
+.\] 
+Now plugging into the inequality $ R_n < \frac{ 1 }{ \ln^{  } \left( n \right)  } <= 10^{ -7 } $ we will find that $ n \ge e^{ 10^{ 7 } } $, so we will need to evaluate the series at $ e^{ 10^{ 7 } } $ terms to our series to get an error no greater than $ 10^{ -7 } $.
+
+\section*{Question 4}%
+\label{sec:Question 4}
+Apply the Direct Comparison test to show if $ \sum_{ n=1 } ^{ \infty } \frac{ 2 }{ 3^{ n }+3^{ -n } }  $ converges or diverges. \\ \\ 
+
+Looking at dominance, we can assume this series will behave like $  2 \sum_{ n=1 } ^{ \infty } \left( \frac{ 1 }{ 3 }  \right) ^{ n } $ which is a geometric series that will converge because its ratio will be $ \frac{ 1 }{ 3 }  $ and fits in our IOC of $ \left| r \right| < 1 $. Knowing that this converges we can build a larger function by taking the $ \frac{ 1 }{ 3^{ -n } }  $ out of the denominator to get $ \frac{ 2 }{ 3^{ n }+3^{ -n } } < \frac{ 2 }{ 3^{ n } } $ which will also converge by dominance and comparison.
+
+\section*{Question 5}%
+\label{sec:Question 5}
+\paragraph{The remainder of a geometric series \\} 
+
+The remainder $ R_n $ is the error when approximating a series $ R_n = S- S_n $. \\ \\
+
+Consider a general geometric series: $ \sum_{ k=0 } ^{ \infty } r^{ k } $. Create an explicit formula for $ R_n $, in terms of r. \\
+
+Replacing variables with sums and using the formula for infinite and definite geometric series,
+\[
+r_n = s - s_n = \sum_{ k=0 } ^{ \infty } r^{ k } - \sum_{ k=0 } ^{ n } r^{ k } = \frac{ 1 }{ 1-r } - \frac{ 1-r^{ n+1 } }{ 1-r } = \frac{ 1 }{ 1-r } - \frac{ 1 }{ 1-r } + \frac{ r^{ n+1 } }{ 1-r } = \frac{ r^{ n+1 } }{ 1-r }
+.\] 
+This comes with the conditions that $ \left| r \right| < 1 $ and $ r \neq 1 $.
+
+\section*{Question 6}%
+\label{sec:Question 6}
+Use the formula $ R_n $ from the previous problem to determine the minimum number of terms needed to add so that the error $ \left| R_n \right| < 10^{ -6 } $ for the series: $ \sum_{ k=0 } ^{ \infty } \left( 0.25 \right) ^{ k } $. \\ \\ 
+
+Plugging values into our formula we get $ \frac{ 0.25^{ n+1 } }{ 1-0.25 } < 10^{ -6 } $, which simplifies to $ 0.25^{ n+1 } < 0.75 \cdot 10^{ -6 } $, and finally $  n > \frac{ \ln \left( 0.75\cdot 10^{ -6 } \right)  }{ -\ln\left( 4 \right)  } - 1  $. Which gives the estimate that $ n> 9.1733 $ or that we will need to evaluate the series at 10 terms to get an error less than $ 10^{ -6 } $.
+
+
+\section*{Question 7}%
+\label{sec:Question 7}
+Determine whether the series converges: conditionally, absolutely, or diverges. Provide justification
+\[
+\sum_{ k=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ k+1 }k }{ 3k+1 }
+.\]
+\\ \\ 
+We can start by trying to determine if the series converges absolutely, so,
+\[
+\left| \frac{ \left( -1 \right) ^{ k+1 }k }{ 3k+1 } \right|= \frac{ k }{ 3k+1 } \approx \frac{ k }{ 3k } =\frac{ 1 }{ 3 } 
+.\] 
+Because the series doesn't approach 0 we can conclude that the series won't converge absolutely. Now testing if it will converge conditionally we can use AST. When testing if we will approach 0,
+\[
+\lim_{ k \to \infty} \frac{ k }{ 3k+1 } \to \frac{ 1 }{ 3 }
+.\] 
+We again find the series to not approach 0 and because it failed the second criterion of AST. 
+
+\section*{Question 8}%
+\label{sec:Question 8}
+Using the Alternating Series Estimation Theorem, determine the minimum number of terms so that the error in approximating $ \sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ n+1 } }{ n^3 } $ is no greater than $ 10^{ -8 } $. \\ \\ 
+First proving that the function converges by AST, \\
+(i) True by,
+\[
+\frac{ 1 }{ k+1 } < \frac{ 1 }{ k } 
+.\] 
+(ii) True by,
+\[
+\lim_{ k \to \infty} \frac{ 1 }{ n^3 } \to 0
+.\] 
+Now that we know we have convergence we can use the AST to find the error with,
+\[
+\left| S-S_n \right| \le 10^{ -8 }
+.\] 
+\begin{align*}
+	\left| \frac{ 1 }{ \left( N+1 \right) ^3 }  \right| &\le 10^{ -8 } \\
+	\left( N+1 \right) ^3 &\ge 10^{ 8 } \\
+	N+1 &\ge 10^{ \frac{ 8 }{ 3 }  } \\
+	N & \ge 10^{ \frac{ 8 }{ 3 }  }- 1 \\
+	N &= 463.159 \\
+\end{align*}
+Which means it would take us 463 terms to get an error less than $ 10^{ -8 } $.
+
+\section*{Question 9}%
+\label{sec:Question 9}
+Demonstrate how to use Direct Comparison and Limit Comparison Tests on the series.  
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ 1 }{ 2n-\sqrt{ n} } 
+.\] 
+\paragraph{A. Direct Comparison Test \\}
+For direct comparison we can use dominance to find that the series should diverge as it's the harmonic, $ \frac{ 1 }{ 2 } \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n }  $. From this we can create the inequality $ \frac{ 1 }{ 2n-\sqrt{ n} } \ge \frac{ 1 }{ 2n } $ because the statement $ 2n > 2n -\sqrt{ n} $ is true, so this shows we will diverge by comparison.
+
+\paragraph{B Limit Comparison Test \\}
+For limit comparison we can use the harmonic series as our comparison series, $ \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ 2n }  $. We can then take the limit of the ratio of the two series,
+
+\[
+\lim_{ n \to \infty} \frac{ \frac{ 1 }{ 2n-\sqrt{ n} }  }{ \frac{ 1 }{ 2n }  }= \lim_{ n \to \infty} \frac{ \underbrace{ 2n }_{ 1 } }{ \underbrace{ 2n }_{ 1 } - \underbrace{ \sqrt{ 2n} }_{ 0 }  } = 1
+.\] 
+Since our limit is finite we can conclude that either both series converge or both series diverge. Just taking the limit of $ 2n $ gives us $ \infty $ which is divergent and means that our original series will also diverge.  
 \end{document}
