@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+
+\usepackage{cancel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\title{Quiz 3 Caclulus 3}
+\author{yawnbo}
+\date{\today}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\maketitle
+\section*{Question 1}%
+\label{sec:Question 1}
+Apply the Integral Test on $ \sum_{ n=2 } ^{ \infty } \frac{ 1 }{ n\ln^{  } \left( n \right)  }  $. \\ \\
+In order to use the test we must prove that $ f\left( x \right)  $ is continuous, and decreasing. Take the first $ \frac{ d }{ dx }  $ to prove it is decreasing, 
+\begin{gather*}
+f'\left( x \right) =  n\ln^{  } \left( n \right) \cdot 0 - 1 \cdot \ln^{  } \left( n \right) +1 \to -\left( \ln^{  } \left( n \right) +1 \right) 
+\end{gather*}
+Which will be negative over our interval as ln is always positive. We know $ f\left( x \right)  $ is continuous as its only hole is when the denominator is 0, so when $ x=1 \text{ or } 0  $ which is outside our interval. Now taking the integral,
+\[
+\int_{ 2 }^{ \infty } \frac{ 1 }{ x\ln^{  } \left( x \right)  } dx
+.\] 
+Using u-sub, $ u = \ln^{  } \left( x \right)  $, $ du = \frac{ 1 }{ x } dx $,
+\[
+	\int_{ 2 }^{ \infty } \frac{ du }{ u } = \ln^{  } \left( u \right) = \ln^{  } \left( \ln^{  } \left( x \right)  \right) \big|_{ 2 }^{ \infty } = \underbrace{\ln^{  } \left( \ln^{  } \left( \infty \right)  \right) }_{\infty} - \ln^{  } \left( \ln^{  } \left( 2 \right)  \right) 
+.\] 
+Which gives us an infinite value that proves our series will also diverge. 
+
+\section*{Question 2}%
+\label{sec:Question 2}
+For what values of p will $ \sum_{ n=2 } ^{ \infty } \frac{ 1 }{ n\left( \ln^{  } \left( n \right)  \right) ^{ p } }  $ converge?
+\end{document}
