@@ -90,12 +90,12 @@ We can start by trying to determine if the series converges absolutely, so,
 \[
 \left| \frac{ \left( -1 \right) ^{ k+1 }k }{ 3k+1 } \right|= \frac{ k }{ 3k+1 } \approx \frac{ k }{ 3k } =\frac{ 1 }{ 3 } 
 .\] 
-Because the series doesn't approach 0 we can conclude that the series won't converge absolutely. Now testing if it will converge conditionally we can use AST. When testing if we will approach 0,
-\[
-\lim_{ k \to \infty} \frac{ k }{ 3k+1 } \to \frac{ 1 }{ 3 }
-.\] 
-We again find the series to not approach 0 and because it failed the second criterion of AST. 
-
+Because the series doesn't approach 0 we can conclude that the series won't converge absolutely. Now testing for conditional convergence we can use subsequences that are even and odd and see what their limits are, 
+\begin{gather*}
+\lim_{ k \to \infty} a_{ 2k -1 } = \frac{ \left( -1 \right) ^{ 2k }2k }{ 3\left( 2k -1 \right) +1 } = \frac{ 2k }{ 6k- 2 } = \frac{ 2 }{ 6 + \frac{ 2 }{ k } } \to \frac{ 2 }{ 6 } = \frac{ 1 }{ 3 } \\
+\lim_{ k \to \infty} a_{ 2k } = \frac{ \left( -1 \right) ^{ 2k+1 }2k }{ 3\left( 2k \right) +1 } = \frac{ -2k }{ 6k+1 } = \frac{ -2 }{ 6 + \frac{ 1 }{ k } } \to \frac{ -2 }{ 6 } = -\frac{ 1 }{ 3 }
+\end{gather*}
+Seeing that both of these will diverge because their limits don't go to 0, we can conclude that the series will diverge.
 \section*{Question 8}%
 \label{sec:Question 8}
 Using the Alternating Series Estimation Theorem, determine the minimum number of terms so that the error in approximating $ \sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ n+1 } }{ n^3 } $ is no greater than $ 10^{ -8 } $. \\ \\ 
@@ -117,9 +117,9 @@ Now that we know we have convergence we can use the AST to find the error with,
 	\left( N+1 \right) ^3 &\ge 10^{ 8 } \\
 	N+1 &\ge 10^{ \frac{ 8 }{ 3 }  } \\
 	N & \ge 10^{ \frac{ 8 }{ 3 }  }- 1 \\
-	N &= 463.159 \\
+	N &\ge 463.159 \\
 \end{align*}
-Which means it would take us 463 terms to get an error less than $ 10^{ -8 } $.
+Which means it would take us 464 terms to get an error less than $ 10^{ -8 } $.
 
 \section*{Question 9}%
 \label{sec:Question 9}
@@ -136,5 +136,5 @@ For limit comparison we can use the harmonic series as our comparison series, $ 
 \[
 \lim_{ n \to \infty} \frac{ \frac{ 1 }{ 2n-\sqrt{ n} }  }{ \frac{ 1 }{ 2n }  }= \lim_{ n \to \infty} \frac{ \underbrace{ 2n }_{ 1 } }{ \underbrace{ 2n }_{ 1 } - \underbrace{ \sqrt{ 2n} }_{ 0 }  } = 1
 .\] 
-Since our limit is finite we can conclude that either both series converge or both series diverge. Just taking the limit of $ 2n $ gives us $ \infty $ which is divergent and means that our original series will also diverge.  
+Since our limit is finite we can conclude that either both series converge or both series diverge. Since we already found $ b_n $ or $ \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ 2n }  $ is divergent, we also know that $ a_n $ or $ \frac{ 1 }{ 2n -\sqrt{ n} }  $ is also divergent. 
 \end{document}
