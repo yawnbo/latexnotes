@@ -1,0 +1,68 @@
+\documentclass[a4paper]{article}
+
+\usepackage{cancel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+
+\title{Taylor series and more 11.9}
+\author{yawnbo}
+\date{\today}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\maketitle
+\section{11.9 Last examples}%
+\label{sec:11.9 Last example}
+\begin{exampleblock}{Estimating a non-elementary integral}
+\[
+\int_{ 0 }^{ 0.3 } \frac{ x^2 }{ 1+x^{ 4 } }
+.\] 
+First make a power series for our function,
+\[
+x^2\left( \frac{ 1 }{ 1-\left( -x^{ 4 } \right)  }  \right) 
+.\] 
+\[
+=\sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }x^{ 4n+2 }
+.\] 
+Now verify that $ \left[ 0,0.3 \right]  $ is in the IOC. So,
+\[
+\int_{ 0 }^{ 0.3 } \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }x^{ 4n+2 }dx \to \lim_{ n \to \infty} \left| \frac{ x^{ 4n+6 } }{ x^{ 4n+2 } } \right|= \left| x^{ 4 } \right| < 1 \implies \left( -1,1 \right) 
+.\] 
+Evaluating our integral,
+\[
+\sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\int_{ 0 }^{ 0.3 } x^{ 4n+2 }dx = \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n } \frac{ x^{ 4n+3 } }{ 4n + 3 } \bigg| _{ 0 }^{ 0.3 }
+.\] 
+\[
+	=\sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n } \left( 0.3 \right) ^{ 4n+3 } }{ 4n+3 } - \cancel{\sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n }\left( 0 \right) ^{ 4n+3 } }{ 4n+3 }}
+.\] 
+Now we have an alternating series so we can easily estimate it with ASET to 6 decimal places. Knowing that our error will be $ \left| R_n \right|= \left| S-S_n \right| \le b_{ n+1 } $. So,
+\[
+\text{Error }\le b_{ n+1 } = \frac{ \left( 0.3 \right) ^{ 4\left( n+1 \right) +3 } }{ 4\left( n+1 \right) +3 } \le 5\cdot 10^{ -7 }
+.\] 
+There isn't a nice way of doing this so we can just manually compute it for this. Using a calculator we find that our error is $ 1.6\cdot 10^{ -7 } $ at $ n=2 $ but because of ASET having the $ b_{ n+1 } $ we want to add one to the final result of n. So our final value is going to be $ n=3 $. Without a calc this would look like,
+\[
+\sum_{ n=0 } ^{ 2 } \frac{ \left( -1 \right) ^{ n }\left( 0.3 \right) ^{ 4n+3 } }{ 4n+3 } = \frac{ \left( 0.3 \right) ^{ 3 } }{ 3 } - \frac{ \left( 0.3 \right) ^{ 7 } }{ 7 } + \frac{ \left( 0.3 \right) ^{ 11 } }{ 11 } \approx 0.0089689182
+.\] 
+\newpage
+Now finding the actually value of our integral we find it to be $ \int_{ - }^{ 0.3 } \frac{ x^2 }{ 1+x^{ 4 } } = 0.00896892$. Which gives us an accuracy of $ 1.6\cdot 10^{ -7 } $. Side note, we chose $ 5\cdot 10^{ -7 } $ because of rounding reasons that gives us a middle ground for our accuracy. \\
+We can also do it with a calculator and without brute force,
+\[
+y_1 = \frac{ \left( 0.3 \right) ^{ 4\left( n+1 \right) +3 } }{ 4\left( n+1 \right) +3 }< y_2 = 5\cdot 10^{ -7 }
+.\] 
+After this you can build your graph to have a $ y_{ \text{ max } }= 5\cdot 10^{ -6 } $ and a $ y_{ \text{ min } }= 5\cdot 10^{ -8 } $. Now looking at the picture. After being in intersect mode we find our $ n\approx 0.8 $ and we can test this,
+\[
+\sum_{ n=0 } ^{ 1 } \left( -1 \right) ^{ n } \frac{ \left( 0.3 \right) ^{ 4n+3 } }{ 4n+3 } = \frac{ 0.3^{ 3 } }{ 3 }- \frac{ 0.3^{ 7 } }{ 7 } \approx 0.0089687571
+.\] 
+Which gives us our desired accuracy of $ 5\cdot 10^{ -7 } $. This shows us that ASET is generally more generous and will overestimate unlike solving algebraically which will give us a more accurate result.
+\end{exampleblock}
+\section{Taylor's Theorem}%
+\label{sec:Taylor's Theorem}
+\paragraph{If a $ f\left( x \right) $} can be represented as a power series,then our power series will look like 
+\[
+f\left( x \right) = \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( c \right)  }{ k! }\left( x-c \right) ^{ k }, \left| x-c \right|< R \text{ (radius of convergence) }
+.\] 
+\end{document}
