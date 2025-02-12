@@ -59,10 +59,114 @@ After this you can build your graph to have a $ y_{ \text{ max } }= 5\cdot 10^{ 
 .\] 
 Which gives us our desired accuracy of $ 5\cdot 10^{ -7 } $. This shows us that ASET is generally more generous and will overestimate unlike solving algebraically which will give us a more accurate result.
 \end{exampleblock}
-\section{Taylor's Theorem}%
-\label{sec:Taylor's Theorem}
-\paragraph{If a $ f\left( x \right) $} can be represented as a power series,then our power series will look like 
+\section{11.10 Taylor \& Maclaurin Series}%
+Let $ f\left( x \right)  $ be a function with power series $ \sum_{ k=0 } ^{ \infty } a_k\left( x-c \right) ^{ k } $ for $ \left| x-c \right|<R $. This is called a general power series. Our goal is to find what $ a_k $ would be. Just naming terms, $ \left| x-c \right| $ will be the center of our IOC, and $ R $ will be the radius of convergence. \\ \\
+
+Looking at few terms of $ f\left( x \right)  $,
 \[
-f\left( x \right) = \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( c \right)  }{ k! }\left( x-c \right) ^{ k }, \left| x-c \right|< R \text{ (radius of convergence) }
+f\left( x \right) =a_0 + a_1\left( x-c \right) + a_2\left( x-c \right) ^{ 2 } + a_3\left( x-c \right) ^{ 3 } + \ldots
 .\] 
+Taking a derivative,
+\[
+f'\left( x \right) = f^{ \left( 1 \right)  }\left( x \right) = a_1 + 2a_2\left( x-c \right) + 3a_3\left( x-c \right) ^{ 2 } + \ldots
+.\] 
+And another,
+\[
+f^{ \left( 2 \right)  }\left( x \right) = 2a_2 + 3\cdot 2a_3\left( x-c \right) + 4\cdot 3a_4\left( x-c \right) ^{ 2 } + \ldots
+.\] 
+With these, we want to find a pattern that would give us the $ f^{ \left( k \right) \left( x \right)  } $ derivative. Which we find to be,
+\[
+f^{ \left( k \right)  }\left( x \right) = k!a_k + \left( k+1 \right)! a_{ k+1 }\left( x-c \right) + \left( k+2 \right) ! a_{ k+2 }\left( x-c \right) ^2 + \ldots
+.\] 
+Now we can evaluate this at $ x=c $,
+\begin{gather*}
+f\left( c \right) =a_0 + 0 + 0 + 0\ldots \\
+f'\left( c \right) = a_1 + 0 + 0 + 0 \ldots \\
+f^{ 2 }\left( x \right) = 2a_2 \\
+f^{ 3 }\left( x \right) = 6a_3 \\
+\end{gather*}
+So when going to the $ \frac{ d }{ dx } k^{ \text{th } } $ we can generalize it as $ f^{ k }\left( c \right) = k!a_k $. Now solving for $ a_k $, we find that $ a_k=\frac{ f^{ k }\left( c \right)  }{ k! } $. This is where the Taylor series comes from and we can now write our series as.
+\[
+\sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( c \right)  }{ k! }\left( x-c \right) ^{ k }
+.\] 
+\subsection*{Taylor's theorem}%
+\label{sub:Taylor's theorem}
+\paragraph{If} $ f\left( x \right)  $ has a power series, then 
+\[
+f\left( x \right)=\sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( c \right)  }{ k! }\left( x-c \right) ^{ k } \text{ for } \left| x-c \right|<R
+.\] 
+The maclaurin series is just a Taylor series with $ c=0 $. \\ \\
+
+\subsection*{Usage}%
+\label{sub:Usage}
+Recall how we would make power series,
+\[
+\frac{ 1 }{ 1-x^2 } \to \sum_{ n=0 } ^{ \infty } \left( x^2 \right) ^{ n }
+.\] 
+This works for normal functions, but we can do this for functions like $ \sin^{  } \left( x \right)  $. So let's instead use a taylor series.\\ \\
+\begin{exampleblock}{Ex.}
+	First let's choose a center and make a maclaurin series. So let's put the 0 in the center and make a series for $ \sin\left( x \right)  $.
+	\[
+	\sin^{  } \left( x \right) = \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( 0 \right)  }{ k! }\left( x-c \right) ^{ k }
+	.\] 
+	So let's start by writing some terms as we go through values of k. 
+	\begin{gather*}
+	f^{ 0 }\left( 0 \right) =\sin^{  } \left( 0 \right) =0 \\
+	f^{ 1 }\left( 0 \right) =\cos^{  } \left( 0 \right) =1 \\
+	f^{ 2 }\left( 0 \right) =-\sin^{  } \left( 0 \right) =0 \\
+	f^{ 3 }\left( 0 \right) =-\cos^{  } \left( 0 \right) =-1 \\
+	f^{ 4 }\left( 0 \right) =\sin^{  } \left( 0 \right) =0 \\
+	\end{gather*}
+	Now what happens if we throw in our factorial?
+	\[
+	=\frac{ 0 }{ 0 } , \frac{ 1 }{ 1! }, \frac{ 0 }{ 2! }, \frac{ -1 }{ 3! }, \frac{ 0 }{ 4! }
+	.\] 
+	Ignoring the zeroes we can start to make an explicit formula for our series as,
+	\[
+	\frac{ \left( -1 \right) ^{ k } }{ \left( 2k+1 \right) ! }
+	.\] 
+	Now with our function we can put it back into our power series as
+	\[
+	\sin^{  } \left( x \right) =\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ \left( 2k+1 \right) ! }x^{ k }
+	.\] 
+	Now we want to find our IOC, so let's use ratio test and take the $ \lim_{ n \to \infty} \left| \frac{ a_{ k+1 } }{ a_k } \right| $ or,
+	\[
+	=\lim_{ n \to \infty} \left| \frac{ x^{ k+1 } }{ \left( 2\left( k+1 \right) +1 \right) ! }\cdot \frac{ \left( 2k+1 \right) ! }{ x^{ k } } \right| = \lim_{ k \to \infty} \frac{ 1 }{ \left( 2k+3 \right) \left( 2k+2 \right)  } \left| x \right|<1
+	.\] 
+	Now because $ \lim_{ k \to \infty} \frac{ 1 }{ \left( 2k+3 \right) \left( 2k+2 \right)  }  $ goes to 0 we know our interval of convergence will be $ \left( -\infty,\infty \right)  $.  \\ \\ 
+	Just doing some proof work we estimate sin to be $ 1-\frac{ x }{ 3! } +\frac{ x^2 }{ 5! }  $ but this doesnt look right. Looking back at our series we only took our odd powers, but never accounted for it in our power series. So instead our series will be,
+	\[
+	\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ \left( 2k+1 \right) ! }x^{ 2k+1 }
+	.\] 
+
+\end{exampleblock}
+\subsection*{Maclaurin series of $ \cos^{  } \left( x \right)  $}%
+\begin{exampleblock}{}
+	 $ f\left( x \right) =\cos^{  } \left( x \right)  $ and our sum $ \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( 0 \right)  }{ k! }\left( x-c \right) ^{ k } $ need to be solved. So writing out terms,
+	 \begin{align*}
+			f^{ 0 }\left( 0 \right) &= \cos^{  } \left( 0 \right) =1 \\
+			f^{ 1 }\left( 1 \right) &= -\sin^{  } \left( 0 \right) =0 \\
+			f^{ 2 }\left( 2 \right) &= -\cos^{  } \left( 0 \right) =-1 \\
+			f^{ 3 }\left( 3 \right) &= \sin^{  } \left( 0 \right) =0 \\
+			f^{ 4 }\left( 4 \right) &= \cos^{  } \left( 0 \right) =1 \\
+	 .\end{align*}
+	 Writing our sequence,
+	 \[
+		a_k=\frac{ 1 }{ 0! } ,\frac{ 0 }{ 1! } ,\frac{ -1 }{ 2! } ,\frac{ 0 }{ 3! } ,\frac{ 1 }{ 4! }\ldots
+	 .\] 
+	 We can find our sequence to be 
+	 \[
+	 a_k=\frac{ \left( -1 \right) ^{ k } }{ \left( 2k \right) ! }
+	 .\] 
+	 and our series to be 
+	 \[
+	 \sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ \left( 2k \right) ! }\left( x \right) ^{ 2k }
+	 .\] 
+		Note that we use $ 2k $ because we only want the evens in this series. If we instead kept it as just $ k $, we would have the odd powers and those would just zero. Now let's write a partial sum to test it,
+		\[
+		=\frac{ 1 }{ 0! } x^{ 0 }-\frac{ x^2 }{ 2! } + \frac{ x^{ 4 } }{ 4! }-\frac{ x^{ 6 } }{ 6! } + \frac{ x^{ 8 } }{ 8! } - \ldots
+		.\] 
+
+\end{exampleblock}
+
 \end{document}
