@@ -1,0 +1,212 @@
+\paragraph{Note that quiz 2 is due next Tuesday. }
+\section{Day 1 week3}%
+\label{sec:Day 1 week3}
+
+\section*{11.3 Convergent series with the integral test}%
+\label{sec:11.3 Convergent series with the integral test}
+Given a series $ \sum_{ k=1 } ^{ \infty } a_k $ has a remainder of $ R_n $ that is called or error and can be found using
+\[
+R_n = \sum_{ k=1 } ^{ \infty } a_k - \sum_{ k=1 } ^{ n } a_k = a_{ n+1 }+a_{ n+2 }+a_{ n+3 } \ldots
+.\] 
+This is just saying that when we have a sum to the number n that we are ignoring all values that are above n, so our error from the actual can be found with the above. \\
+
+The important part is that we can use integral to find and estimate our area. Think about this using right and left endpoint rectangles. This can be written using the inequality
+\[
+\int_{ n+1 }^{ \infty } f\left( x \right) dx<R_n < \int_{ n }^{ \infty } f\left( x \right) dx
+.\] 
+And 
+\[
+S=\sum_{ k=1 } ^{ \infty } a_k = \sum_{ k=1 } ^{ n } a_k + R_n = S_n + R_n 
+.\] 
+Now combining our inequalities we find that 
+\[
+S_n + \int_{ n+1 }^{ \infty } f\left( x \right) dx<S < \int_{ n }^{ \infty } f\left( x \right) dx+S_n
+.\] 
+Now calling our lower bound $ L_n $ and upper bound $ U_n $ we can just call it $ L_n < S< U_n $. This inequality is important because it allows us to estimate the sum of a series by finding the integral of the function.
+
+
+\subsubsection*{Ex. }
+\paragraph{Consider the series $ \sum_{ i=1 } ^{ \infty } \frac{ 1 }{ n^2 }  $}
+\paragraph{Part a) Find an upper bound for the remainder in terms of n}
+Start by figuring our $ S_n $. Write out some terms from our sum first,
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^2 } =1+\frac{ 1 }{ 2^2 } +\frac{ 1 }{ 3^2 } +\frac{ 1 }{ 4^2 } 
+.\] 
+Let's start by finding the upper bound $ R_n < \int_{ n }^{ \infty } f\left( x \right) dx$ as $ \frac{ 1 }{ n }  $ from our p theorem. 
+
+\paragraph{Part b) find how many terms are needed to ensure that the remainder ($ error $) is less than $ 10^{ -3 } $. \\}
+Start by writing our inequality to be $ \frac{ 1 }{ n } < 10^{ -3 } $ or $ 10^{ 3 }<n $. Now we need to add one to our number to find that n would have to be at least $ 1001 $ terms. 
+
+\paragraph{Find the lower and upper bounds ($ L_n $ and $ U_n $ respectively) on the exact value of the series\\}
+Start by letting $ n=1001 $ and plug into our inequality $ L_n \le \sum_{ n=1 } ^{ \infty } a_n \le U_n$ 
+\[
+S_{ 1001 }\int_{ 1002 }^{ \infty } \frac{ 1 }{ x^2 } dx\le S \le \int_{ 1001 }^{ \infty } \frac{ 1 }{ x^2 } dx + S_{ 1001 }
+.\] 
+Computing this out we find,
+\[
+	S_{ 1001} + \frac{ 1002^{ 1-2 } }{ 2-1 } \le S \le \frac{ 1001^{ 1-2 } }{ 2-1 } + S_{ 1001 }
+.\] 
+
+\paragraph{Part D) find an interval in which the value of the series must lie if you approximate it using ten terms of the series. \\}
+Start with our value of n being 10. Now write our inequality to be $ L_{ 10 } \le S\le U_{ 10 } $. So,
+\[
+S_{ 10 }+\int_{ 11 }^{ \infty } \frac{ 1 }{ x^2 } dx\le S\le S_{ 10 }+\int_{ 10 }^{ \infty } \frac{ 1 }{ x^2 } dx
+.\] 
+\[
+S_{ 10 }+\frac{ 11^{ 1-2 } }{ 2-1 }\le S\le S_{ 10 }+ \frac{ 10^{ 1-2 } }{ 2-1 }
+.\] 
+Plugging this into a calculator gives us $ S_n = 1.549767731 $, so our inequality is $ 1.640676822< S < 1.649767731$. Which is a good estimate. Given our actual answer to be $ \frac{ \pi^2 }{ 6 }  $, we find that the estimated value of $ 1.644934067 $ is in our range. 
+\section{01/23/25 Day 2 w3}%
+\label{sec:01/23/25 Final notes on 11.3}
+
+\subsection*{Theorem}%
+\label{sub:Theorem}
+\paragraph{The p-series of $ \sum_{ i=1 } ^{ \infty } \frac{ 1 }{ i^{ p } }  $ converges for p>1. This is basically exactly the same as p integrals and is proved using them either way.}
+
+\subsection{Section 11.4 The comparison test}%
+\label{sub:Section 11.4 The comparison test}
+\paragraph{Preamble:}
+If we let $ a_n,b_n >0 $, then,
+\paragraph{(i)} If $ \sum_{  } ^{  } b_n $ converges and $ a_n \le b_n $, then $ \sum_{  } ^{  } a_n $ also converges. 
+\paragraph{(ii)} If $ \sum_{  } ^{ } b_n $ diverges and $ b_n \le a_n $, then $ \sum_{  } ^{  } a_n $ also diverges. \\
+This can be used in the same way that comparisons can be proved in integrals. This is done by just finding a simpler series to compare with because we will only need this for very complex series that cannot be proven using our other known methods. 
+
+\paragraph{Ex.}
+\[
+\sum_{  } ^{  } \frac{ 1 }{ n^2+6n+13 } 
+.\] 
+For this we can use integration using the integral test, but integration would be technical and not the easiest thing ever. (completing the square and trig sub), so instead we can use our comparison test. Start with an assumption. This can be done by looking at our function as a function with dominance applied to it. Using dominance we get $ \frac{ 1 }{ n^2+6n+13 } \approx \frac{ 1 }{ n^2 }  $ and because $ p>1 $ this should converge. Knowing this we should find a series that is LARGER to compare with. (because if we have a larger function then we know everything less will converge) So we start by removing some terms from our original summation. \\
+
+Removing terms from the denominator we get
+\[
+\sum_{  } ^{  } \frac{ 1 }{ n^2+6n+13 } < \sum_{  } ^{  } \frac{ 1 }{ n^2+6n } <\sum_{  } ^{  } \frac{ 1 }{ n^2 } 
+.\] 
+
+This shows us the method of proving that our function is smaller and now that it's at our formula we can stop because it's proven using our integrals from calc2. Again as a last note, if we are trying to prove convergence, we need to find a larger and simpler function, but if we are trying to prove divergence we find a smaller function that is also simpler.
+
+\paragraph{Ex. Given}
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ n }{ n^2-\cos^{ 2 } \left( n \right)  } 
+.\] 
+\paragraph{Prove divergence or convergence. \\}
+
+Again, we first make an assumption, let's look at our function and notice that cos will just bounce between 1 and -1, so we can ignore it. Now using dominance we find that our function will approximate to $ \sum_{  } ^{  } \frac{ 1 }{ n }  $ which is a harmonic series and divergent. This is also a p value of 1 so, we know it won't work. Now that we guessed divergence, we know we want to find something that is smaller and simpler. We start by reconstructing our function with cos and create an inequality.
+
+\begin{gather*}
+0<\cos^{ 2 } \left( n \right) <1\\
+0\ge -1\cos^{ 2 } \left( n \right) \ge -1 \\
+n^2\ge n^2-\cos^{ 2 } \left( n \right) \ge n^2-1 \\
+\frac{ n }{ n^2 } \le \frac{ n }{ n^2-\cos^{ 2 } \left( n \right)  } \le \frac{ n }{ n^2-1 } \\
+\sum_{ n=1 } ^{ \infty } \frac{ n }{ n^2 } \le \sum_{ n=1 } ^{ \infty }  \frac{ n }{ n^2-\cos^{ 2 } \left( n \right)  } \le \sum_{ n=1 } ^{ \infty } \frac{ n }{ n^2-1 } \\
+\end{gather*}
+This technique is called construction and can be done for proving all our comparisons but may be more complex than other ways. 
+
+\paragraph{EX.}
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ n^3+3 }{ n^{ 5 }+6 }
+.\] 
+\paragraph{Prove convergence or divergence. \\}
+This will behave similar to $ \sum_{ n=1 } ^{ \infty } \frac{ n^3 }{ n^{ 5 } } $ which will converge because $ p>1 $. Now we know we want to find something bigger, so lets start by throwing away some terms. 
+
+\[
+<\sum_{ n=1 } ^{ \infty } \frac{ n^3+3 }{ n^{ 5 } }
+.\] 
+Given the above sum we can just split the sum into two fractions and prove it like that
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ n^3 }{ n^{ 5 } } +\sum_{ n=1 } ^{ \infty } \frac{ 3 }{ n^{ 5 } } \implies \sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^2 } +3\sum_{ n=1 } ^{ \infty } \frac{ 1 }{ n^{ 5 } } 
+.\] 
+Because both of our sums converge, we know that our actual sum will also converge. (the above converges based on p values and can be cut down to the theorem from before that a convergent sum + a convergent sum will also be convergent) 
+\subsection*{Limit comparison test}%
+\label{sub:Limit comparison test}
+Let $ a_n, b_n > 0 $,
+\paragraph{(i)}
+If $ 0<\lim_{ n \to \infty} \frac{ a_n }{ b_n }<\infty  $ then either, both $ \sum_{  } ^{  } a_n, \sum_{  } ^{  } b_n $ converge, or both diverge. It cannot be interchanged. This means that you cannot have $ a_n $ be convergent and $ b_n $ be divergent. 
+
+\paragraph{Ex.}
+\[
+\sum_{ k=1 } ^{ \infty } \frac{ 4k^2+k+2 }{ 3k^3+9 }
+.\] 
+\paragraph{Prove convergence or divergence.\\}
+In a case like this normal comparison would be difficult so let's use our limit comparison test. First make an assumption using dominance, so, $ a_n \approx \frac{ 4k^2 }{ 3k^3 } \implies \frac{ 4 }{ 3 } \sum_{  } ^{  } \frac{ 1 }{ k } $. Now that we see that we have a harmonic, we can use $ \frac{ 4 }{ 3k }  $ as our $ b_n $. (This would also work with its reciprocol so $ \lim_{ n \to \infty} \frac{ b_n }{ a_n } )$. 
+
+So let's take our limit,
+\[
+\lim_{ n \to \infty} \frac{ a_n }{ b_n }=\lim_{ n \to \infty} \frac{ 4k^2+k+2 }{ 3k^3+9 }\cdot \frac{ 3 }{ 4 } \cdot k
+.\] 
+Distributing our terms we will get a $ 12k^3 $ function on the top and bottom so our resulting limit will be finite by dominance. Because $ 0<\lim_{ n \to \infty} \frac{ a_n }{ b_n }<\infty $ is proven true, we know that we have either convergence or divergence for both. And because we already showed that $ a_n $ diverges by dominance to the harmonic, we know that $ b_n $ will also be divergent and our whole function will be divergent. 
+\section{01/24/25 Alt limit and comparison last}%
+\label{sec:01/24/25 Alt limit and comparison last}
+
+\paragraph{Ex.}
+\paragraph{Determine Conv/div using limit comp. Using limit comp test}
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ 1 }{ \sqrt[ 3 ]{ 3n^{ 4 }+ 1}  } 
+.\] 
+
+Start with dominance and take our dominant terms to find
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ 1 }{ \sqrt[ 3 ]{ 3n^{ 4 }+1 }  } \approx \sum_{  } ^{  } \frac{ 1 }{ \sqrt[ 3 ]{ 3n^{ 4 } }  } =\sum_{  } ^{  } \frac{ 1 }{ \sqrt[ 3 ]{ 3 } n^{ \frac{ 4 }{ 3 }  } } 
+.\] 
+and because $ p > 1 $ we will assume convergence and test for it. Now we need verift using $ 0<\lim_{ n \to \infty} \frac{ a_n }{ b_n } <\infty $. So, 
+\[
+\lim_{ n \to \infty} \frac{ \frac{ 1 }{ \sqrt[ 3 ]{ 3n^{ 4 }+1 }  }  } {\frac{ 1 }{ \sqrt[ 3 ]{ 3n^{ 4 } }  }}  = \lim_{ n \to \infty} \sqrt[ 3 ]{ \frac{ 3n^{ 4 } }{ 3n^{ 4 }+1 } }= 1
+.\] 
+
+\subsection*{11.5 Alternating series test (AST)}%
+\label{sub:11.5 Alternating series test (AST)}
+
+\paragraph{Definition\\}
+$ b_n > 0 $ for all n.
+\paragraph{Form:}
+\[
+b_1 - b_2 + b_3 - b_4 + b_5 - b_6 + \ldots \text{ or }\sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n+1 }b_n
+.\] 
+or
+\[
+-b_1 + b_2 - b_3 + b_4 - b_5 + b_6 - \ldots \text{ or }\sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n }b_n
+.\] 
+is an alternating series.
+
+\paragraph{Theorem.} AST, we start with the same conditions, so $ b_n > 0 $ for all n and assume $ \lim_{ n \to \infty} b_n=0 $ and our series is monotonic decreasing ($ b_1 > b_2 > b_3 > \ldots $) (which just states  that the terms are decreasing to 0) then $ \sum_{ n=1 } ^{ \infty } \left( -1 \right)^{ n+1 }b_n  $
+
+\paragraph{Theorem} Alternating series Estimation Theorem. Let $ S=\sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n+1 }b_n $ with the same conditions on $ b_n $ as AST. Then the $ \left\| \text{ error } \right\|=\left\| S-S_n \right\| \le b_{ n+1 } $. \\
+\label{par:Theorem}
+This is just saying that if we stop at a definite value $ n $ then our error will be less than what our next b value will be. 
+
+\paragraph{Ex.}
+\[
+\sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n+1 }\frac{ 1 }{ n^2 } =S
+.\] 
+First we can look at our AST theorem, which, (1) being that $ b_n $ is monotnoic decreasing and that $ \lim_{ n \to \infty} b_n = 0 $, now find 
+\paragraph{How close is $ S_4 $ to $ S $?\\}
+So we start with our error, 
+\[
+\left\| S-S_{ 4 } \right\|\le b_5 = \frac{ 1 }{ 25 } 
+.\] 
+
+\paragraph{Ex.}
+\[
+\text{ For }\sum_{ n=1 } ^{ \infty } \left( -1 \right) ^{ n+1 }\frac{ 1 }{ n! } 
+.\] 
+\paragraph{Determine $ n $ so that $ S_n $ is within $ 0.001 $ of $ S $.\\}
+
+Start with error, 
+
+\[
+\left\| S-S_n \right\|\le 0.001
+.\] 
+So we know we need $ b_{ n+1 }\le 0.001 $. So,
+\begin{gather*}
+b_n = \frac{ 1 }{ n! } \to n=1:1 n=2:\frac{ 1 }{ 2! } =\frac{ 1 }{ 2 } n=3:\frac{ 1 }{ 3! } =\frac{ 1 }{ 6 } \\
+\ldots n=7:\frac{ 1 }{ 7! } =\frac{ 1 }{ 5040 } <\frac{ 1 }{ 1000 } 
+\end{gather*}
+
+This is just one way of solving something like this, but we can also do it with algebra if we have a better looking function like
+\[
+\frac{ 1 }{ \left( n+1 \right) ^2 } \le 0.0001 \to \frac{ 1 }{ 0.0001 } \le \left( n+1 \right) ^2 \to \sqrt{ \frac{ 1 }{ 0.0001 } }\le n+1 \implies \sqrt{ \frac{ 1 }{ 0.0001 } -1}\le n
+.\] 
+Which would come out to $ n\ge 99 $ which means that we need to find the sum of 99 terms to get close enough of the absolute sum of the series $ S $. 
+
+\section{End of week 3}%
+\label{sec:End of week 3}
+

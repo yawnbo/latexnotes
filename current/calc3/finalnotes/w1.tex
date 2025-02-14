@@ -1,0 +1,368 @@
+\paragraph{Office hours will be held at L218 on the given dates of the front page of canvas}%
+\label{par:Office hours will be held at L218 on the given dates of the front page of canvas}
+\paragraph{Room that class meets in is subject to change and will be announced through canvas }%
+\label{par:Room that class meets in is subject to change and will be announced through canvas }
+
+\section{Intro to sequences chapter 11.1}%
+\label{sec:Intro to sequences}
+
+\paragraph{Think about functions. A function can be defined as something that takes an input and assigns at most one output. We usually have things like $f\left( x \right) = x^2$ which gives us the continuous graph of $x^2$. }
+
+\paragraph{When talking about sequences we are essentially breaking the function into parts that we can give another function. This can be done by looking at the domain of the function to start. Looking at $x^2$ we see a dense set of points that has infinitely many values. This implies that if we take the set $\left[ 0,1 \right] $ we get a dense set of points that has the same amount of points as the whole set. This is proven by Cantor. }
+
+\paragraph{If instead have a number line of integers, we have something that is countibly infinite instead of uncountably infinite like the first example with a dense set of points. We can use the symbol Aleph to represent the smallest infinite cardinal number. This basically serves as a way to scale certain infinities.}
+
+\paragraph{Going back to the graph of $x^2$, if we throw away all values between our integers, we are left with a discrete graph that changes our domain to real integers. This is exactly what a sequence is. }
+
+\subsection{Definition of a sequence}%
+\label{sub:Definition of a sequence}
+\paragraph{A sequence is a function with a COUNTABLE domain. This is usually Integers or natural/whole numbers which is what we will usually see. (natural numbers are just positive integers). The last one is Q, or all real/natural fractions. (this will not be used during this course due to complexity) }
+
+\newpage
+\subsection{Coming up with a sequence}%
+\label{sub:Coming up with a sequence}
+\paragraph{Lets take the sequence $\left( 0,2,4,6,8 \ldots \right) $. This is just a sequence of even numbers. We can assign index numbers to each of these (ordinals) so, $n_1 = 0, n_2 = 2, n_3 = 4 \ldots$. Now our goal is to find some $f\left( n \right) $ so that we find the $n^{th}$ even number. We are essentially just taking some countable domain and giving it a function. For this we can define this as, $f\left( n \right) =2n-2$. We should avoid using $x$ as our dummy variable as it is commonly referring to uncountable doamins, but we want to look at a discrete domain so we can use n. }
+
+\paragraph{Another notation for this can be using $a$. This would look like $a_0 = 0, a_1 = 2, a_2 = 4 \ldots$. This is generally the common notation for it so this should be the focus. However, notice that $a_n$ starts counting at 0. This means that our function should change to $f\left( n \right) =2n$. Which can be tested as so, $f\left( 3 \right) =2\left( 3 \right) =6$. But we also need to replace our function with our a notation as so, $a_n=2n$. }
+
+\subsection{Set notation }%
+\label{sub:Set notation }
+
+\paragraph{For set notation we generally use something like $\{a_n\} = \{2n\}_{n=0}^{\infty}$. This is generally more useful as we can define our starting and ending points. In this example, we would start at 0 and end at infinity (infinity is implied and doesnt have to be written). For another set like $\{0,2,4,6,8\} $ we would use  $\{2n\}_{n=0}^{8}$. Another quirk of this is that we can't use $-\infty$ as our starting point because its not a real value. If we wanted to go to $-\infty$ we can just write it as $\{2n\}_{n = 0}^{-\infty}$. }
+
+\subsection{Explicitly defined sequences}%
+\label{sub:Explicitly defined sequences}
+
+\paragraph{The above example is a explicitly defined sequence that can fit in something nice like $f\left( n \right) $, but we can also have recursive sequences like the Fibonacci Sequence. This sequence works by having the inputs $\left( 1,1 \right) $ and the sequence would add those two together. This sequence just keeps taking the previous 2 outputs in order to get the next one. So this would continue as, $\left( 1,2 \right) , \left( 2,3 \right) , \left( 3,5 \right) \ldots$ and so on. }
+
+\paragraph{For this we don't have a nice function to define it so we use Recursive definitions such as, $a_0 = 1 \text{ and } a_1 = 1 $ for $n>1$ $a_n=a_{n-1}+a_{n-2}$. This definition works such that if we were to pick a number $n$ we can recursively backtrack through our list to find our answer. (without a given list we would just use the final sum as we count up to n)}
+
+\section*{01/08/25 Seqs. cont}%
+\label{sec:01/08/25 Seqs. cont}
+
+\subsection{Recursive sequence}%
+\label{sub:Recursive sequence}
+\paragraph{A recursive sequence is one that needs to use its previous terms to define the next term.}
+
+\subsection{Explicit sequence}%
+\label{sub:Explict sequence}
+
+\paragraph{An explicit sequence is one that can be defined by a function.}
+
+\paragraph{Ex. Given}
+
+\[
+	\left\{\frac{n+2}{n}\right\}_{n=1}^{\infty}
+.\] 
+\paragraph{Find the 5th term.}
+\paragraph{Because this isn't a recursive sequence, we can just plug in a given $n$ value into our sequence to find our term which is $\frac{7}{5}$. }
+
+\paragraph{This sequence can also be written as a set like,}
+
+\[
+	\left\{\left( 1,3 \right), \left( 2,2 \right), \left( 3,\frac{5}{3} \right) \ldots \right\} 
+.\] 
+
+\paragraph{Looking at this set, we also can find a commmon theory known as Set Theory, which states that we cannot have a set that repeats. This happens because the sets each have different values of $n$ and an output by the function. }
+
+\paragraph{Ex. Write out the first 5 elements/terms for the sequence}
+
+\[
+	\left\{\frac{\left( -1 \right) ^{n}\left( n-2 \right) }{2^{n}}\right\}_{n=0}^{\infty}
+.\] 
+
+\paragraph{We can now find the terms leading up to 5.}
+
+\[
+\frac{\left( -1 \right) ^{0}\left( 0-2 \right) }{2^{0}}=-2, \frac{\left( -1 \right) ^{1}\left( 1-2 \right) }{2^{1}}=\frac{1}{2}, \frac{\left( -1 \right) ^{2}\left( 2-2 \right) }{2^{2}}=0 \ldots
+.\] 
+\paragraph{We keep doing the above until we get to using 5 as n.}
+
+\paragraph{This function also shows us an important factor for sequences in $\left( -1 \right) ^{n}$ which creates a function that alternates between negative and positive.}
+
+\newpage
+\paragraph{Ex. Make a formula for}
+\[
+	\left\{-2,4,-6,8,-10 \ldots \right\}
+.\] 
+\paragraph{Lets start with $2n$ because we are counting even values. Because we also know that -2 is our starting point we can decide to start at $n=1$. but we also need our function to fluctuate between being positive and negative so we make it $\left\{\left( -1 \right) ^{n}\cdot 2n\right\}_{n=1}^{\infty}$. We can also write this with the lower bound being $n=0$ but this becomes more complex because we need to avoid having $n^{n}$ as this can cause issues with a computer. }
+
+\paragraph{For this function we would have $\left\{\left( -2n-2 \right) \left( -1 \right) ^{n}\right\}_{n=0}^{\infty}$. The general strategy for finding such a function is taking the lower bound and matching it with what our starting value of the set is. }
+
+\paragraph{Ex. come up with the function for the sequence}
+
+\[
+	\left\{0,1,0,-1,0,1,0,-1 \ldots \right\}
+.\]
+
+\paragraph{This is a sequence that is defined as $\left\{\sin^{}( \frac{n\pi^{}}{2} )\right\}_{n=0}$. }
+
+\paragraph{But this can also be defined with cos as $\left\{\cos^{}( \frac{n\pi^{}}{2} )\right\}_{n=-1}$.}
+\paragraph{Sequences that are fluctuating between 3 values like this are generally defined by sin or cos.}
+
+
+
+\section{Arithmetic sequences}%
+\label{sec:Arithmetic sequences}
+
+\paragraph{Ex.}
+\[
+	\left\{ 142,146,150,154 \ldots\right\}
+.\] 
+\paragraph{These are usually present in IQ tests for children. In this case we can define the next number in the sequence as 158. If we are using addition to get to the next number, we can define this as an arithmetic sequence that can be defined with a linear equation in the form $y=mx+b$. For this case we would have $\left\{y=4x+142\right\}_{n=0}$. This can also be proven by just graphing the points, which can be often helpful in finding the equation for a sequence.}
+
+\paragraph{Ex.}
+
+\[
+\left\{8,3,-2,-7 \ldots \right\}
+.\] 
+
+\paragraph{Which can be defined with $\left\{-5n+8\right\}_{n=0}$. We can also start it at $n=1$ using the equation $\left\{-5n+13\right\}_{n=1}$.}
+
+\subsection{Trick for substitution}%
+\label{sub:Trick for substitution}
+
+\paragraph{If we have our function$\left\{-5n+8\right\}_{n=0}$ and we want to switch our $n=0$ to $n=1$, we can use a dummy variable such as $m$ and define it as $m=n-1$. We can now sub it in for our old function to get $\left\{-5\left( m-1 \right) +8\right\}_{m=1}$. This is essentially u sub from calc 2 but brought into our functions.  }
+
+\section{Introduction of calculus into sequences}%
+\label{sec:Introduction of calculus into sequences}
+\paragraph{One of the goals of this course is to be able to find the limits of a sequence. }
+\paragraph{Definition: A sequence $\left\{a_{n}\right\}$ has limit L when $\lim_{n \to \infty} a_n = L$. If $\lim_{n \to \infty} a_n$ exists, we can say that the sequence converges to a point $L$. If the limit doesn't exist, we can instead say that the series will diverge. }
+
+\paragraph{Ex. Find $\lim_{n \to \infty} 1+\frac{1}{n}$.}
+
+\paragraph{In calc 1 we would have written it as $\lim_{x \to \infty} 1+\frac{1}{n}$ because we weren't only talking about integers. }
+
+\paragraph{Because we distribute the lim we can get}
+
+\[
+\lim_{n \to \infty} 1 + \lim_{n \to \infty} \frac{1}{x}
+.\] 
+Which equates to 
+\[
+1+0=1
+.\] 
+
+\subsection{Theorem}%
+\label{sub:Theorem}
+\[
+\lim_{n \to \infty} \frac{1}{n^{P}}=0 \text{ when }p>0
+.\] 
+This should be used whenever we have a similar situation. 
+
+\subsubsection{Remember to use the limit laws when applying them, such as}
+
+\begin{gather*}
+\text{ Sum Law: } \lim_{n \to \infty} \left( a_n \pm b_n \right) = \lim_{n \to \infty} a_n \pm \lim_{n \to \infty} b_n\\
+\text{ Constant Multiple Law } \lim_{n \to \infty} c\cdot a_n = c\cdot \lim_{n \to \infty} a_n\\
+\text{ Product Law } \lim_{n \to \infty} a_n\cdot b_n = \lim_{n \to \infty} a_n \cdot \lim_{n \to \infty} b_n\\
+\text{ Quotient Law } \lim_{n \to \infty} \frac{a_n}{b_n} = \frac{\lim_{n \to \infty} a_n}{\lim_{n \to \infty} b_n} \text{ when } \lim_{n \to \infty} b_n \neq 0\\
+\text{ Power Law } \lim_{n \to \infty} a_n^{p} = \left( \lim_{n \to \infty} a_n \right) ^{p} \text{ when } p>0\\
+\text{ Squeeze Theorem } \text{ if } a_n \leq b_n \leq c_n \text{ and } \lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = L \text{ then } \lim_{n \to \infty} b_n = L
+\end{gather*}
+\newpage
+\paragraph{Ex.}
+\[
+\lim_{n \to \infty} \frac{\left( -1 \right) ^{n}}{n}
+.\] 
+
+\paragraph{Using limit laws we could say that }
+
+\[
+	\left( \lim_{n \to \infty} \frac{1}{n} \right) \left( \lim_{n \to \infty} \left( -1 \right) ^{n} \right) 
+.\] 
+
+Which simplifies to $0 \cdot \text{ Indeterminate }$. Which just leaves it undetermined. 
+
+\paragraph{Luckily we have a theorem that states that if we have a sequence $\lim_{n \to \infty} a_n = 0$, we can rewrite it as $\lim_{n \to \infty} \left\|a_n\right\| = 0$ which we can take to our last equation and find}
+
+\[
+\lim_{n \to \infty} \left\|\frac{\left( -1 \right) ^{n}}{n}\right\|=\lim_{n \to \infty} \frac{1}{n}=0
+.\] 
+\paragraph{Which proves our original question to be 0.}
+
+\section*{01/09/25 Continuation of sequences 2}%
+\label{sec:01/09/25 Continuation of sequences 2}
+
+\paragraph{Pre Lecture notes:}
+Room change may occur on 01/10 to L213 but not confirmed.
+
+\subsection{Example problems on the worksheets}%
+\label{sub:Example problems on the worksheets}
+
+\subsubsection{Question #1}
+\[
+\text{ Let }\left( a_k \right) _{ n=1 }^{ \infty } \text{ whose terms are  } \frac{1}{2}, \frac{1}{5}, \frac{1}{11}, \frac{1}{14}, \frac{1}{17}\ldots
+.\] 
+\paragraph{There is an explicit formula for $ a_k $ which works for all values of k is $ a_k = \left( b\left( k \right)  \right) ^{ -1 } $ where $ b\left( k \right)= $ }
+
+\paragraph{To start, we can notice that our denominators go up by a factor of 3, so we can write our sequence as $ y=3x+2 $, but this is in terms of $ x=0 $ where we instead want $ x=1 $. For this we plug in $ k-1 $ for our x to end with $ b\left( k \right) =3\left( k-1 \right) +2 $ and $ \left( a_k \right) _{ k=1 }^{ \infty }=\left( \left( 3\left( k-1 \right) +2 \right) ^{ -1 } \right)  $.}
+
+\subsubsection{Question #2}
+\[
+\text{ Find the }n^{ th }\text{  term of the sequence }\frac{1}{2},\frac{1}{4},\frac{1}{6}\ldots
+.\] 
+\paragraph{For even numbers we just use $ 2n $ so for this equation we would have $ a_n=\left{ \frac{1}{2n} \right} _{ n=1 } $. If instead we were looking at the odd equivelent for odd numbers we would generally use something like $ 2n+1 $. }
+
+\subsubsection*{3.2.4 Question 4}
+\[
+\text{ Find the sequence whose first few terms are }\frac{1}{2},\frac{1}{5},\frac{1}{10},\frac{1}{17}.
+.\] 
+
+\paragraph{This can be identified using $ \left{ \frac{1}{n^2+1} \right}_{ n=1 }  $ where n is going to be our term number starting at 1.}
+
+\paragraph{This shows that if we have something that is going up by odd increments it might be a square}
+
+\subsubsection*{3.2.5 Question 5 }
+
+\paragraph{This question contains something called a subsequence.}
+
+\[
+\left{ 1,5,1,5,1 \ldots \right} 
+.\] 
+
+\paragraph{Which can be defined as $ \left{ 3+2\left( -1 \right) ^{ n } \right} _{ n=1 } $. But we can also solve this as a piecewise function. This can be done by spliting the sequence into 2 such as, }
+
+\[
+a_n=\left{ 1 \right} \text{ if n odd }
+\] 
+\[
+a_n=\left{ 5 \right} \text{ if n even }
+.\] 
+
+\paragraph{With this we can also ask just the question, "What would all of the odd terms be?" which can be answered by our subsequences above}
+
+
+\section{Theorems}%
+\label{sec:Theorems}
+
+\subsection{Proving convergence as $ n\to \infty $.}
+
+\paragraph{Yesterday we had something like $ \lim_{ n \to \infty} \left\| a_n \right\|=0 $ then $ \lim_{ n \to \infty} a_n $ must also $ = $ 0. }
+
+\paragraph{Now, we can also say that $ \lim_{ n \to \infty} a_n=L $ if all subsequences also converge to L. This is useful to prove divergence by showing that one subsequence does not converge to L.}
+
+\subsubsection{Ex. Prove $ \left{ \left( -1 \right) ^{ n } \right} _{ n=1 } $ diverges.}
+
+\paragraph{We can write this as a subsection as $ \lim_{ n \to \infty} a_{ 2n }=1 $ and $ \lim_{ n \to \infty} a_{ 2n+1 }=-1 $. Because these two do NOT go to the same value of L we can conclude that these will diverge and we will not have a limit for this sequence.}
+
+\subsection{Factorials: $ n! $}%
+\label{sub:Factorials: $ n! $}
+
+\[
+	3! = 3 \cdot 2\cdot 1
+.\] 
+\paragraph{We also assume that $ 1! = 1 $ and $ 0! = 1 $. Which gives us the definition of a factorial as $ n! = n\left( n-1 \right) \left( n-2 \right)  \left( n-3 \right) \ldots$}
+\paragraph{A technique that will be useful for them is going to be }
+
+\[
+	\left( n+1 \right) n! = \left( n+1 \right) !
+.\] 
+
+\paragraph{This will be useful for something like}
+\[
+\frac{ 7! }{ 3! }
+.\] 
+
+\paragraph{Which can be rewritten as}
+\[
+\frac{ 7\cdot 6\cdot 5\cdot 4\cdot 3! }{ 3! }=7\cdot 6\cdot 5\cdot 4
+.\] 
+\paragraph{Due to the factorials cancelling each other in the end}
+
+\paragraph{If instead we had something negative like, $ \left( n-2 \right) ! $, we rewrite it as}
+
+\[
+\frac{ \left( n \right) \left( n-1 \right) \left( n-2 \right) ! }{ \left( n \right) \left( n-1 \right)  } = \frac{ n! }{ n\left( n-1 \right)  }
+.\] 
+
+\subsection{Back to sequences}%
+\label{sub:Back to sequences}
+
+\paragraph{If we have an increasing (monotonic increasing) sequence $ a_n $ then $ \frac{d}{dn}\left( a_n \right) >0 $. This is the same for decreasing sequences but with the opposite sign.}
+
+\subsubsection{Bounded Sequences}
+
+\paragraph{If we have $ M\le a_n $ for all n, we can say that the sequence is bounded below because it has a greatest lower bound. If instead we have $ a_n \le M $ for all n, we can say that the sequence is bounded above.}
+
+\paragraph{We can also have something bound above and below, such as $ \left{ \sin^{}\left( n \right) \right}  $ which is bound above and below. }
+
+\subsection{Theorem again}%
+\label{sub:Theorem again}
+
+\paragraph{Every decreasing sequence bounded below converges, and every increasing one bounded above, will also converge}
+\paragraph{While this is obvious, it's important to note and can be used for something like}
+
+\[
+\text{ Prove  }\left{ \frac{1}{ n }  \right} \text{ converges }
+.\] 
+
+\paragraph{For this we can take the derivative to find $ \frac{d}{ dn } -n^{ -2 } $ < 0 for all n which tells use that this is a decreasing sequence. We can also see that this is bounded below by 0. This tells us that this sequence will converge to 0.}
+
+\section*{01/10/25 Proving things (last for this pdf)}%
+\paragraph{Pre class notes}%
+Quiz is open and is due in a week (1/17/25).
+
+\section{Examples of sequences}%
+\label{sec:Examples of sequences}
+
+\paragraph{Ex. show that $ \frac{ n }{ n+1 }  $ is increasing using $ \frac{ d }{ dx }  $ and algebra. \\}
+
+ We start by remembering that a positive $ \frac{ d }{ dx }  $ means that a function is increasing so, we take its derivative
+
+ \[
+ \frac{ \left( n+1 \right) \left( 1 \right) -\left( n \right) \left( 1 \right)  }{ \left( n+1 \right) ^2 } = \frac{ 1 }{ \left( n+1 \right) ^2 } >0
+ .\] 
+
+If we instead wanted to do this algebraically we could show that $ a_{ n+1 }>a_n $ for all n. So we,
+\[
+\frac{ \left( n+1 \right)  }{ \left( n+1 \right) +1 }>\frac{ n }{ \left( n+1 \right)  } \implies \left( n+1 \right) ^2 > n\left[ \left( n+2 \right)  \right] \to n^2+2n+1> n^2+2n \text{ or } 1>0
+.\] 
+Both of these methods get to the same place and neither is prefered over the other, but one might be easier to do than the other in certain situations.
+
+\paragraph{Again using $ \left\{ \frac{ n }{ n+1 }  \right\}  $, show that this sequence is bounded above. \\}
+
+To do this we can make an assumption that we are bounded somewhere like 1 in this case. We can then write out some of the terms of the sequence to see if we are proven correct, like in this case,
+\[
+\frac{ 1 }{ 2 } <1, \frac{ 2 }{ 3 } <1, \frac{ 3 }{ 4 } <1 \ldots
+.\] 
+
+This can also be proven using algebra by stating that $ n<n+1 $ which will always be valid for each term in the sequence proving that we are bounded at 1. 
+
+Going back to one of our theories from a few days ago, we know that a sequence converges if it's bounded above and increasing so we can say that this is convergent, but we still need to find the limit.
+
+First lets do the hard way of finding it by using algebra. 
+\[
+\lim_{ n \to \infty} \frac{ n }{ n+1 } \cdot \frac{ \frac{ 1 }{ n }  }{ \frac{ 1 }{ n }  }= \lim_{ n \to \infty} \frac{ 1 }{ 1+\frac{ 1 }{ n }  }= \frac{ 1 }{ 1+0 } =1
+.\] 
+
+The easy way can be done just by using Dominance Theory. This states that whenever we are dealing with a variable to the power of some constant ($ n^{ p } $ ) we can just ignore the constant and take the limit of the variable. So in this case we can just ignore the 1 and take the limit of $ \frac{ n }{ n } =1$.
+\newpage
+\paragraph{Question 24 worksheet}
+\[
+\lim_{ n \to \infty} \frac{ 2n }{ \sqrt[ 4 ]{ 256n^{ 4 }+81n^2+49 }  }
+.\] 
+With this we can just use dominance to rewrite our whole expression to be a lot simpler. 
+\[
+\lim_{ n \to \infty} a_n \approx \lim_{ n \to \infty} \frac{ 2n }{ \sqrt[ 4 ]{ 256n^{ 4 } }  } =\lim_{ n \to \infty} \frac{ 2n }{ 4n } =\frac{ 1 }{ 2 } 
+.\] 
+
+We take only the term with the highest power p when using dominance so we just worry about the $ n^{ 4 } $ for this case.
+
+\paragraph{Question 25 worksheet}
+\[
+\lim_{ n \to \infty} \int_{ \frac{ 2 }{ n }  }^{ \frac{ 1 }{ n }  } \frac{ x+1 }{ x^2+1 }dx
+.\] 
+
+Lets break the integral first using u sub where $ u=x^2+1 \text{ and }du=xdx $ 
+\[
+ \frac{ du }{ 2u } +\tan^{-1}\left( x \right) \Big|_{ \frac{ 2 }{ n }  }^{ \frac{ 1 }{ n }  } =\frac{ 1 }{ 2 } \ln\left( \left\| u \right\| \right) +\tan^{-1}\left( x \right) \Big|_{ \frac{ 2 }{ n }  }^{ \frac{ 1 }{ n }  }=
+.\] 
+Which simplifies to,
+\[
+\frac{ 1 }{ 2 } \ln^{  } \left( \left\| \left( \frac{ 1 }{ n }  \right) ^2 +1\right\| \right) + tan^{ -1 }\left( \frac{ 1 }{ n }  \right) -\frac{ 1 }{ 2 } \ln^{  } \left( \left\| \left( \frac{ 2 }{ n }  \right) ^2 +1\right\| \right) - tan^{ -1 }\left( \frac{ 2 }{ n }  \right) =0
+.\] 
+Looking at this we can see that each term just goes to 0 so we know that our whole thing would go to 0. 
+
+\paragraph{Next week will be geometric sequences}
+

@@ -1,0 +1,249 @@
+\section{11.9 Last examples}%
+\label{sec:11.9 Last example}
+\begin{exampleblock}{Estimating a non-elementary integral}
+\[
+\int_{ 0 }^{ 0.3 } \frac{ x^2 }{ 1+x^{ 4 } }
+.\] 
+First make a power series for our function,
+\[
+x^2\left( \frac{ 1 }{ 1-\left( -x^{ 4 } \right)  }  \right) 
+.\] 
+\[
+=\sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }x^{ 4n+2 }
+.\] 
+Now verify that $ \left[ 0,0.3 \right]  $ is in the IOC. So,
+\[
+\int_{ 0 }^{ 0.3 } \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }x^{ 4n+2 }dx \to \lim_{ n \to \infty} \left| \frac{ x^{ 4n+6 } }{ x^{ 4n+2 } } \right|= \left| x^{ 4 } \right| < 1 \implies \left( -1,1 \right) 
+.\] 
+Evaluating our integral,
+\[
+\sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\int_{ 0 }^{ 0.3 } x^{ 4n+2 }dx = \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n } \frac{ x^{ 4n+3 } }{ 4n + 3 } \bigg| _{ 0 }^{ 0.3 }
+.\] 
+\[
+	=\sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n } \left( 0.3 \right) ^{ 4n+3 } }{ 4n+3 } - \cancel{\sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n }\left( 0 \right) ^{ 4n+3 } }{ 4n+3 }}
+.\] 
+Now we have an alternating series so we can easily estimate it with ASET to 6 decimal places. Knowing that our error will be $ \left| R_n \right|= \left| S-S_n \right| \le b_{ n+1 } $. So,
+\[
+\text{Error }\le b_{ n+1 } = \frac{ \left( 0.3 \right) ^{ 4\left( n+1 \right) +3 } }{ 4\left( n+1 \right) +3 } \le 5\cdot 10^{ -7 }
+.\] 
+There isn't a nice way of doing this so we can just manually compute it for this. Using a calculator we find that our error is $ 1.6\cdot 10^{ -7 } $ at $ n=2 $ but because of ASET having the $ b_{ n+1 } $ we want to add one to the final result of n. So our final value is going to be $ n=3 $. Without a calc this would look like,
+\[
+\sum_{ n=0 } ^{ 2 } \frac{ \left( -1 \right) ^{ n }\left( 0.3 \right) ^{ 4n+3 } }{ 4n+3 } = \frac{ \left( 0.3 \right) ^{ 3 } }{ 3 } - \frac{ \left( 0.3 \right) ^{ 7 } }{ 7 } + \frac{ \left( 0.3 \right) ^{ 11 } }{ 11 } \approx 0.0089689182
+.\] 
+\newpage
+Now finding the actually value of our integral we find it to be $ \int_{ - }^{ 0.3 } \frac{ x^2 }{ 1+x^{ 4 } } = 0.00896892$. Which gives us an accuracy of $ 1.6\cdot 10^{ -7 } $. Side note, we chose $ 5\cdot 10^{ -7 } $ because of rounding reasons that gives us a middle ground for our accuracy. \\
+We can also do it with a calculator and without brute force,
+\[
+y_1 = \frac{ \left( 0.3 \right) ^{ 4\left( n+1 \right) +3 } }{ 4\left( n+1 \right) +3 }< y_2 = 5\cdot 10^{ -7 }
+.\] 
+After this you can build your graph to have a $ y_{ \text{ max } }= 5\cdot 10^{ -6 } $ and a $ y_{ \text{ min } }= 5\cdot 10^{ -8 } $. Now looking at the picture. After being in intersect mode we find our $ n\approx 0.8 $ and we can test this,
+\[
+\sum_{ n=0 } ^{ 1 } \left( -1 \right) ^{ n } \frac{ \left( 0.3 \right) ^{ 4n+3 } }{ 4n+3 } = \frac{ 0.3^{ 3 } }{ 3 }- \frac{ 0.3^{ 7 } }{ 7 } \approx 0.0089687571
+.\] 
+Which gives us our desired accuracy of $ 5\cdot 10^{ -7 } $. This shows us that ASET is generally more generous and will overestimate unlike solving algebraically which will give us a more accurate result.
+\end{exampleblock}
+\section{11.10 Taylor \& Maclaurin Series}%
+Let $ f\left( x \right)  $ be a function with power series $ \sum_{ k=0 } ^{ \infty } a_k\left( x-c \right) ^{ k } $ for $ \left| x-c \right|<R $. This is called a general power series. Our goal is to find what $ a_k $ would be. Just naming terms, $ \left| x-c \right| $ will be the center of our IOC, and $ R $ will be the radius of convergence. \\ \\
+
+Looking at few terms of $ f\left( x \right)  $,
+\[
+f\left( x \right) =a_0 + a_1\left( x-c \right) + a_2\left( x-c \right) ^{ 2 } + a_3\left( x-c \right) ^{ 3 } + \ldots
+.\] 
+Taking a derivative,
+\[
+f'\left( x \right) = f^{ \left( 1 \right)  }\left( x \right) = a_1 + 2a_2\left( x-c \right) + 3a_3\left( x-c \right) ^{ 2 } + \ldots
+.\] 
+And another,
+\[
+f^{ \left( 2 \right)  }\left( x \right) = 2a_2 + 3\cdot 2a_3\left( x-c \right) + 4\cdot 3a_4\left( x-c \right) ^{ 2 } + \ldots
+.\] 
+With these, we want to find a pattern that would give us the $ f^{ \left( k \right) \left( x \right)  } $ derivative. Which we find to be,
+\[
+f^{ \left( k \right)  }\left( x \right) = k!a_k + \left( k+1 \right)! a_{ k+1 }\left( x-c \right) + \left( k+2 \right) ! a_{ k+2 }\left( x-c \right) ^2 + \ldots
+.\] 
+Now we can evaluate this at $ x=c $,
+\begin{gather*}
+f\left( c \right) =a_0 + 0 + 0 + 0\ldots \\
+f'\left( c \right) = a_1 + 0 + 0 + 0 \ldots \\
+f^{ 2 }\left( x \right) = 2a_2 \\
+f^{ 3 }\left( x \right) = 6a_3 \\
+\end{gather*}
+So when going to the $ \frac{ d }{ dx } k^{ \text{th } } $ we can generalize it as $ f^{ k }\left( c \right) = k!a_k $. Now solving for $ a_k $, we find that $ a_k=\frac{ f^{ k }\left( c \right)  }{ k! } $. This is where the Taylor series comes from and we can now write our series as.
+\[
+\sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( c \right)  }{ k! }\left( x-c \right) ^{ k }
+.\] 
+\subsection*{Taylor's theorem}%
+\label{sub:Taylor's theorem}
+\paragraph{If} $ f\left( x \right)  $ has a power series, then 
+\[
+f\left( x \right)=\sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( c \right)  }{ k! }\left( x-c \right) ^{ k } \text{ for } \left| x-c \right|<R
+.\] 
+The maclaurin series is just a Taylor series with $ c=0 $. \\ \\
+
+\subsection*{Usage}%
+\label{sub:Usage}
+Recall how we would make power series,
+\[
+\frac{ 1 }{ 1-x^2 } \to \sum_{ n=0 } ^{ \infty } \left( x^2 \right) ^{ n }
+.\] 
+This works for normal functions, but we can do this for functions like $ \sin^{  } \left( x \right)  $. So let's instead use a taylor series.\\ \\
+\begin{exampleblock}{Ex.}
+	First let's choose a center and make a maclaurin series. So let's put the 0 in the center and make a series for $ \sin\left( x \right)  $.
+	\[
+	\sin^{  } \left( x \right) = \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( 0 \right)  }{ k! }\left( x-c \right) ^{ k }
+	.\] 
+	So let's start by writing some terms as we go through values of k. 
+	\begin{gather*}
+	f^{ 0 }\left( 0 \right) =\sin^{  } \left( 0 \right) =0 \\
+	f^{ 1 }\left( 0 \right) =\cos^{  } \left( 0 \right) =1 \\
+	f^{ 2 }\left( 0 \right) =-\sin^{  } \left( 0 \right) =0 \\
+	f^{ 3 }\left( 0 \right) =-\cos^{  } \left( 0 \right) =-1 \\
+	f^{ 4 }\left( 0 \right) =\sin^{  } \left( 0 \right) =0 \\
+	\end{gather*}
+	Now what happens if we throw in our factorial?
+	\[
+	=\frac{ 0 }{ 0 } , \frac{ 1 }{ 1! }, \frac{ 0 }{ 2! }, \frac{ -1 }{ 3! }, \frac{ 0 }{ 4! }
+	.\] 
+	Ignoring the zeroes we can start to make an explicit formula for our series as,
+	\[
+	\frac{ \left( -1 \right) ^{ k } }{ \left( 2k+1 \right) ! }
+	.\] 
+	Now with our function we can put it back into our power series as
+	\[
+	\sin^{  } \left( x \right) =\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ \left( 2k+1 \right) ! }x^{ k }
+	.\] 
+	Now we want to find our IOC, so let's use ratio test and take the $ \lim_{ n \to \infty} \left| \frac{ a_{ k+1 } }{ a_k } \right| $ or,
+	\[
+	=\lim_{ n \to \infty} \left| \frac{ x^{ k+1 } }{ \left( 2\left( k+1 \right) +1 \right) ! }\cdot \frac{ \left( 2k+1 \right) ! }{ x^{ k } } \right| = \lim_{ k \to \infty} \frac{ 1 }{ \left( 2k+3 \right) \left( 2k+2 \right)  } \left| x \right|<1
+	.\] 
+	Now because $ \lim_{ k \to \infty} \frac{ 1 }{ \left( 2k+3 \right) \left( 2k+2 \right)  }  $ goes to 0 we know our interval of convergence will be $ \left( -\infty,\infty \right)  $.  \\ \\ 
+	Just doing some proof work we estimate sin to be $ 1-\frac{ x }{ 3! } +\frac{ x^2 }{ 5! }  $ but this doesnt look right. Looking back at our series we only took our odd powers, but never accounted for it in our power series. So instead our series will be,
+	\[
+	\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ \left( 2k+1 \right) ! }x^{ 2k+1 }
+	.\] 
+
+\end{exampleblock}
+\subsection*{Maclaurin series of $ \cos^{  } \left( x \right)  $}%
+\begin{exampleblock}{}
+	 $ f\left( x \right) =\cos^{  } \left( x \right)  $ and our sum $ \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( 0 \right)  }{ k! }\left( x-c \right) ^{ k } $ need to be solved. So writing out terms,
+	 \begin{align*}
+			f^{ 0 }\left( 0 \right) &= \cos^{  } \left( 0 \right) =1 \\
+			f^{ 1 }\left( 1 \right) &= -\sin^{  } \left( 0 \right) =0 \\
+			f^{ 2 }\left( 2 \right) &= -\cos^{  } \left( 0 \right) =-1 \\
+			f^{ 3 }\left( 3 \right) &= \sin^{  } \left( 0 \right) =0 \\
+			f^{ 4 }\left( 4 \right) &= \cos^{  } \left( 0 \right) =1 \\
+	 .\end{align*}
+	 Writing our sequence,
+	 \[
+		a_k=\frac{ 1 }{ 0! } ,\frac{ 0 }{ 1! } ,\frac{ -1 }{ 2! } ,\frac{ 0 }{ 3! } ,\frac{ 1 }{ 4! }\ldots
+	 .\] 
+	 We can find our sequence to be 
+	 \[
+	 a_k=\frac{ \left( -1 \right) ^{ k } }{ \left( 2k \right) ! }
+	 .\] 
+	 and our series to be 
+	 \[
+	 \sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ \left( 2k \right) ! }\left( x \right) ^{ 2k }
+	 .\] 
+		Note that we use $ 2k $ because we only want the evens in this series. If we instead kept it as just $ k $, we would have the odd powers and those would just zero. Now let's write a partial sum to test it,
+		\[
+		=\frac{ 1 }{ 0! } x^{ 0 }-\frac{ x^2 }{ 2! } + \frac{ x^{ 4 } }{ 4! }-\frac{ x^{ 6 } }{ 6! } + \frac{ x^{ 8 } }{ 8! } - \ldots
+		.\] 
+
+\end{exampleblock}
+\section*{02/12/25}%
+\label{sec:02/12/25}
+\paragraph{Practice review is out and the review has an extra point problem about fractals worth 4 points. }
+
+\begin{exampleblock}{}
+	\paragraph{Ex.}
+	Find the maclaurin series for $ f\left( x \right) = \tan^{ -1 } \left( x \right)  $. Start by getting our derivatives,
+	\begin{align*}
+		f\left( x \right) &= \tan^{ -1 } \left( x \right) \\
+		f^{ 1 }\left( x \right) &= \frac{ 1 }{ 1+x^2 } \\
+		f^{ 2 }\left( x \right) &= \frac{ -1\left( 1+x^2 \right) ^{ -2 }\cdot 2x }{ \left( 1+x^2 \right) ^2 } \\
+		f^{ 3 }\left( x \right) &= \frac{ -2\left( 1+x^2 \right)^{ -3 } -2x\left( 1+x^2 \right)^{ -2 }  }{ \left( 1+x^2 \right) ^2 } = 2\left( 1+x^2 \right) ^{ -3 }\left( 2x-\left( 1+x^2 \right) \right) \\
+		f^{ 4 }\left( x \right) &=  \frac{ 24x\left( 1+x^2 \right)  }{ \left( 1+x^2 \right) ^{ 4 } }  \\
+		f^{ 5 }\left( x \right) &= \frac{ 24\left( 1-10x^2+5x^{ 4 } \right)  }{ \left( 1+x^2 \right) ^{ 5 } } \\
+	\end{align*}
+	Because we want a mclaurin, we want to evaluate each function at 0,
+	\begin{align*}
+		f\left( 0 \right) &= \tan^{ -1 } \left( 0 \right) = 0 \\
+		f^{ 1 }\left( 0 \right) &= \frac{ 1 }{ 1+0 } = 1 \\
+		f^{ 2 }\left( 0 \right) &= \frac{ 0 }{ 1 } = 0 \\
+		f^{ 3 }\left( 0 \right) &= = -2 \\
+		f^{ 4 }\left( 0 \right) &= 0 \\
+		f^{ 5 }\left( 0 \right) &= 24 \\
+	\end{align*}
+	We see that this gives us the pattern $ \underbrace{ 0 }_{ k=0 } ,1,0,-2,0,24,0,-720 $. Looking at these we see that we have a sequence of even factorials. This can now be built into a sum,
+	\[
+	\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k }\left( 2k \right) ! }{ k! }
+	.\] 
+	Now because we only want the odds we can instead write it as,
+	\[
+	\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k }\left( 2k \right) ! }{ \left(2k+1\right)! }x^{ 2k+1 }
+	.\] 
+	Now cancelling,
+	\[
+	\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ 2k+1 }x^{ 2k+1 }
+	.\] 
+	\paragraph{The easier way with integration}
+	Start by taking the $ \frac{ d }{ dx }  $,
+	\[
+	\frac{ d }{ dx } \tan^{ -1 } \left( x \right) = \frac{ 1 }{ 1+x^2 } \to \frac{ 1 }{ 1-\left( x^2 \right)  } = \sum_{ k=0 } ^{ \infty } \left( -x^2 \right) ^{ n }
+	.\] 
+	But this is just the sum of the derivative, so we can integrate both sides to find
+	\[
+	\int_{  }^{  } \frac{ d }{ dx } \tan^{ -1 } \left( x \right) =\int_{  }^{  } \sum_{ k=0 } ^{ \infty } \left( -1 \right) ^{ n }x^{ 2n } \to \sum_{ k=0 } ^{ \infty } \left( -1 \right) ^{ n }\frac{ x^{ 2n+1 } }{ 2n+1 }+C
+	.\] 
+	Now to find C we just plug in 0 for x,
+	\[
+	\underbrace{ \sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n }0^{ 2n+1 } }{ 2n+1 } }_{ 0 } \implies C = 0
+	.\] 
+	This again goes back to the same series we found earlier and shows that power series are unique up to their IOC, or there is only ONE power series for each IOC. 
+	\paragraph{Ex.Making a new series from old series.}
+	Knowing that \[
+	e^{ x }=\sum_{ n=0 } ^{ \infty } \frac{ x^{ n } }{ n! }
+	.\] 
+	How can we make a power series for $ e^{ 5x+1 } $?
+	We can just do this with subsitution where our new power series will look like 
+	\[
+=	\sum_{ n=0 } ^{ \infty } \frac{ \left( 5x+1 \right) ^{ n } }{ n! }
+	.\] 
+	Same thing for $ e^{ x^{ 3 } } $,
+	\[
+	=\sum_{ n=0 } ^{ \infty } \frac{ \left( x^3 \right) ^{ n } }{ n! }
+	.\] 
+	For something like $ \ln^{  } \left( x^2 \right)  $, we would have to set the inside of our known  maclaurin, $ \ln^{  } \left( 1+x \right) =\sum_{ k=1 } ^{ \infty } \left( -1 \right) ^{ k-1 }\frac{ x^{ k } }{ k } $ to $ x^2 $ so,
+	\[
+	\ln^{  } \left( x^2 \right) = \ln^{  } \left( 1+\left( x^2-1 \right)  \right) = \sum_{ k=1 } ^{ \infty } \left( -1 \right) ^{ k-1 }\frac{ \left( x^2-1 \right) ^{ k } }{ k }
+	.\] 
+	Also works for $ \frac{ 1 }{ x }  $ like
+	\[
+	\frac{ 1 }{ 1-\left( 1-x \right)  } = \sum_{ k=0 } ^{ \infty } \left( 1-x \right) ^{ n }
+	.\] 
+\paragraph{Find the taylor series for $ f\left( x \right) =x^{ -3 } $ centered at $ c=1 $}
+Taking $ \frac{ d }{ dx }  $ 's we get,
+\begin{align*}
+	f\left( x \right) &= x^{ -3 } \to 1\\
+	f^{ 1 }\left( x \right) &= -3x^{ -4 } \to -3 \\
+	f^{ 2 }\left( x \right) &= 3\cdot 4 x^{ -5 } \to 3\cdot 4\\
+	f^{ 3 }\left( x \right) &= -3\cdot 4\cdot 5 x^{ -6 } \to -3\cdot 4\cdot 5\\
+	\ldots \\
+\end{align*}
+Giving us the sequence,
+\[
+f^{ n }\left( 1 \right) =\left( -1 \right) ^{ n }\frac{ \left( n+2 \right) ! }{ 2 }
+.\] 
+Taylor's theorem tells us that this will be
+\[
+x^{ -3 }= \sum_{k=0}^{\infty} \frac{ \left( -1 \right) ^{ k }\left( k+2 \right) ! }{ 2\cdot k! }\left( x-1 \right) ^{ k } = \sum_{ k=0 } ^{ \infty } \left( -1 \right) ^{ k } \frac{ \left( k+2 \right) \left( k+1 \right) \left( x-1 \right) ^{ k } }{ 2 }
+.\] 
+With this IOC can be done using ratio test, and should become $ \left| x -1 \right| < 1 $ or $ R=1 $. 
+\end{exampleblock}
+Friday's class will probably be the last lecture before the test and will be on sec11.11 or the $ T_n\left( x \right) : $ n-th degree Taylor polynomial. 
+\paragraph{Quick Ex.}
+\[
+e^{ x }=\sum_{ k=0 } ^{ \infty } \frac{ x^{ k } }{ k! }= 1 + \frac{ x }{ 1 } +\frac{ x^2 }{ 2 } + \frac{ x^3 }{ 3! }+ \frac{ x^{ 4 } }{ 4! }\ldots
+.\] 
+If we take a partial sum $ S_0 $ then this would be called the $ T_0\left( x \right) 1 $ or the $ 0^{ \text{ th } } $-deg Taylor Polynomial. Basically just the estimation of the radical function in terms of a taylor polynomial. 

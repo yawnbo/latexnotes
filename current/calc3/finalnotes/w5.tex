@@ -1,28 +1,11 @@
-\documentclass[a4paper]{article}
-
-\usepackage{cancel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage[english]{babel}
-\usepackage{amsmath, amssymb}
-
-\title{Short week 5}
-\author{yawnbo}
-\date{\today}
-
-\pdfsuppresswarningpagegroup=1
-
-\begin{document}
-\maketitle
-\section*{Thursday}%
+\section{Thursday}%
 \label{sec:Thursday}
 This started with quiz questions that I came late to, so starting with 7, 
-\subsection*{Question 7}%
+\subsection{Question 7}%
 \label{sub:Question 7}
 Instead of using ast on the absolute we can take subsequences to prove the the whole $ a_n $ diverges. 
 
-\subsection*{Question 3}%
+\subsection{Question 3}%
 \label{sub:Question 3}
 Use ASET with integrals and remember to use the p-test to solve the integral,
 \[
@@ -105,4 +88,3 @@ As an extra, we can find our IOC using ratio test.
 \lim_{ n \to \infty} \left| \frac{ a_{ n+1 } }{ a_n } \right| = \lim_{ n \to \infty} \frac{ 4 \left|  x^{ 4\left( n+1 \right) +4 } \right|}{ 4\left( n+1 \right) +4 }\cdot \frac{ 4n+4 }{ 4 \left| x^{ 4n+4 } \right| } = \lim_{ n \to \infty} \frac{ n+1 }{ n+2 }\cdot \left| x^{ 4 } \right|<1
 .\] 
 So our ratio is $ -1<x<1 $ and we now test -1 and 1. When we test -1, we find that our numerator is always positive 1 so our sum is basically $ \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\frac{ 1 }{ n+1 }  $ and by AST we are convergent because $ \frac{ 1 }{ n+1 }  $ goes to 0 and we have a decreasing function. The same thing happpens for $ x=1 $ so we know our IOC is $ \left[ -1,1 \right]  $. 
-\end{document}
