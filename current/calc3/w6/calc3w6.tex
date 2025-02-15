@@ -1,5 +1,6 @@
-\documentclass[a4paper]{article}
+\documentclass{report}
 
+\input{../finalnotes/preamble}
 \usepackage{cancel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -17,7 +18,7 @@
 \maketitle
 \section{11.9 Last examples}%
 \label{sec:11.9 Last example}
-\begin{exampleblock}{Estimating a non-elementary integral}
+\section*{Estimating a non-elementary integral}
 \[
 \int_{ 0 }^{ 0.3 } \frac{ x^2 }{ 1+x^{ 4 } }
 .\] 
@@ -58,7 +59,6 @@ After this you can build your graph to have a $ y_{ \text{ max } }= 5\cdot 10^{ 
 \sum_{ n=0 } ^{ 1 } \left( -1 \right) ^{ n } \frac{ \left( 0.3 \right) ^{ 4n+3 } }{ 4n+3 } = \frac{ 0.3^{ 3 } }{ 3 }- \frac{ 0.3^{ 7 } }{ 7 } \approx 0.0089687571
 .\] 
 Which gives us our desired accuracy of $ 5\cdot 10^{ -7 } $. This shows us that ASET is generally more generous and will overestimate unlike solving algebraically which will give us a more accurate result.
-\end{exampleblock}
 \section{11.10 Taylor \& Maclaurin Series}%
 Let $ f\left( x \right)  $ be a function with power series $ \sum_{ k=0 } ^{ \infty } a_k\left( x-c \right) ^{ k } $ for $ \left| x-c \right|<R $. This is called a general power series. Our goal is to find what $ a_k $ would be. Just naming terms, $ \left| x-c \right| $ will be the center of our IOC, and $ R $ will be the radius of convergence. \\ \\
 
@@ -104,7 +104,9 @@ Recall how we would make power series,
 \frac{ 1 }{ 1-x^2 } \to \sum_{ n=0 } ^{ \infty } \left( x^2 \right) ^{ n }
 .\] 
 This works for normal functions, but we can do this for functions like $ \sin^{  } \left( x \right)  $. So let's instead use a taylor series.\\ \\
-\begin{exampleblock}{Ex.}
+\section*{Maclaurin series examples}%
+\label{sec:Maclaurin series examples}
+
 	First let's choose a center and make a maclaurin series. So let's put the 0 in the center and make a series for $ \sin\left( x \right)  $.
 	\[
 	\sin^{  } \left( x \right) = \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( 0 \right)  }{ k! }\left( x-c \right) ^{ k }
@@ -139,9 +141,8 @@ This works for normal functions, but we can do this for functions like $ \sin^{ 
 	\sum_{ k=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ k } }{ \left( 2k+1 \right) ! }x^{ 2k+1 }
 	.\] 
 
-\end{exampleblock}
 \subsection*{Maclaurin series of $ \cos^{  } \left( x \right)  $}%
-\begin{exampleblock}{}
+\section{Forgot what this was}
 	 $ f\left( x \right) =\cos^{  } \left( x \right)  $ and our sum $ \sum_{ k=0 } ^{ \infty } \frac{ f^{ k }\left( 0 \right)  }{ k! }\left( x-c \right) ^{ k } $ need to be solved. So writing out terms,
 	 \begin{align*}
 			f^{ 0 }\left( 0 \right) &= \cos^{  } \left( 0 \right) =1 \\
@@ -167,7 +168,7 @@ This works for normal functions, but we can do this for functions like $ \sin^{ 
 		=\frac{ 1 }{ 0! } x^{ 0 }-\frac{ x^2 }{ 2! } + \frac{ x^{ 4 } }{ 4! }-\frac{ x^{ 6 } }{ 6! } + \frac{ x^{ 8 } }{ 8! } - \ldots
 		.\] 
 
-\end{exampleblock}
 
 \include{calc3w6p2}
+\input{calc3w6p3}
 \end{document}

@@ -1,0 +1,75 @@
+\section*{02/14/25}%
+\label{sec:02/14/25}
+
+\subsection*{Last lecture for chapter 11: Polynomials}%
+\label{sub:Last lecture for chapter 11}
+\subsection*{11.11 Taylor Polynomials}%
+\label{sub:11.11 Taylor Polynomials}
+
+\[
+\sum_{k=0}^{\infty} \frac{ f^{ k }\left( c \right)  }{ k! }(x-c)^k , \left| x-c \right| < R
+.\] 
+Getting some terms would look like,
+\[
+= f\left( c \right) + f'\left( c \right) (x-c) + \frac{ f^{ 2 }\left( c \right)  }{ 2! }(x-c)^2 + \ldots
+.\] 
+Where taking each leading term and the sum of it's previous as a subsequence we can write it as $ T_n\left( x \right)  $. These can be called partial sums, but are more accurately defined as Taylor polynomials.
+
+\paragraph{Maclaurin series example}
+\[
+\sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n } x^{ 2n+1 }}{ \left( 2n+1 \right) ! }= x - \frac{ x^3 }{ 3! } + \frac{ x^5 }{ 5! } - \ldots
+.\] 
+For this we DON'T have a 0th Taylor polynomial as it's centered at 0 and would just be 0. This means that our first significant one would be at $ T_1\left( x \right)  $. For things like this we cannot write $ T_2\left( x \right)  $ because our leading term would be non-existent. This would be the same as calling a quadratic cubic even though there is no leading term that contains a cube. 
+
+\paragraph{Ex.}
+\paragraph{Find the Taylor polynomial $ T_3\left( x \right)  $ for the function f centered at the number a. }
+\[
+f\left( x \right) =\cos^{  } \left( x \right) , a=\frac{ \pi }{ 2 } 
+.\] 
+With this we know our c value can be $ \frac{ \pi }{ 2 }  $ and we can write out some terms of the derivative to find our taylor,
+\begin{align*}
+	f^{ 0 }\left( x \right) &=\cos^{  } \left( x \right) = 0\\
+	f^{ 1 }\left( x \right) &= -\sin^{  } \left( x \right) =-1 \\
+	f^{ 2 }\left( x \right) &= -\cos^{  } \left( x \right) =0 \\
+	f^{ 3 }\left( x \right) &= \sin^{  } \left( x \right) =1 
+.\end{align*}
+Where we now write it as a polynomial,
+\[
+T_3\left( x \right) = \frac{ -1 }{ 1! }\left( x-\frac{ \pi }{ 2 }  \right) ^{ 1 }+ \frac{ 1 }{ 3! } \left( x-\frac{ \pi }{ 2 }  \right) ^3
+.\] 
+\section*{Taylor's Inequality}%
+\label{sec:Taylor's Inequality}
+\paragraph{If $ \left| f^{ n+1 }\left( x \right)  \right|\le M $ for $ \left| x-c \right|\le d $ then $ R_n $ satisfies }
+\[
+\left| \text{ Error } \right|= \left| R_n\left( n \right)  \right|\le \frac{ M }{ \left( n+1 \right) ! } \left| x-c \right|^{ n+1 }\text{ for } \left| x-c \right|\le d
+.\] 
+\paragraph{Ex.}
+Suppose $ x\epsilon\left( \frac{ \pi }{ 3 } ,\frac{ 2pi }{ 3 }  \right)  $ for our previous example taylor polynomial. \\
+To estimate this we need to take the $ f^{ n+1 }\left( x \right)  $ which is the same as $ f^{ n }\left( x \right)  $ for cos and sin so we can say that $ f^{ 3+1 }\left( x \right) \approx \cos^{  } \left( x \right)  $. Now with the Taylor inequality we need to find the largest value of $ f^{ n+1 }\left( x \right)  $ over $ \left[ a,b \right]  $. So our max will be $ f^{ 4 }\left( x \right) =\frac{ 1 }{ 2 } =M $ and we can write our error to be 
+\[
+\left| \text{ Error } \right|\le \frac{ \frac{ 1 }{ 2 }  }{ \left( 3+1 \right) ! }
+.\] 
+We also need the last part of our inequality so we want to have 
+\[
+\frac{ \pi }{ 3 } <x<\frac{ 2pi }{ 3 } \to \left| x-c \right|\le R
+.\] 
+For this we already know we have a center at $ \frac{ \pi }{ 2 }  $ but if we didnt know it we would take the average,
+\[
+\frac{ \frac{ \pi }{ 3 } +\frac{ 2pi }{ 3 }  }{ 2 }= \frac{ \frac{ 3pi }{ 3 }  }{ 2 }=\frac{ \pi }{ 2 } =c
+.\] 
+Which also gives us what we want. Now that we would know the center we can find the $ R $ (radius) to be $ \frac{ \pi }{ 6 }  $. Where we can now write the second part as $ \left| x-\frac{ \pi }{ 2 }  \right|<\frac{ \pi }{ 6 }  $ and the whole thing as
+\[
+\left| \text{ Error } \right|\le \frac{ \frac{ 1 }{ 2 }  }{ \left( 3+1 \right) ! } \left|  x-\frac{ \pi }{ 2 } \right|^{ 3+1 }\le \frac{ 1 }{ 2\left( 4 \right) ! } \left( \frac{ \pi }{ 6 }  \right) ^{ 4 }
+.\] 
+This can be put into a calculator and we can find our error to be $ \approx 0.0015658612 $ which would give us an accuracy of around $ 10^{ -3 } $. 
+\paragraph{What if  we instead wannted to find what values will $ T_3\left( x \right)  $ approx cosx with $ \left| \text{ Error } \right|\le 10^{ -4 } $?}
+We start with the same starting inequality, $ \frac{ \frac{ 1 }{ 2 }  }{ 4! } \left| x-\frac{ \pi }{ 2 }  \right|^{ 4 }\le 10^{ -4 } $ but switching variables so we need to solve it with algebra. Rewriting and simplifying,
+\[
+\frac{ 1 }{ 48 } \left| x-\frac{ \pi }{ 2 }  \right|^{ 4 } \le 10^{ -4 } \to \sqrt[ 4 ]{ \left| x-\frac{ \pi }{ 2 }  \right|^{ 4 } } \le \sqrt[ 4 ]{ 48\cdot 10^{ -4 } } \to \frac{ \pi }{ 2 } - \sqrt[ 4 ]{ 48 } \cdot 10^{ -1 }< x < \sqrt[ 4 ]{ 48 } \cdot 10^{ -1 }+\frac{ \pi }{ 2 } 
+.\] 
+With a calculator,
+\[
+1.3075 < x < 1.8340
+.\] 
+Where we can expect our error to be in the range of $ 10^{ -4 } $ for this interval of x. It's very important to note that these are ESTIMATES and we can even go to something like $ 1.9 $ for the upper bound and still be within our range. \\ \\
+Note the exam will be building power series, proving convergence/divergence and a few taylor series questions. Some maclaurin series will be given (common ones) and will be used a few times. 
