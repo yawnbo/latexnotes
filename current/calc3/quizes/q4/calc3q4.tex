@@ -72,4 +72,16 @@ By Taylor's theorem, if we ignore 0's our sequence will be,
 -1, \frac{ 1 }{ 3! }, -\frac{ 1 }{ 5! } , \frac{ 1 }{ 7! } \ldots
 .\] 
 Which can be written as $ \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\frac{ 1 }{ \left( 2n+1 \right) ! } \left( x-\pi \right) ^{ 2n+1 } $. The domain of this series will be all real numbers because the sine function is periodic and will repeat itself every $ 2\pi $.
+\section*{Bonus question}%
+\paragraph{a) Let $ L_n $ be the perimeter of $ I_n $. Show that $ \lim_{ n \to \infty} L_n = \infty$}
+\paragraph{b) Let $ A_n $ be the area of $ I_n $. Find $ \lim_{ n \to \infty} A_n  $; i.e., find the area of the fractal. \\ \\}
+We can start by getting some ratios of our area and only focusing on how it increases after $ I_0 $. The area of each new triangle when $ a_0 = \frac{ \sqrt{ 3 }  }{ 4 } $ should be $ a_0 \sum_{ n=1 } ^{ \infty } \frac{1}{ 9^{ n } }  $ and we should have 4 times as many triangles with each itteration after the first one (which was instead 3), so, $ 3 \cdot 4^{ n-1 } = \frac{ 3 }{ 4 } \cdot \sum_{ n=1 } ^{ \infty } 4^{ n } $ is the amount of triangles we need to calculate area for, which is given by,
+ \[
+a_0\sum_{ n=1 } ^{ \infty }\frac{ 1 }{ 9^{ n } }\cdot \frac{ 3 }{ 4 } \sum_{ n=1 } ^{ \infty } \cdot 4^{ n } \to \frac{ 3 }{ 4 } a_0 \sum_{ n=1 } ^{ \infty } \left( \frac{ 4 }{ 9 }  \right)^{ n }
+.\] 
+Because this sum is only accounting for the increase after the first triangle, our sum should be adding on $ a_0 $ to get the actual area, and we can write this as the sum,
+\[
+	a_0 + \frac{ 3 }{ 4 } a_0 \sum_{ n=1 } ^{ \infty } \left( \frac{ 4 }{ 9 }  \right)^{ n } \to a_0\left(   1+\frac{ 1 }{ 3 } \sum_{ n=0 } ^{ \infty } \left( \frac{ 4 }{ 9 }  \right) ^{ n }\right)
+.\] 
+Which can now be easily evaluated as $ a_0\left( 1+\frac{ 1 }{ 3 } \cdot \frac{ 1 }{ 1-\frac{ 4 }{ 9 } } \right) = a_0\left( 1+\frac{ 1 }{ 3 } \cdot \frac{ 9 }{ 5 } \right) = a_0\left( 1+\frac{ 3 }{ 5 } \right) = \frac{ 8 }{ 5 } \cdot \frac{ \sqrt{ 3 }  }{ 4 } = \frac{ 2\sqrt{ 3 }  }{ 3 }$. 
 \end{document}
