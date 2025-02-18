@@ -71,9 +71,79 @@ By Taylor's theorem, if we ignore 0's our sequence will be,
 \[
 -1, \frac{ 1 }{ 3! }, -\frac{ 1 }{ 5! } , \frac{ 1 }{ 7! } \ldots
 .\] 
-Which can be written as $ \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\frac{ 1 }{ \left( 2n+1 \right) ! } \left( x-\pi \right) ^{ 2n+1 } $. The domain of this series will be all real numbers because the sine function is periodic and will repeat itself every $ 2\pi $.
+Seeing the pattern of an alternation with a factorial we know our series can be written as $ \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n+1 }\frac{ 1 }{ \left( 2n+1 \right) ! } \left( x-\pi \right) ^{ 2n+1 } $. Finding the domain can be done with ratio test,
+\[
+	\lim_{ n \to \infty} \left| \frac{ a_{ n+1 } }{ a_n } \right| \to \lim_{ n \to \infty} \left| \frac{ \cancel{\left( -1 \right) ^{ n+2 }} \cancel{\left( x-\pi  \right) ^{ 2n+2 }} }{ \left( 2n+3 \right)\left( 2n+2 \right) \cancel{\left( 2n+1 \right) !}  }\cdot \frac{ \cancel{\left( 2n+1 \right) !} }{\cancel{\left( -1 \right)^{ n+1 }}\left( \frac{ 1 }{\left( x-\pi  \right) ^2} \right) \cancel{\left( x-\pi  \right) ^{ 2n+2 }} } \right|
+.\] 
+\[
+\to \underbrace{ \lim_{ n \to \infty} \frac{ 1 }{ \left( 2n+3 \right) \left( 2n+2 \right) } }_{ 0 }  \left|\left( x-\pi  \right) ^2\right| < 1 \to 0 < 1 \to \text{all } x
+.\] 
+Because our limit results in a true statement that is independent of $ x $, our series will converge for all $ x $ and our domain will be $ -\infty<x<\infty $.
+
+\section*{Question 4}%
+\label{sec:Question 4}
+\paragraph{Find the closed-form exact value of }
+\[
+\frac{ 1 }{ 1\cdot 2 } - \frac{ 1 }{ 3\cdot 2^3 } +\frac{ 1 }{ 5\cdot 2^{ 5 } } -\frac{ 1 }{ 7\cdot 2^{ 7 } } + \ldots
+.\]
+\paragraph{One can then refer to a common Maclaurin series, in this case the one for $ f\left( x \right) =e^{ x } $ and infer that the closed-form exact value of the series is $ f\left( \frac{ 3 }{ 5 }  \right) = e^{ \frac{ 3 }{ 5 }  } $.\\ \\ }
+Looking at the given sequence we can write our sum as,
+\[
+\sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n } }{ \left( 2n+1 \right) 2^{ 2n+1 } }
+.\] 
+Since we need the closed form we can find the closest general Maclaurin to be the one for tan inverse,
+\[
+\tan^{ -1 } \left( x \right)  = \sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\cdot \frac{ x^{ 2n+1 } }{ 2n+1 } 
+.\] 
+So we rewrite our sum as,
+\[
+\sum_{ n=0 } ^{ \infty } \left( -1 \right) ^{ n }\cdot \frac{ \left( \frac{ 1 }{ 2 }  \right) ^{ 2n+1 } }{ 2n+1 }
+.\] 
+Where we see our new x value to be $ \frac{ 1 }{ 2 }  $ and our closed form will be $ f\left( \frac{ 1 }{ 2 }  \right) =\tan^{ -1 } \left( \frac{ 1 }{ 2 }  \right)  $.
+\section*{Question 5}%
+\label{sec:Question 5}
+\paragraph{a) Write out the first three non-zero terms from the Maclaurin series representation of $ \cos^{  } \left( x^2 \right)  $. \\ \\}
+Starting with the Maclaurin for $ \cos^{  } \left( x \right)  $, we can substitute $ x^2 $ for $ x $ to get,
+\[
+\sum_{ n=0 } ^{ \infty } \frac{ \left( -1 \right) ^{ n } }{ \left( 2n \right) ! }x^{ 4n }
+.\] 
+and writing out 3 terms we get,
+\[
+1 - \frac{ 1 }{ 2 } x^{ 4 } + \frac{ 1 }{ 24 } x^{ 8 }
+.\] 
+\paragraph{b) What degree is the Taylor Polynomial that you constructed in part a)? \\ \\ }
+The degree of $ T_3\left( x^2 \right) = 8 $ because the highest power of x is 8. 
+\paragraph{c) Evaluate the indefinite integral using either the Maclaurin Series or the Taylor Polynomial and provide the first three non-zero terms of the antiderivative.}
+
+\[
+\int_{  }^{  } \cos^{  } \left( x^2 \right) dx
+.\] 
+Integrating the first 3 terms of our series,
+\[
+\int_{  }^{  } \left( 1- \frac{ x^{ 4 } }{ 2 } + \frac{ x^{ 8 } }{ 24 } \right) = \int_{  }^{  } 1 - \int_{  }^{  } \frac{ x^{ 4 } }{ 2 } + \int_{  }^{  } \frac{ x^{ 8 } }{ 24 } = x - \frac{ x^{ 5 } }{ 10 } + \frac{ x^{ 9 } }{ 216 } + C 
+.\] 
+\section*{Question 6}%
+\label{sec:Question 6}
+\paragraph{For $ f\left( x \right) =e^{ x } $, if we use $ T_3\left( x \right)  $ centered at $ c=0 $, what will be the upper bound on the error $ R_3 $ according to Taylor's inequality? \\ \\}
+Starting with the Taylor for $ e^{ x } $ ( $ \sum_{ n=0 } ^{ \infty } \frac{ x^{ k } }{ k! } $ ) we can write the first 3 terms as 
+\[
+1+\frac{ x }{ 1! } +\frac{ x^2 }{ 2! } 
+.\] 
+\paragraph{b) According to Taylor's inequality, what value of n should be considered so that $ T_n\left( x \right)  $ approximates $ e^{ x } $ to within 0.001 for every $ x \epsilon\left[ -3,2 \right]  $?}
+\newpage
 \section*{Bonus question}%
 \paragraph{a) Let $ L_n $ be the perimeter of $ I_n $. Show that $ \lim_{ n \to \infty} L_n = \infty$}
+Writing out some terms of the perimeter, 
+\begin{align*}
+	L_0  &= 1\cdot 3 \\
+	L_1 &= \frac{ 4 }{ 3 } \cdot 3 \\
+	L_2 &= \frac{ 1 }{ 9 } \cdot 4\cdot 4\cdot 3=\frac{ 16 }{ 9 } =\left( \frac{ 4 }{ 3 }  \right) ^2 \cdot 3 \\
+	L_3 &= \frac{ 1 }{ 27 } \cdot 4\cdot 4\cdot 4\cdot 3= \frac{ 64 }{ 27 } \cdot 3 = \left( \frac{ 4 }{ 3 }  \right) ^3\cdot 3
+.\end{align*}
+With this we can see the pattern of the geometric $ \sum_{ n=0 } ^{ \infty } 3\left( \frac{ 4 }{ 3 }  \right) ^{ n } $ which gives us the ratio $ \frac{ 4 }{ 3 } >1 $ which will diverge. Finding the limit shows us the same thing as,
+\[
+\lim_{ n \to \infty} 3 \underbrace{ \left( \frac{ 4 }{ 3 }  \right) ^{ n } }_{ \infty } = \infty
+.\] 
 \paragraph{b) Let $ A_n $ be the area of $ I_n $. Find $ \lim_{ n \to \infty} A_n  $; i.e., find the area of the fractal. \\ \\}
 We can start by getting some ratios of our area and only focusing on how it increases after $ I_0 $. The area of each new triangle when $ a_0 = \frac{ \sqrt{ 3 }  }{ 4 } $ should be $ a_0 \sum_{ n=1 } ^{ \infty } \frac{1}{ 9^{ n } }  $ and we should have 4 times as many triangles with each itteration after the first one (which was instead 3), so, $ 3 \cdot 4^{ n-1 } = \frac{ 3 }{ 4 } \cdot \sum_{ n=1 } ^{ \infty } 4^{ n } $ is the amount of triangles we need to calculate area for, which is given by,
  \[
@@ -83,5 +153,5 @@ Because this sum is only accounting for the increase after the first triangle, o
 \[
 	a_0 + \frac{ 3 }{ 4 } a_0 \sum_{ n=1 } ^{ \infty } \left( \frac{ 4 }{ 9 }  \right)^{ n } \to a_0\left(   1+\frac{ 1 }{ 3 } \sum_{ n=0 } ^{ \infty } \left( \frac{ 4 }{ 9 }  \right) ^{ n }\right)
 .\] 
-Which can now be easily evaluated as $ a_0\left( 1+\frac{ 1 }{ 3 } \cdot \frac{ 1 }{ 1-\frac{ 4 }{ 9 } } \right) = a_0\left( 1+\frac{ 1 }{ 3 } \cdot \frac{ 9 }{ 5 } \right) = a_0\left( 1+\frac{ 3 }{ 5 } \right) = \frac{ 8 }{ 5 } \cdot \frac{ \sqrt{ 3 }  }{ 4 } = \frac{ 2\sqrt{ 3 }  }{ 3 }$. 
+Which can now be easily evaluated as $ a_0\left( 1+\frac{ 1 }{ 3 } \cdot \frac{ 1 }{ 1-\frac{ 4 }{ 9 } } \right) = a_0\left( 1+\frac{ 1 }{ 3 } \cdot \frac{ 9 }{ 5 } \right) = a_0\left( 1+\frac{ 3 }{ 5 } \right) = \frac{ 8 }{ 5 } \cdot \frac{ \sqrt{ 3 }  }{ 4 } = \frac{ 2\sqrt{ 3 }  }{ 5 }$. 
 \end{document}
