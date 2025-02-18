@@ -125,11 +125,29 @@ Integrating the first 3 terms of our series,
 \section*{Question 6}%
 \label{sec:Question 6}
 \paragraph{For $ f\left( x \right) =e^{ x } $, if we use $ T_3\left( x \right)  $ centered at $ c=0 $, what will be the upper bound on the error $ R_3 $ according to Taylor's inequality? \\ \\}
-Starting with the Taylor for $ e^{ x } $ ( $ \sum_{ n=0 } ^{ \infty } \frac{ x^{ k } }{ k! } $ ) we can write the first 3 terms as 
+Assuming the domain is still $ \left[ -3,2 \right]  $, we start with the Taylor for $ e^{ x } $ ( $ \sum_{ n=0 } ^{ \infty } \frac{ x^{ k } }{ k! } $ ) and figure out our values. We find the largest value of $ f^{ n+1 }\left( x \right)  $ over $ \left[ -3,2 \right]  $ to be $ f^{ 4 }\left( x \right) = e^2 = M $ and our n to be $ 3 $, and the center as $ \frac{ -3+2 }{ 2 }= -0.5?$ (I assume we use -0.5 based on what the typo says? If not I'll fix it on the next attempt). We can now find our upper bound by plugging it into Taylor's inequality,
 \[
-1+\frac{ x }{ 1! } +\frac{ x^2 }{ 2! } 
+R_3\left( x \right) \le \frac{ e^2 }{ 4! } \left| x-0.5 \right|^{ 4 }
 .\] 
+Finding the maximum value of $ \left| x-0.5 \right|^{ 4 } $ over $ \left[ -3,2 \right]  $ we get $ 2.5^{ 4 } $ and plugging it into our inequality we get,
+\[
+R_3\left( x \right) \le \frac{ \left( \frac{ 5 }{ 2 }  \right) ^{ 4 }e^2 }{ 4 }
+.\]
 \paragraph{b) According to Taylor's inequality, what value of n should be considered so that $ T_n\left( x \right)  $ approximates $ e^{ x } $ to within 0.001 for every $ x \epsilon\left[ -3,2 \right]  $?}
+Plugging in the same values as before but this time without a definite n value we get,
+\[
+\left| R_n\left( x \right)  \right|\le \frac{ e^2 }{ \left( n+1 \right) ! }\left( 2.5 \right) ^{ n+1 }\le 0.001
+.\] 
+Which can just be brute forced by a calculator at different values of n until we satisfy the inequality. 
+\[
+	n=5 \implies \frac{ e^2\cdot 2.5^{ 6 } }{ 6! } \approx 2.5 \cancel{\le} 1
+.\] 
+\[
+	n=10 \implies \frac{ e^2\cdot 2.5^{ 11 } }{ 11! } \approx 0.033 \cancel{\le} 1
+.\] 
+\[
+n=11 \implies \frac{ e^2\cdot 2.5^{ 12 } }{ 12! } \approx 0.00092 \le 1
+.\] 
 \newpage
 \section*{Bonus question}%
 \paragraph{a) Let $ L_n $ be the perimeter of $ I_n $. Show that $ \lim_{ n \to \infty} L_n = \infty$}
