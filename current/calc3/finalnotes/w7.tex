@@ -1,0 +1,27 @@
+\ex{
+Make a Taylor Polynomial (4 terms) for $ \cos^{  } \left( x \right)  $ with $ c=-\frac{ \pi }{ 2 }  $
+}
+{
+	Start with $ f\left( x \right) =\cos^{  } \left( x \right)  $ and write out some derivatives while evaluating at $ -\frac{ \pi }{ 2 }  $.
+	\begin{align*}
+		f^{ 0 }\left( x \right) &=\cos^{  } \left( x \right) \to 0 \\
+		f^{ 1 }\left( x \right) &= -\sin^{  } \left( x \right) \to 1 \\
+		f^{ 2 }\left( x \right) &=-\cos^{  } \left( x \right) \to 0 \\
+		f^{ 3 }\left( x \right) &= \sin^{  } \left( x \right) \to -1 \\
+		f^{ 4 }\left( x \right) &= \cos^{  } \left( x \right) \to 0
+	.\end{align*}
+	With this we can write our polynomial as
+	\[
+	\frac{ x+\frac{ \pi }{ 2 }  }{ 1 }-\frac{ x+\frac{ \pi }{ 2 }  }{ 3! }+\frac{ x+\frac{ \pi }{ 2 }  }{ 5! }-\frac{ x+\frac{ \pi }{ 2 }  }{ 7! }
+	.\] 
+	Now that we have our taylor, whats the max error to expect $ T_7\left( x \right)  $ of $ \cos^{  } \left( x \right)  $ to have over $ \left[ -\pi ,\frac{ \pi }{ 4 }  \right]  $?
+	Using Taylor's inequality we can write our starting equation as
+	\[
+	\left| T_7\left( x \right)  \right|\le \frac{ M }{ \left( n+1 \right) ! } \left| x-c \right|^{ n+1 }
+	.\] 
+	Getting our center we find, $ c= \frac{ -\pi + \frac{ \pi }{ 4 }  }{ 2 } = -\frac{ 3\pi }{ 8 }  $ and our max value as $ max\left( f^{ n+1 }\left( x \right) \text{ over } \left[ -\pi , \frac{ \pi }{ 4 }  \right] \right) = f^{ 8 }\left( x \right) =\cos^{  } \left( M \right)  $ and because $ \cos^{  } \left( x \right)  $ has a max at $ M=1 $ over $ \left[ -\pi , \frac{ \pi }{ 4 }  \right]  $ we can write our max error as
+	\[
+	\frac{ 1 }{ 8! } \left| x+\frac{ \pi }{ 8 }  \right|^{ 8 } \to \frac{ 1 }{ 8! } \left( \frac{ 5\pi }{ 8 }   \right) ^{ 8 }
+	.\] 
+
+} 
