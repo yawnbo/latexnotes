@@ -76,8 +76,72 @@ and
 e^{ -x }=\sum_{ n=0 } ^{ \infty } \frac{ \frac{ \left( -x \right) ^{ n } }{ \left( -1 \right) ^{ n }x^{ n } } }{ n! } 
 .\] 
 Which matches our created terms and shows that we made the MacLaurin series for $ e^{ x } $ without using the Taylor formula.
-\section{Eulers formula}%
+\section{Eulers formula (Tuesday)}%
 \label{sec:Eulers formula}
+Recall that the complex plain is a 2d plain that is comprised of a real and imaginary part, of $ a+\left( bi \right)  $ where $ i=\sqrt{ -1 }  $. This was used in pre-calc with quadratics like $ x^2+x+1=0 $ where our formula gets you to $ x = \frac{ -b\pm\sqrt{ b^2-4ac }  }{ 2a } = \frac{ -1\pm\sqrt{ -3 }  }{ 2 }\text{ or }\frac{ -1\pm\sqrt{ 3 } i }{ 2 } $. This can be graphed as points on complex plain and this helps with solving quadratics like this. \\
+
+Going back to power series, if we write out the Maclaurin for $ e^{ x } $ and let our x be a complex number, $ a+bi $ we can write our sum as 
+\[
+e^{ a+bi } = e^{ a }+e^{ bi }= \sum_{ n=0 } ^{ \infty } \frac{ x^{ n } }{ n! }
+.\] 
+Prof went back on this to instead plot it as a vector with point $ \left( a, bi \right)  $ and angle of $ \theta $. Our magnitude or modulus would be $ \left| z \right|=\sqrt{ a^2+b^2 }  $ and our side lengths are $ \left| z \right|\sin^{  } \left( \theta \right)  $ and $ \left| z \right|\cos^{  } \left( \theta \right)  $. Now that we have this represenatation we can write it as
+\[
+\left| z \right|\cos^{  } \left( \theta \right) +i \left| z \right|\sin^{  } \left( \theta \right) 
+.\] 
+Which can be made into the below formula. 
 \[
 e^{ i \theta } \cos^{  } \left( \theta \right) + i \sin^{  } \left( \theta \right) 
 .\] 
+Proving this lets start with plugging in $ i\theta $ in for x in the series for $ e^{ x } $,
+\[
+	e^{ x }=e^{ i\theta }= \sum_{ n=0 } ^{ \infty } \frac{ \left( i\theta \right) ^{ n } }{ n! } = \frac{ i^{ 0 }\theta^{ 0 } }{ 0! }+ \frac{ i^{ 1 }\theta^{ 1 } }{ 1! }+ \frac{ i^{ 2 }\theta^{ 2 } }{ 2! }+ \frac{ i^{ 3 }\theta^{ 3 } }{ 3! } + \frac{ i^{ 4 }\theta^{ 4 } }{ 4! }+ \frac{ i^{ 5 }\theta^{ 5 } }{ 5! } + \frac{ i^{ 6 }\theta^{ 6 } }{ 6! } + \ldots
+.\] 
+Simplifying,
+\[
+1+i\theta - \frac{ 1 }{ 2! } \theta^2 - \frac{ i }{ 3! } \theta^3 + \frac{ 1 }{ 4! } \theta^4 + \frac{ i }{ 5! } \theta^5 - \frac{ 1 }{ 6! } \theta^6 - \ldots
+.\] 
+Now splitting it into our real and imaginary parts,
+\[
+1-\frac{ 1 }{ 2! } \theta^2+\frac{ \theta^{ 4 } }{ 4! }-\frac{ 1 }{ 6! } \theta^{ 6 }+ \ldots + i\left( \theta -\frac{ \theta^{ 3 } }{ 3! }+\frac{ \theta^{ 5 } }{ 5! }-\ldots \right) 
+.\] 
+Which can each be simplified to their respective maclaurins,
+\[
+\cos^{  } \left( \theta \right) \text{ and }i\sin^{  } \left( \theta \right) 
+.\] 
+
+\subsection{10.1 Intro to parametric equations}%
+\label{sub:10.1 Intro to parametric equations}
+Note that this will take around 2 weeks to cover so an exam can be expected around week 10-11. \\ \\ 
+
+The idea is that we have a graph that is of the points $ \left( x,y \right)  $, but we cannot assign a function to it because the graph is not real, or there are more y points for each x and y is NOT a function of x. If we instead introduce another variable $ t $, we will have new sets of points that will be in terms of t and have points at $ \left( x\left( t \right) , y\left( t \right)  \right)  $ which will each be their own functions. For this case, we call our variable t a 'parameter' and this is what the root of parametric equations is, they are just the functions that define x and y over another parameter such as t or time. 
+
+\ex{ Sketch the curve }
+{ Given 
+\begin{align*}
+	x\left( t \right) &= 2t -4 \\
+	y\left( t \right) &=3+t^2
+.\end{align*}
+For this we need to have a 3 column table that counts our t's and parametric equatiosn. Now we want to form a domain. Let's choose random t values to be $ -2,0,2,4 $. Now we can just plug these in to find our results for each parametric function. 
+\begin{align*}
+	x\left( t \right) &= -8,-4,0,4 \\
+	y\left( t \right) &= 7,3,7,19 
+.\end{align*}
+Now that we have these points we can graph it to a 2d plain with coordinates $ \left( x\left( t \right) , y\left( t \right)  \right)  $. (i dont know how to use tikzpictures so i can't draw it here but its a quadratic going from left to right centered at $ \left( -4,3 \right)  $ ) This is really a three dimensional graph because we have 3 different variables but we won't draw the t dimension because it's linear and can just be represented like this for now. \\ \\
+} 
+\newpage
+Now that we did it by hand, we can also do it with a calculator. Start with going to mode and selecting 'PAR' instead of 'FUNC'. This will put you into parametric mode and now the $ y= $ will have another dimension inside of it. Now we can input our sets of equations in for what the calculator wants. Now that the values are in the functions, we can make our window mins to be our domain of t, which we can recall to be $ \left[ -2,4 \right]  $ and we can input our step size to be 2 because of our previous points. Again looking at the graph I DIDNT DRAW, we can see our $ x_{ min } $ can be around -10 and $ x_{ max } $ to be around 6. Doing the same thing for y we can write it as $ 0 $ and 20. \\ \\
+
+Now graphing it we can see that it looks around the same as how I TOTALLY DREW IT AS. Now if we decrease the step size we get a smoother and smoother curve, with the absolute curve being $ \lim_{ t \to \infty} \left( x\left( t \right) , y\left( t \right)  \right)  $. Choosing a VERY low value of t will make the calculator work for a while so 0.25 is suggested to get a decent looking curve. 
+\subsection{Removing the parameter}%
+\label{sub:Removing the parameter}
+With our previous example again, 
+\begin{align*}
+	x\left( t \right) &= 2t -4 \\
+	y\left( t \right) &=3+t^2
+.\end{align*}
+We can solve for t and substitute it into the other equation to get a function of x and y.
+
+\[
+	x+4=2t \to t=\frac{ x+4 }{ 2 } \text{ and } y=3+\left( \frac{ x+4 }{ 2 } \right) ^2
+.\] 
+We can now instead graph this and we get the same function. This is just algebra again\ldots but this doesn't always work so that's why this section of calc exists I guess.
