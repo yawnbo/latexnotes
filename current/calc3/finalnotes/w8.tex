@@ -214,4 +214,31 @@ So to get around the circle one time we would need $ t\epsilon\left[ 2\pi \right
 \subsection{Ellipse}%
 \label{sub:Ellipse}
 With our major (a) and minor (b) axis, if we let our coordinates be $ \left( a\cos^{  } \left( t \right) , b\sin^{  } \left( t \right)  \right)  $ we can draw ellipses. It can also be shifted by just adding an h and k for the centers. 
+\newpage
+\section{Thursday, 10.1 parametric eqs. cont}%
+\label{sec:Thursday, 10.1 parametric eqs. cont}
+\ex{ }{ 
+	\paragraph{Ex.} A turtle walks constant speed counter-clockwise on circular path, radius 4ft, centered at $ \left( 0,0 \right)  $. Turtle starts at $ \left( 4,0 \right)  $ and completes one lap in 30 minutes. Let t be minutes $ t\ge 0 $.  \\ \\
+	Start with the basic coords of a circle, 
+	\[
+		\left( x\left( t \right) ,y\left( t \right)  \right) =\left( 4\cos^{  } \left( bt \right) ,4\sin^{  } \left( bt \right)  \right) 
+	.\] 
+	Solve for b, $ \frac{ 2 \pi  }{ b } \to b = \frac{ \pi }{ 15 }   $, so $ t\epsilon\left[ 0,30 \right]  $. 
+} 
 
+\subsection{Physics: Projectile motion in two dimensions}%
+\label{sub:Physics: Projectile motion in two dimensions}
+If we know the vector (magnitude and angle) of an object and we neglect air resistance, and call each component of the vector ($ v_0 $) as vectors $ \left( tv_0\cos^{  } \left( \theta \right) ,tv_0\sin^{  } \left( \theta \right)  \right)  $, because we also want gravity we call our y vector $ tv_0\sin^{  } \left( \theta \right) -\frac{ 1 }{ 2 } 9.81t^2 $. 
+
+\ex{ A baseball is hit with a bat }{ 
+\begin{gather*}
+v_0=150 \frac{ ft }{ s } , \theta= 35^{\circ} , h = 3ft
+\end{gather*}
+So now our balls position as a function of time is written as 
+\[
+	\left( 150\cos^{  } \left( 35 \right) t, 150\sin^{  } \left( 35 \right) t-\frac{ 1 }{ 2 } \left( 32 \right) t^2 + 3\right) 
+.\] 
+The rest of the question is basic physics, part a included plugging in values of t to find some points of the ball and part was taking the $ \frac{ d }{ dx }  $ of the y component to find the maximum when the velocity is at 0. This goes to $ 150\sin^{  } \left( 35 \right) -32t  $ and $ t=\frac{ 150\sin^{  } \left( 35 \right)  }{ 32 } $. This can also be plugging into calculator to find it. \\ \\
+For part c we want to set the quadratic to 0 for when $ y=0 $ and plug that t back into the position of x to find the distance it went. 
+
+} 
