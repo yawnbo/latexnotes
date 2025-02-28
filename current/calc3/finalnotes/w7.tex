@@ -25,3 +25,28 @@ Make a Taylor Polynomial (4 terms) for $ \cos^{  } \left( x \right)  $ with $ c=
 	.\] 
 
 } 
+\section*{Exam review for midterm 1}%
+\label{sec:Exam review for midterm 1}
+\subsection*{1.f}%
+\label{sub:1.f}
+Done with the theorem that $ \lim_{ n \to \infty} \sqrt[ n ]{ a_n } = \lim_{ n \to \infty} \frac{ a_{ n+1 } }{ a_n } $, so
+\[
+\lim_{ n \to \infty} \sqrt[ n ]{ \frac{ n }{ 2 }  } = \lim_{ n \to \infty} \frac{ \frac{ n+1 }{ 2 } }{ \frac{ n }{ 2 }  }= \lim_{ n \to \infty} \frac{ n+1 }{ n }=1
+.\] 
+Instead using natural logs we can do it as
+\[
+\lim_{ n \to \infty} \sqrt[ n ]{ \frac{ n }{ 2 }  } = L \to \frac{ 1 }{ n } \ln^{  } \left( \frac{ n }{ 2 }  \right) =\ln^{  } \left( L \right) 
+.\] 
+Taking L'Hopital's rule we get
+\[
+\frac{ \frac{ 1 }{ \frac{ n }{ 2 } } \cdot \frac{ 1 }{ 2 }  }{ 1 } = \frac{ 1 }{ n } = 0 \implies L = u ^{ 0 }=1
+.\] 
+Note that this can help with using root test a lot because at most points you will get to something in terms of the $ n $ th root. 
+
+\subsection*{q3 question 7}%
+\label{sub:q3 question 7}
+\[
+\sum_{ n=1 } ^{ \infty } \frac{ \left( -1 \right) ^{ k+1 }k }{ 3k+1 }
+.\] 
+Checking for absolute convergence we use divergence thm and see that for the absulte, $ b_n $ will not approach 0.\\
+For conditional we can use something that if $ \lim_{ n \to \infty} a_{ 2k }\neq \lim_{ n \to \infty} a_{ 2k+1 } $. 
