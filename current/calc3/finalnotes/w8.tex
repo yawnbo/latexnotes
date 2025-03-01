@@ -242,3 +242,61 @@ The rest of the question is basic physics, part a included plugging in values of
 For part c we want to set the quadratic to 0 for when $ y=0 $ and plug that t back into the position of x to find the distance it went. 
 
 } 
+\section{Friday 2/28}%
+\label{sec:Friday 2/28}
+\subsection{Calculus with parametric cords.}%
+\label{sub:Calculus with parametric cords.}
+
+
+\begin{tikzpicture}[scale=1.5]
+    % Draw coordinate axes
+    \draw[thick] (-3,0) -- (3,0);
+    \draw[thick] (0,-1) -- (0,3);
+    
+    % Draw the curve with a loop
+    \draw[white, thick] plot[smooth, tension=0.8] coordinates {(-2.5,0.5) (-1,1.5) (0,1) (1,2) (2.5,2.5)};
+    
+    % Redraw the curve in black
+    \draw[thick] plot[smooth, tension=0.8] coordinates {(-2.5,0.5) (-1,1.5) (0,1) (1,2) (2.5,2.5)};
+    
+    % Add the loop to the curve
+    \draw[thick] plot[smooth, tension=1] coordinates {(-1.2,1.7) (-0.8,2.2) (-0.4,1.8) (-0.8,1.3) (-1.2,1.7)};
+    
+    % Add the tangent arrow
+    
+    % Add blue annotations for the point and formula
+    \node[blue] at (1.5,1.2) {$P = (x(t), y(t))$};
+    
+    % Add blue derivative annotation
+    \node[blue, align=left] at (2.3,0.4) {$\frac{dy}{dx} = \text{slope of tangent}$\\$\text{at Point }P$ ?};
+    
+\end{tikzpicture} \\ \\
+Picture was something like the above and was there to show that the tangent of the circle will be $ \frac{ dy }{ dx }  $ at any point p. 
+\dfn { First $ \frac{ d }{ dx } proof parametrics $ }{ 
+Starting with a function, we can take it's $ \frac{ d }{ dx }  $ with respect to time as,
+\[
+\frac{ dy }{ dt } 
+.\] 
+Which can then be expanded to
+\[
+=\frac{ dy }{ dx } \cdot \frac{ dx }{ dt } 
+.\] 
+and made into
+\[
+\to \frac{ dy }{ dx } = \frac{ \frac{ dy }{ dt }  }{ \frac{ dx }{ dt }  }= \frac{ y'\left( t \right)  }{ x'\left( t \right)  }
+.\] 
+if $ x'\left( t \right) \neq 0 $. \\ \\ 
+
+\paragraph{For the second $ \frac{ d }{ dx }  $}
+By quotient rule we can take the second $ \frac{ d }{ dx }  $ as,
+\[
+D\left( \frac{ dy }{ dx }  \right) = \frac{ d^2y }{ dx^2 } = \frac{ d }{ dx } \left( \frac{ dy }{ dx }  \right) = \frac{ \frac{ d }{ dt } \left( \frac{ dy }{ dx } \right)  }{ \frac{ dx }{ dt }  }= \frac{ \frac{ d }{ dt } \left( \frac{ y'\left( t \right)  }{ x'\left( t \right)  } \right)  }{ x'\left( t \right)  } = \frac{ x'\left( t \right) \cdot y''\left( t \right) - y'\left( t \right) \cdot x''\left( t \right)  }{ \left( x'\left( t \right)  \right) ^3 }
+.\] 
+} 
+The above has use cases for finding derivatives of our parametrics and lets say we were to use them in a circle with $ t= \frac{ 5 \pi  }{ 4 } $. \\ \\
+
+Using the above formula we take the derivative of sin and cos and plug them in to find,
+ \[
+ \frac{ dy }{ dx } =\frac{ y'\left( t \right)  }{ x'\left( t \right)  }= \frac{ -\cos^{  } \left( t \right)  }{ -\sin^{  } \left( t \right)} = \frac{ \frac{ \sqrt{ 2 }  }{ 2 } }{ \frac{ \sqrt{ 2 }  }{ 2 } }= 1
+.\] 
+will be our tangent. 
