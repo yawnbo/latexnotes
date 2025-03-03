@@ -1,0 +1,88 @@
+\section{10.2 Speed}%
+\label{sec:10.2 Speed}
+This is trying to answer the question of how fast is the curve tracing at a point k? This is NOT the same as the tangent at the given point. For this we instead look at some point ahead of our arbitrary point and call it $ t+\Delta t $. For this we just calculate the average speed as $ \frac{ d }{ \Delta t }  $ over $ \left[ t,t+\Delta t \right]  $, so we can find this as
+\[
+\frac{ \sqrt{ \left( \Delta x \right) ^2 } + \left( \Delta y \right) ^2 }{ \Delta t^2 } \to \sqrt{ \frac{ \left( \Delta x \right) ^2+\left( \Delta y \right) ^2 }{ \left( \Delta t \right) ^2 } } \to \sqrt{ \left( \frac{ \Delta x }{ \Delta t } \right) ^2 + \left( \frac{ \Delta y }{ \Delta x } \right) ^2 } 
+.\] 
+Which gives us the average. Now we take a limit to get our speed at the point K with time t,
+\[
+\lim_{ \Delta t \to 0} \sqrt{ \left( \frac{ \Delta x }{ \Delta t } \right) ^2 + \left( \frac{ \Delta y }{ \Delta x } \right) ^2 } = \sqrt{ \left( x'\left( t \right)  \right) ^2+\left( y'\left( t \right)  \right) ^2 } 
+.\] 
+
+\ex{ Turtle thing }{ 
+Given a circle with $ r=4 $ and a period of 30mins we found our parametrics to be \[
+	\left( x'\left( t \right) ,y\left( t \right)  \right) = \left( 4\cos^{  } \left( \frac{ \pi }{ 15 } t \right) , 4\sin^{  } \left( \frac{ \pi }{ 15 } t \right)  \right) 
+.\] 
+and now we can find the speed of the turtle, at let's say $ t=0 $. Finding $ x'\left( t \right)  $ and $ y'\left( t \right)  $, 
+\[
+	\left( x'\left( t \right) ,y\left( t \right)  \right) = \left( -\frac{ 4\pi }{ 15 } \sin^{  } \left( \frac{ \pi }{ 15 } t \right) ,\frac{ 4\pi }{ 15 } \cos^{  } \left( \frac{ \pi }{ 15 } t \right)  \right) 
+.\] 
+and
+\[
+	\left( x'\left( 0 \right) , y'\left( 0 \right)  \right) = \left( 0,\frac{ 4\pi }{ 15 }  \right) 
+.\] 
+Which can be put into our speed equation to find 
+\[
+\text{ Speed }= \frac{ 4\pi }{ 15 } \frac{ ft }{ min } 
+.\] 
+} 
+\section{Arc length}%
+\label{sec:Arc length}
+We can also find the arc length or the length of the graph from a point $ \left( a,b \right)  $. In calc 2 terms this would be defined as $ L=\int_{ a }^{ b } \sqrt{ 1+\left[ f'\left( x \right)  \right] ^2 }  $. Making this into a parametric we can let $ x=x\left( t \right)  $ and $ dx=x'\left( t \right) dt $. Now because $ f'\left( x \right) =\frac{ dy }{ dx }  $ we can substitute and find
+\[
+L=\int_{ x=a }^{ b } \sqrt{ 1+\left[ \frac{ dy }{ dx }  \right] ^2 } \to \int_{ x=a }^{ b } \sqrt{ \left( \frac{ \frac{ dx }{ dt } }{ \frac{ dx }{ dt } } \right)^2 + \left( \frac{ \frac{ dy }{ dt }  }{ \frac{ dx }{ dt }  } \right) ^2 } x'\left( t \right) dt
+.\] 
+\[
+=\int_{ x=a }^{ b } \frac{ \sqrt{ \left( x'\left( t \right)  \right) ^2+ \left( y'\left( t \right)  \right) ^2 }  }{ \sqrt{ \left( x'\left( t \right)  \right) ^2 } }x'\left( t \right) dt 
+.\] 
+\[
+=\int_{ t_1 }^{ t_2 } \sqrt{ \left( \frac{ dx }{ dt }  \right) ^2+\left( \frac{ dy }{ dt }  \right)^2dt  } 
+.\] 
+
+\ex{ Calculate the perimeter of a circle. }{ 
+Making a simple parametric definition for our circle, $ \left( \cos^{  } \left( t \right) ,\sin^{  } \left( t \right)  \right)  $ over $ \left[ 0,2 \pi  \right]  $. Given this, our circumfrence should be,
+\[
+C=\int_{ 0 }^{ 2 \pi  } \sqrt{ \cos^{ 2 } \left( t \right) + \sin^{ 2 } \left( t \right)  } 
+.\] 
+\[
+=\int_{ 0 }^{ 2 \pi  } 1dt=2 \pi
+.\] 
+} 
+\ex{ Calculate the arc length of a parabola }{ 
+\[
+	\left( t,t^2 \right) \text{ at } t=2 \text{ and }t=-2
+.\] 
+Using our formula to find the length, 
+\[
+L=\int_{ 0 }^{ 2 } \sqrt{ \left( 1 \right) ^2+\left( 2t \right) ^2 } dt
+.\] 
+\[
+=\int_{ 0 }^{ 2 } \sqrt{ 1+4t^2 } dt
+.\] 
+Using trig sub we can use $ a\tan^{  } \left( \theta \right) = x $ and $ \frac{ 1 }{ 2 } \tan^{  } \left( \theta \right) =t $ so we get 
+\[
+=\int_{ 02 }^{ 2 } \sqrt{ \underbrace{ 1+\tan^{ 2 } \left( \theta \right) }_{ \sec^{ 2 } \left( \theta \right)  }   } \frac{ 1 }{ 2 } \sec^{ 2 } \left( \theta \right) d\theta
+.\] 
+\[
+=\int_{ t=0 }^{ 2 } \frac{ 1 }{ 2 } \sec^{ 3 } \left( \theta \right) d\theta
+.\] 
+Which can be done using reduction formulas and we don't have time for right now.
+} 
+\section{Area under a curve}%
+\label{sec:Area under a curve}
+Remembering calc 2,
+\[
+\int_{ a }^{ b } f\left( x \right) dx=
+.\] 
+We take the derivative of $ x'\left( t \right)  $ to find $ dx=x'\left( t \right) dt \implies y=y\left( t \right)  $ and our integral will be
+\[
+\int_{ t_1 }^{ t_2 } y\left( t \right) \cdot x'\left( t \right) dt
+.\] 
+Using our parabola from before, we can find the integral of 
+\[
+\int_{ x=0 }^{ 2 } x^2dx = \frac{ 8 }{ 3 } 
+.\] 
+and we can do this parametrically as well using $ \left( t,t^2 \right)  $ as
+\[
+A=\int_{ 0 }^{ 2 } t^2\left( 1 \right) dt=\frac{ 8 }{ 3 } 
+.\] 
