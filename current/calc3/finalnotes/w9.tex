@@ -86,3 +86,71 @@ and we can do this parametrically as well using $ \left( t,t^2 \right)  $ as
 \[
 A=\int_{ 0 }^{ 2 } t^2\left( 1 \right) dt=\frac{ 8 }{ 3 } 
 .\] 
+\section{Wednesday}%
+\label{sec:Wednesday}
+First part of class was just splitting integrals to cover total area because half of it is negative. \\
+For example to integrate area over the x axis we would use
+\[
+\int_{ t_1 }^{ t_2 } y\left( t \right) x'\left( t \right) dt
+.\] 
+and the inverse would be used for the y axis
+\[
+\int_{ t_1 }^{ t_2 } x\left( t \right) y'\left( t \right) dt
+.\] 
+
+\ex{ Integrating $ y=\ln^{  } \left( x \right)  $ over the y axis }{ 
+For this we just do the usual and solve for each variable getting,
+\[
+x=e^{ y }
+.\] 
+and
+\[
+y=x
+.\] 
+which can be plugged in with t to find $ x=e^{ t } $ and $ y=t $. } 
+\ex{ Area of a circle }{ 
+With
+\[
+	\left( \cos^{  } \left( t \right) ,\sin^{  } \left( t \right)  \right) 
+.\]
+find the area of the first quarter of the circle. \\ \\
+Our integral will be 
+\[
+\int_{ 0 }^{ \frac{ \pi }{ 2 }  } \sin^{  } \left( t \right) \left( -\sin^{  } \left( t \right)  \right) dt
+.\] 
+Which will be negative and we can instead use a double angle identity to find
+\[
+\cos^{  } \left( 2t \right) = 1-2\sin^{ 2 } \left( t \right) \to \sin^{ 2 } \left( t \right) =\cos^{  } \left( 2t \right) -1 \to -\sin^{ 2 } \left( t \right) =\frac{ \cos^{  } \left( 2t \right)  }{ 2 }-\frac{ 1 }{ 2 } 
+.\] 
+and we can integrate as 
+\[
+	\int_{ 0 }^{ \frac{ \pi }{ 2 } } \left( \frac{ \cos^{  } \left( 2t \right)  }{ 2 }-\frac{ 1 }{ 2 }  \right) dt \to \frac{ 1 }{ 4 } \sin^{  } \left( 2t \right) -\frac{ 1 }{ 2 } t = -\frac{ \pi }{ 4 } 
+.\] 
+
+} 
+\newpage
+\section{Vertical tangents}%
+\label{sec:Vertical tangents}
+As an example curve, take
+\[
+4t-t^2, t
+.\] 
+If we were to integrate $ t\epsilon\left[ 0,3 \right]  $ then we would have a tangent somewhere where $ \frac{ dy }{ dx }  $ is undefined or when $ dx = 0 $. Using this we know that $ dx $ would be 0 at $ t=2 $. Knnowing this we would integrate over this interval so as not to include the edge case,
+\[
+\int_{ t=0 }^{ 2 } \left( t \right) \left( 4-2t \right) dt
+.\] 
+If we instead wanted to find the total area, using $ \int_{ 0 }^{ 3 } y\left( t \right) x'\left( t \right) dt $, we would have a cancellation of area when we integrate going the other way. 
+
+\subsection{Bonus problem}%
+\label{sub:Bonus problem}
+\qs{ Challenge Question }{ 
+Consider the parametric curve $ \left( x,y \right) = \left( t\sin^{  } \left( t \right),t \right)  $ and consider the regions that are bounded by the curve and the $ x,yaxis $. The regions of interest are shown in the picture provided, setup integrals that will calculate the area of each region. Be sure that you modify your integral so that it provides a positive result for areal please do not use absolute values on your integrals. 
+\begin{gather*}
+A \approx 21.69 \\
+B \approx 1.9 \\
+C \approx 9.42 \\
+\end{gather*}
+
+} 
+This is done by finding the vertical tangents and integrating using those bounds. Keep in mind that these will be approximate as the drawing isn't perfect.
+
