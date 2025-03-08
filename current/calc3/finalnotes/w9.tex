@@ -153,4 +153,54 @@ C \approx 9.42 \\
 
 } 
 This is done by finding the vertical tangents and integrating using those bounds. Keep in mind that these will be approximate as the drawing isn't perfect.
+\subsection{Final integrals for above problem}%
+\label{sub:Final integrals for above problem}
+\begin{align*}
+	A:& \int_{ 0 }^{ \pi  } t\sin^{  } \left( t \right) dt-\int_{ \pi  }^{ 4.91 } t\left( \sin^{  } \left( t \right) +t\cos^{  } \left( t \right)  \right) dt\\
+	B:& \int_{ 0 }^{ 2.03 } t\left( \sin^{  } \left( t \right) +t\cos^{  } \left( t \right)  \right) dt \\
+	C:& \int_{ -\pi  }^{ 2\pi  } t\sin^{  } \left( t \right) dt
+\end{align*}
+\paragraph{THIS WILL BE ON THE EXAM}
 
+\section{Thursday's announcements}%
+\label{sec:Thursday's announcements}
+\paragraph{To find intersections in parametrics}
+Start by having one of them in terms of t and replace the other one in terms of another dummy variable (s) and set each component equal to each other, you will get a system of equations. If $ s=t $ then the two will meet at the same time, but if they do not equal, then there will be a delayed intersection between the two. Meaning they will hit the same point but at different times. If there is no solution to the system at all, there will be no intersection at all.
+
+\section{ 10.3 Polar systems}%
+\label{sec:Polar systems}
+Instead of points x,y we have an angle $ \theta $ and radius r which gives us a vector or ray where it's origin will be the origin. Basically just goes on about review of the cartesian coordinate system and gives some basic graphing examples that won't be shown because I DON'T know how to use tikz :)\\\\
+All this is really about is converting cartesian to x,y by making $ x=r\cos^{  } \left( \theta \right)  $ and $ y=r\sin^{  } \left( \theta \right)  $ like parametrics and common sense and whatnot.
+
+\section{Friday}%
+\label{sec:Friday}
+\subsection{10.3 Graphs and Functions in polar}%
+\label{sub:10.3 Graphs and Functions in polar}
+When we have an equation in form $ r=f\left( \theta \right)  $ we can graph it by plugging in values of $ \theta $ and $ r $ to get a graph. For example, if we have $ r=1+\cos^{  } \left( \theta \right)  $ we can plug in values of $ \theta $ to get a graph and use given identities. 
+
+\ex{ Convert $ r=4\cos^{  } \left( \theta \right)  $ to linear coordinates }{ 
+Start by realizing the identity of $ r^2=x^2+y^2 $ can be used to find our equation in terms of x and y because we can get rid of our r value, so we multiply both sides by $ r $,
+\[
+r^2=4r\cos^{  } \left( \theta \right) \to x^2+y^2=4x
+.\] 
+In the above we converted $ r\cos^{  } \left( \theta \right)  $ into x because that is the definition of x on the cartesian plane as their points are given by $ \left( r\cos^{  } \left( \theta \right) , r\sin^{  } \left( \theta \right)  \right)  $. Now we can rearrange and solve the quadratic in terms of x,
+\[
+	\left( x^2-4x+4 \right) +y^2=4 \implies \left( x-2 \right) ^2 + y^2 =4
+.\] 
+Which will give us a circle with center $ \left( 2,0 \right)  $ and radius of 2.
+} 
+\subsubsection{Two ways to make lines in polar}
+The first way is by just plugging in to the formula which we find below,
+
+\subsection{Create a formula for converting $ y=mx+b $ into polar}%
+This is done by using our previous identities of $ x=r\cos^{  } \left( \theta \right)  $ and $ y=r\sin^{  } \left( \theta \right)  $. We can plug these into $ y=mx+b $ and simplify to find,
+\[
+r\sin^{  } \left( \theta \right) =mr\cos^{  } \left( \theta \right) +b
+.\] 
+\[
+=r\sin^{  } \left( \theta \right) -mr\cos^{  } \left( \theta \right) =b
+.\] 
+\[
+r=\frac{ b }{ \sin^{  } \left( \theta \right) - m\cos^{  } \left( \theta \right)  } 
+.\] 
+This identity can be used alongside $ r=d\sec^{  } \left( \theta - \propto \right)  $ to get a line out of linear equations. 
