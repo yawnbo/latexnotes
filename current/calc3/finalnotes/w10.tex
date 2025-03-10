@@ -1,0 +1,38 @@
+\section{Monday 10.3 Tangent slops and Derivatives}%
+\label{sec:Monday 10.3 Tangent slops and Derivatives}
+Since functions in polar are in terms $ r=f\left( \theta \right)  $, we can find our tangent slope with the same methods as before using $ \frac{ dy }{ dx }  $ because there isn't a nice way to do it in polar.\\ \\
+
+For basic derivatives, since our coordinates are $ \left( r\cos^{  } \left( \theta \right) , r\sin^{  } \left( \theta \right)  \right)  $ we take our derivative,
+\[
+\frac{ dy }{ d\theta} = \frac{ dy }{ dx } \cdot \frac{ dx }{ d\theta }  \to \frac{ dy }{ dx } = \frac{ \frac{ dy }{ d\theta }  }{ \frac{ dx }{ d\theta }  }
+.\] 
+Since r is a function we need to use chain rule and take it as
+\[
+\frac{ d }{ d\theta } = \frac{ r }{ d\theta } \sin^{  } \left( \theta \right) = \frac{ dr }{ d\theta } \sin^{  } \left( \theta \right) +r\cos^{  } \left( \theta \right)  
+.\] 
+The opposite is done for cos,
+\[
+\frac{ d }{ d\theta } x = \frac{ dr }{ d\theta } \cos^{  } \left( \theta \right) -r\sin^{  } \left( \theta \right) 
+.\] 
+\[
+	\frac{ \frac{ dy }{ d\theta }  }{ \frac{ dx }{ d\theta }  } = \frac{ \frac{ dr }{ d\theta } \sin^{  } \left( \theta \right) +r\cos^{  } \left( \theta \right)  }{ \frac{ dr }{ d\theta } \cos^{  } \left( \theta \right) -r\sin^{  } \left( \theta \right) }
+.\] 
+\ex{ Compute the derivative }{ 
+\[
+r=2\cos^{  } \left( \theta \right) \text{ at }\theta=\frac{ \pi }{ 6 } 
+.\] 
+So,
+\[
+r\left( \theta \right) = 2\cos^{  } \left( \theta \right) \text{ and }r'\left( \theta \right) =-2\sin^{  } \left( \theta \right) 
+.\] 
+Taking the derivative with our formula
+\[
+\frac{ dy }{ dx } =\frac{ -2\sin^{ 2 } \left( \theta \right) +2\cos^{ 2 } \left( \theta \right)  }{ -2\sin^{  } \left( \theta \right) \cos^{  } \left( \theta \right) -2\cos^{  } \left( \theta \right) \sin^{  } \left( \theta \right)  }
+.\] 
+Using double angles,
+\[
+	\frac{ 2\left( \cos^{  } \left( 2\theta \right)  \right)  }{ -\sin^{  } \left( 2\theta \right) -\sin^{  } \left( 2\theta \right)  }= -\cot^{  } \left( 2\theta \right) = -\cot^{  } \left( \frac{ \pi }{ 3 }  \right) = -\frac{ 1 }{ \sqrt{ 3 }  } 
+.\] 
+} 
+\paragraph{But what does $ \frac{ dr }{ d\theta }  $ mean?}
+Just replacing the r with y and drawing our function on the $ \left( \theta,r \right)  $ axis we get the normal graph plotted again theta and our derivative will be the rate at which r changes with respect to theta. Imagine a cow tied to a pole with a rope (r) the point of $ \frac{ dr }{ d\theta }  $ would be to find how much rope is lost as the cow goes around in circles.
