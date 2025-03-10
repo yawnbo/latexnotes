@@ -1,0 +1,177 @@
+\documentclass{report}
+
+\input{../../../pkgs/preamble}
+\input{../../../pkgs/macros}
+\input{../../../pkgs/letterfonts}
+
+\pgfplotsset{compat=1.18}
+\title{\Huge{Quiz5 Calc3}\\ Solution }
+\author{\huge{yawnbo}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+
+\pagebreak
+
+\section*{Question 1}%
+\label{sec:Question 1}
+\paragraph{Your friends are on a Ferris wheel in Seattle. At time t seconds their location is given parametricaly as $ \left( x_f\left( t \right) ,y_f\left( t \right)  \right) =\left( -27\sin^{  } \left( \frac{ 2\pi }{ 120 } t \right) , 36-27\cos^{  } \left( \frac{ 2\pi }{ 120 } t \right)  \right)  $ Note for EVERY question below, the origin is located below the center of the ferrs wheel.}
+\paragraph{a)} is the Ferris wheel turning clockwise or counter-clockwise? \\ \\
+Since the graph of $ \sin^{  } \left( x \right)  $ starts at 0 and starts in the positive direction we know that $ -\sin^{  } \left( x \right)  $ will do the oposite and go in the negative direction first which will mean that our x value will decrease from the origin until the circles left most point, so we are going clockwise.
+\paragraph{b)} How many second does it take for the Ferris wheel to make one revolution (a.k.a one period)? \\ \\
+The period of sin and cos is $ 2\pi  $ so one period will be $ \frac{ 2\pi }{ b }  $ or $ \frac{ 2\pi }{ \frac{ 2\pi }{ 120 }  } =120 $ seconds. 
+\paragraph{c)}Starting right beneath the center of the ferris wheel at $ t=0 $, you walk to the right at 3 feet/second. What is your position as a parametric equation, $ \left( x_w\left( t \right) ,y_w\left( t \right)  \right)  $? Careful about where the origin is. \\ \\ 
+Our origin is on the floor so our y will be constant at 0 and we are moving to the right at 3ft/s so x will be $ 3t $ giving $ \left( 3t,0 \right)  $. 
+\paragraph{d)} Use both parametric equations and create a function $ D\left( t \right)  $ that calculates the distance between you and your friends as a function of t. \\ \\
+Using the distance formula,
+\[
+D= \sqrt{ \left( x_2-x_1 \right) ^2+\left( y_2-y_1 \right) ^2 } \implies \sqrt{ \left( -27\sin^{  } \left( \frac{ 2\pi }{ 120 } t \right) -3t \right) + \left( 36-27\cos^{  } \left( \frac{ 2\pi }{ 120 }  \right)  \right) ^2 } 
+.\] 
+will be the distance between you and your friends. 
+\section*{Question 2}%
+\label{sec:Question 2}
+\paragraph{A slug oozes along at position $ 4t,-6t-12 $ leaving behind a trail of slime. A snail crawls along at position $ \left( 3t-4,-8t \right)  $ also leaving behind a trial of slime.
+}
+\paragraph{a)} Do the slug and snail ever collide? If so, at what time t? \\ \\
+Setting both components equal to each other we find that $ 4t=3t-4 \implies t=-4 $ and $ -6t-12=-8t \implies t=6$ Which means that they will not collide because their coordinates (x(t),y(t)) will be never the same.
+\paragraph{b)} Do their slime trials ever cross? If so, which critter goes through the other's slime? \\ \\
+To find if they ever collide we can remove the extra parameter in t and solve, \\ \\
+Slug
+\[
+x=4t \implies t= \frac{ x }{ 4 } \implies y=-\frac{ 3 }{ 2 } x-12
+.\] 
+Snail
+\[
+x=3t-4 \implies t= \frac{ x+4 }{ 3 } \implies y=-8\left( \frac{ x+4 }{ 3 }  \right) =-\frac{ 8 }{ 3 } x-\frac{ 32 }{ 3 }
+.\] 
+Setting them equal and solving,
+\[
+-\frac{ 3 }{ 2 } x-12 = -\frac{ 8 }{ 3 } x-\frac{ 32 }{ 3 } \to -9x -72 =-16x-64 \to 7x=8 \to x=\frac{ 8 }{ 7 } 
+.\] 
+Knowing that they cross at $ x=\frac{ 8 }{ 7 }  $ we plug it back into our y equation to find $ y=-\frac{ 96 }{ 7 }  $ which tells us they will intersect at $ \left( \frac{ 8 }{ 7 } ,-\frac{ 96 }{ 7 }  \right)  $. To find which one got there first we can plug in either of our coordinates to solve for t. Using the x coordinates because we already found the conversion for them, \\ \\
+Slug
+\[
+t=\frac{ x }{ 4 } \to t=\frac{ 2 }{ 7 } 
+.\] 
+Snail
+\[
+t=\frac{ 1 }{ 3 } \left( x+4 \right) \to t=\frac{ 12 }{ 7 } 
+.\] 
+Because $ \frac{ 2 }{ 7 } < \frac{ 12 }{ 7 }  $ we know that the slug reached the point first and the snail will cross over the slugs trial. 
+\section*{Question 3}%
+\label{sec:Question 3}
+A particle follows the parametric curve described by the graphs above. 
+\paragraph{a)} Where (or rather when) does the tangent line to hte parametric curve have a slope that is zero, undefined, and positive? \\ \\
+Derivatives of parametrics are found as $ \frac{ \frac{ dy }{ dt }  }{ \frac{ dx }{ dt }  } $. This means that when $ \frac{ dx }{ dt } =0 $ we will have a verticle tangent and the derivative will be undefined, and when $ \frac{ dy }{ ty } =0 $ we will have a horizontal tangent because the derivative will be 0. \\ \\
+\begin{tikzpicture}[scale=1.0]
+\def\axisSettings{
+    axis lines=center,
+    xlabel={$t$},
+    xtick=\empty,
+    ytick=\empty,
+    xmin=0, xmax=6,
+    ymin=-2.5, ymax=2.5,
+    axis line style={-stealth},
+    x label style={at={(axis cs:3.8,0)}, anchor=west},
+    y label style={at={(axis cs:0,2.3)}, anchor=south},
+    width=6cm,
+    height=6cm
+}
+\begin{scope}
+    \draw[->] (-0.5,0) -- (4,0) node[right] {$t$};
+    \draw[->] (0,-2) -- (0,2) node[above] {$x(t)$};
+    
+    \foreach \x in {1,2,3}
+        \draw[gray!30] (\x,-2) -- (\x,2);
+    
+    \draw[blue, thick] 
+        (0,0.2) .. controls (0.3,1.5) and (0.7,1.8) .. (0.8,1.6)
+        .. controls (1,1.2) and (1.2,0) .. (1.5,-1)
+        .. controls (1.8,-1.5) and (2.2,-1.2) .. (2.5,-0.5)
+        .. controls (2.8,0) and (3,0.5) .. (3.5,0.8);
+\end{scope}
+\begin{scope}[xshift=7cm]
+    \draw[->] (-0.5,0) -- (5.5,0) node[right] {$t$};
+    \draw[->] (0,-2) -- (0,2) node[above] {$y(t)$};
+    
+    \foreach \x in {1,2,3,4,5}
+        \draw[gray!30] (\x,-2) -- (\x,2);
+    
+    \draw[blue, thick] 
+        (0,0) .. controls (0.3,-0.5) and (0.6,-1.5) .. (1,-2)
+        .. controls (1.5,-1.5) and (2,0) .. (2.5,0.2)
+        .. controls (2.21,0) and (3.25,1) .. (4.5,0)
+\end{scope}
+\end{tikzpicture}
+\\ Making pictures with tikz is horrible that's the best i can do and im not finding the points on those graphs to plot points I think it's obvious where each will be undefined or have a tangent at, the $ x\left( t \right)  $ graph will have its horizontal tangents or be undefined, at about t=0.7 and t=1.7. The $ y\left( t \right)  $ graph is undefined at around t=1 and has a tangent at around t=4.5 (note non of these are to scale with the actual provided pictures they are just based on the estimations above) this means that the parametric will have a horizontal tanget at those points. The slope will be positive when both graphs are increasing or when each of their derivatives is positive. 
+\paragraph{b)} Given $ y'\left( 2 \right) =\frac{ 1 }{ 2 } \text{ and } x'\left( 2 \right) =-\frac{ 3 }{ 2 } $ find $ \frac{ dy }{ dx } \bigg|_{ t=2 } $ and the speed of the particle at $ t=2 $.\\ \\
+Given the above,
+\[
+\frac{ dy }{ dx } \bigg|_{ t=2 } = \frac{ \frac{ dy }{ dt }  }{ \frac{ dx }{ dt }  } \bigg|_{ t=2 } = \frac{ \frac{ 1 }{ 2 }  }{ -\frac{ 3 }{ 2 }  } = -\frac{ 1 }{ 3 }
+.\] 
+And the speed can be found with the formula 
+\[
+\sqrt{ \left( x'\left( t \right)  \right) ^2+ \left( y'\left( t \right)  \right) ^2 } \to \sqrt{ \left( -\frac{ 3 }{ 2 }  \right) ^2+\left( \frac{ 1 }{ 2 }  \right) ^2 } =\sqrt{ \frac{ 5 }{ 2 }  } \approx 1.58 \text{ units/s }
+.\] 
+
+\section*{Question 4}%
+\label{sec:Question 4}
+For the parametric curve described by 
+\[
+	\left( \sqrt{ t } ,0.25\left( t^2-4 \right)  \right) ;t\ge 0,
+\] 
+\paragraph{a)} Find the slope and concavity at the point $ \left( 2,3 \right)   $.\\ \\
+Finding derivatives of the main function for later,
+\[
+	\left( \sqrt{ t } ,\frac{ 1 }{ 4 } \left( t^2-4 \right)  \right) \to \left( \frac{ 1 }{ 2\sqrt{ t }  } ,\frac{ t }{ 2 }  \right) \to \left( -\frac{ 1 }{ 4t^{ \frac{ 3 }{ 2 }  } }, \frac{ 1 }{ 2 }   \right) 
+.\] 
+Solving for t,
+\[
+2=\sqrt{ t } \implies t=4
+.\] 
+Since the slope of parametric is foudn with $ \frac{ dy }{ dx }  $ at some point  we can find the slope of our parametric to be
+\[
+\frac{ \frac{ t }{ 2 }  }{ \frac{ 1 }{ 2\sqrt{ t }  }  }=t\sqrt{ t };t=4 \implies 4\sqrt{ 4 } =8
+.\] 
+Now solving for concavity we use the $ \frac{ d^2y }{ dx^2 } $ and use the formula 
+\[
+\frac{ \frac{ d }{ dt } \left( \frac{ y'\left( t \right)  }{ x'\left( t \right)  } \right)  }{ x'\left( t \right)  }= \frac{ \frac{ d }{ dt } \left( t\sqrt{ t }  \right)  }{ \frac{ 1 }{ 2\sqrt{ t }  }   } = \frac{ \frac{ 3 }{ 2 } \sqrt{ t }  }{ \frac{ 1 }{ 2\sqrt{ t }  }  } = \frac{ 3 }{ 2 } \sqrt{ t } \left( 2\sqrt{ t } \right) =3t \text{ at }t=4 = 12
+.\] 
+Since the above is positive we know that the point is concave up.
+\paragraph{b)} Find the arc length over $ t\epsilon\left[ 0,4 \right]  $.
+Arc length is found with the formula 
+\[
+\int_{ t_1 }^{ t_2 } \sqrt{ \left( \frac{ dx }{ dt }  \right) ^2+ \left( \frac{ dy }{ dt }  \right) ^2 } dt
+.\] 
+Which becomes
+\[
+\int_{ 0 }^{ 4 } \sqrt{ \left( \frac{ 1 }{ 2\sqrt{ t }  }  \right) ^2+ \left( \frac{ t }{ 2 }  \right) ^2 } dt \approx 4.9892
+.\] 
+\qs{  }{ Setup an integral that will calculate the are bounded inside the loop described by the parametric equation $ \left( \sin^{  } \left( t \right) ,t^2\right) $ } 
+Start by noticing that the interseting point will be when $ \sin^{  } \left( t \right) =0 $. This happens when sin is 0 and next at $ \pi  $ and since we aren't at the origin we know this occurs at $ \pi  $, so our integral will be 
+\[
+2 \int_{ 0 }^{ \pi  } \sin^{  } \left( t \right) \left( 2t \right) dt
+.\] 
+This can be done by parts,
+\[
+dv=\sin^{  } \left( t \right) \implies v = -\cos^{  } \left( t \right) 
+.\] 
+\[
+u=t \implies du = 1
+.\] 
+\[
+=vu-\int_{  }^{  } vdu = -t\cos^{  } \left( t \right) -\int_{  }^{  } -\cos^{  } \left( t \right) dt
+.\] 
+\[
+=4\left( -t\cos^{  } \left( t \right) +\sin^{  } \left( t \right)  \right) \bigg|_{ 0 }^{ \pi  }	
+.\] 
+\[
+=4\left( \left( \pi \underbrace{ -\cos^{  } \left( \pi  \right)  }_{ 1 } +\underbrace{ \sin^{  } \left( \pi \right)  }_{ 0 }  \right) - \underbrace{ \left( 0\cdot \cos^{  } \left( 0 \right) +\sin^{  } \left( 0 \right)  \right)  }_{ 0 } \right) = 4\left( \pi -0 \right) =4\pi 
+.\] 
+
+\end{document}
