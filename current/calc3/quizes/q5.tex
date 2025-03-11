@@ -67,48 +67,7 @@ Because $ \frac{ 2 }{ 7 } < \frac{ 12 }{ 7 }  $ we know that the slug reached th
 \label{sec:Question 3}
 A particle follows the parametric curve described by the graphs above. 
 \paragraph{a)} Where (or rather when) does the tangent line to hte parametric curve have a slope that is zero, undefined, and positive? \\ \\
-Derivatives of parametrics are found as $ \frac{ \frac{ dy }{ dt }  }{ \frac{ dx }{ dt }  } $. This means that when $ \frac{ dx }{ dt } =0 $ we will have a verticle tangent and the derivative will be undefined, and when $ \frac{ dy }{ ty } =0 $ we will have a horizontal tangent because the derivative will be 0. \\ \\
-\begin{tikzpicture}[scale=1.0]
-\def\axisSettings{
-    axis lines=center,
-    xlabel={$t$},
-    xtick=\empty,
-    ytick=\empty,
-    xmin=0, xmax=6,
-    ymin=-2.5, ymax=2.5,
-    axis line style={-stealth},
-    x label style={at={(axis cs:3.8,0)}, anchor=west},
-    y label style={at={(axis cs:0,2.3)}, anchor=south},
-    width=6cm,
-    height=6cm
-}
-\begin{scope}
-    \draw[->] (-0.5,0) -- (4,0) node[right] {$t$};
-    \draw[->] (0,-2) -- (0,2) node[above] {$x(t)$};
-    
-    \foreach \x in {1,2,3}
-        \draw[gray!30] (\x,-2) -- (\x,2);
-    
-    \draw[blue, thick] 
-        (0,0.2) .. controls (0.3,1.5) and (0.7,1.8) .. (0.8,1.6)
-        .. controls (1,1.2) and (1.2,0) .. (1.5,-1)
-        .. controls (1.8,-1.5) and (2.2,-1.2) .. (2.5,-0.5)
-        .. controls (2.8,0) and (3,0.5) .. (3.5,0.8);
-\end{scope}
-\begin{scope}[xshift=7cm]
-    \draw[->] (-0.5,0) -- (5.5,0) node[right] {$t$};
-    \draw[->] (0,-2) -- (0,2) node[above] {$y(t)$};
-    
-    \foreach \x in {1,2,3,4,5}
-        \draw[gray!30] (\x,-2) -- (\x,2);
-    
-    \draw[blue, thick] 
-        (0,0) .. controls (0.3,-0.5) and (0.6,-1.5) .. (1,-2)
-        .. controls (1.5,-1.5) and (2,0) .. (2.5,0.2)
-        .. controls (2.21,0) and (3.25,1) .. (4.5,0)
-\end{scope}
-\end{tikzpicture}
-\\ Making pictures with tikz is horrible that's the best i can do and im not finding the points on those graphs to plot points I think it's obvious where each will be undefined or have a tangent at, the $ x\left( t \right)  $ graph will have its horizontal tangents or be undefined, at about t=0.7 and t=1.7. The $ y\left( t \right)  $ graph is undefined at around t=1 and has a tangent at around t=4.5 (note non of these are to scale with the actual provided pictures they are just based on the estimations above) this means that the parametric will have a horizontal tanget at those points. The slope will be positive when both graphs are increasing or when each of their derivatives is positive. 
+The parametric will have a horizontal tangent when $ y'\left( t \right) = 0 $, so this will happen at around t=5. The parametric will have an undefined tangent when $ x'\left( t \right) =0$, so this would happen at around t=0.9 and t=2.1. The final condition of when the parametric will have a positive slop occurs when both $ x'\left( t \right)  $ and $ y'\left( t \right)  $ have the same signs. This happens on the intervals of $ t=\left( 0.9,1.1 \right)  $ and $ t=\left( 2.1,5 \right)  $.
 \paragraph{b)} Given $ y'\left( 2 \right) =\frac{ 1 }{ 2 } \text{ and } x'\left( 2 \right) =-\frac{ 3 }{ 2 } $ find $ \frac{ dy }{ dx } \bigg|_{ t=2 } $ and the speed of the particle at $ t=2 $.\\ \\
 Given the above,
 \[
