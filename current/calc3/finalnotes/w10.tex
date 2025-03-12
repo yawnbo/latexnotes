@@ -36,3 +36,95 @@ Using double angles,
 } 
 \paragraph{But what does $ \frac{ dr }{ d\theta }  $ mean?}
 Just replacing the r with y and drawing our function on the $ \left( \theta,r \right)  $ axis we get the normal graph plotted again theta and our derivative will be the rate at which r changes with respect to theta. Imagine a cow tied to a pole with a rope (r) the point of $ \frac{ dr }{ d\theta }  $ would be to find how much rope is lost as the cow goes around in circles.
+
+\section{Wednesday Final lecture}%
+\label{sec:Wednesday Final lecture}
+\paragraph{Quiz due on Monday 03/17, Exam on Tues. 03/18}
+\section{10.4 Polar integration}%
+\label{sec:10.4 Polar integration}
+Since we are essentially taking a pie slice of a circle when integrating, we instead think of this as a proportion of $ \pi r^2 $. This percentage will be $ \frac{ \theta }{ 2\pi } $ and our area will be something like $ \left( \frac{ \theta }{ 2\pi  } \right) \pi r^2 = \frac{ 1 }{ 2 } \theta r^2 $ which is the area of our sector. \\ \\
+
+In polar terms we can think of the smallest angle from the horizontal to the arc as $ \alpha $ and our largest angle as $ \beta $ over $ \theta \epsilon \left[ \alpha, \beta \right]  $. Now thinking of it as a Riemann sum, we can split our interval into many smaller parts or $ d\theta $. 
+When stopping at the $ i^{ th } $ term we can call our area $ A=\frac{ 1 }{ 2 } \left( \Delta \theta \right) r_i^2 $ and we can write it as the sum,
+\[
+\sum_{ i=1 } ^{ n } \frac{ 1 }{ 2 } \Delta \theta r_i^2
+.\] 
+This is just a normal Riemann and we can take a limit to create our integral,
+\[
+\lim_{ n \to \infty} \sum_{ i=1 } ^{ \infty } \frac{ 1 }{ 2 } \Delta \theta r_i^2 = \lim_{ n \to \infty} \sum_{ i=1 } ^{ n } \frac{ 1 }{ 2 } \left( r_i \right) ^2 \Delta \theta = \int_{ \alpha }^{ \beta } \frac{ 1 }{ 2 } r^2d\theta
+.\] 
+This can be though as shooting beams out of the origin point to each point on the arc and finding the area for each individual one. 
+\ex{ Integrating }{ 
+For the example of just a circle with equation $ r=4\sin^{  } \left( \theta \right)  $. To trace this we would have an interval of $ \theta\epsilon\left[ 0,\pi  \right]  $ and a radius of two. We can find our area with basic geometry to $ \pi\left( 2 \right) ^2=4\pi $. 
+Proving this with integration, let's calculate from $ \theta=0 $ to $ \theta=\frac{ \pi }{ 2 }  $,
+\[
+A=\int_{ 0 }^{ \frac{ \pi }{ 2 }  } \frac{ 1 }{ 2 } \left( 4\sin^{  } \left( \theta \right)  \right) ^2d\theta 
+.\] 
+Using double angles we use our formula $ \cos^{  } \left( 2\theta \right) =1-\sin^{ 2 } \left( \theta \right)  $ or $ \sin^{ 2 } \left( \theta \right) = \frac{ 1-\cos^{  } \left( 2\theta \right)  }{ 2 } $,
+\[
+=8 \int_{ 9 }^{ \frac{ \pi }{ 2 }  } \left( \frac{ 1-\cos^{  } \left( 2\theta \right)  }{ 2 } \right) d\theta = 4\left[ \theta-\frac{ 1 }{ 2 } \sin^{  } \left( 2\theta \right)  \right] \bigg|_0^{ \frac{ \pi }{ 2 }  }= 4\left[ \frac{ \pi }{ 2 } -0-\left( 0-0 \right)  \right] =2\pi
+.\] 
+And because $ 2\pi $ is half of our circle we know it worked because we integrated half of the circle. 
+} 
+
+\ex{ Get the area of a petal }{ 
+Using the function 
+\[
+r=\sin^{  } \left( 3\theta \right) 
+.\] 
+Find the area of one petal. \\ \\
+This is an example where the $ r,\theta $ plane is useful, we can draw a normal sin curve and notice that our period will be $ \frac{ 2\pi }{ 3 }  $ and because we have three petals we can see how these petals are made. This is very iffy to explain with just words but basically look for the zeroes on the new axis and integrate from there because the pattern will just be repeating at different coordinates. 
+Now integrating,
+\[
+\frac{ 1 }{ 2 } \int_{ 0 }^{ \frac{ \pi }{ 3 }  } \sin^{  } \left( 3\theta \right) ^2d\theta
+.\] 
+Using the same formula from before but changing it to be in terms of $ 3\theta $, \[
+\sin^{ 2 } \left( \theta \right) = \frac{ 1-\cos^{  } \left( 2\theta \right)  }{ 2 } \implies \sin^{ 2 } \left( 3\theta \right) = \frac{ 1-\cos^{  } \left( 6\theta \right)  }{ 2 }
+.\] 
+and writing our integral as,
+\[
+\frac{ 1 }{ 2 } \int_{ 0 }^{ \frac{ \pi }{ 3 }  } \frac{ 1 }{ 2 } \left( 1-\cos^{  } \left( 6\theta \right)  \right) d\theta = \frac{ 1 }{ 4 } \left[ \theta-\frac{ 1 }{ 6 } \sin^{  } \left( 6\theta \right)  \right] \bigg|_0^{ \frac{ \pi }{ 3 }  }
+.\] 
+\[
+=\frac{ 1 }{ 4 } \left[ \frac{ \pi }{ 3 } -\frac{ 1 }{ 6 }\left( 0 \right)  -\left( 0-0 \right)  \right] = \frac{ \pi }{ 12 } 
+.\] 
+
+} 
+\dfn{ Area between two polar curves }{ 
+Integrating between two curves is essentially the same as x,y plane integration. With curves $ r_1 \left( \theta \right) $, $ r_2\left( \theta \right)  $ and limits of  $ \alpha,\beta $, we can write our integral as 
+\[
+A=\frac{ 1 }{ 2 } \int_{ \alpha }^{ \beta } \left( r_1\left( \theta \right)  \right) ^2-\left( r_2\left( \theta \right)  \right) ^2d\theta
+.\] 
+} 
+\ex{  }{ 
+Lets say we have a circle $ r=1 $ and another circle $ r=2\cos^{  } \left( \theta \right)  $. Find the area bounded by $ r_2 $ that isn't inside of $ r_1 $. First we find the intersections to find our interval, 
+\[
+\frac{ 1 }{ 2 } =\cos^{  } \left( \theta \right) \implies t=\pm\frac{ \pi }{ 3 }  
+.\] 
+Both of these circles will be on the same period so we can write our integral as
+\[
+\frac{ 1 }{ 2 } \int_{ -\frac{ \pi }{ 3 }  }^{ \frac{ \pi }{ 3 }  } \left( 2\cos^{  } \left( \theta \right)  \right) ^2- \left( 1 \right) ^2 d\theta
+.\] 
+Writing as a double angle,
+\[
+\frac{ 1 }{ 2 } \int_{ -\frac{ \pi }{ 3 }  }^{ \frac{ \pi }{ 3 }  } 4\left( \frac{ 1+\cos^{  } \left( 2\theta \right)  }{ 2 } \right) -1d\theta = \frac{ 1 }{ 2 } \left[ \frac{ 4\theta }{ 2 }+\frac{ 4\sin^{  } \left( 2\theta \right)  }{ 4 }-\theta \right] \bigg|_{ -\frac{ \pi }{ 3 }  }^{ \frac{ \pi }{ 3 }  }
+.\] 
+\[
+=\frac{ 1 }{ 2 } \left[ \frac{ 2\pi }{ 3 } + \frac{ \sqrt{ 3 }  }{ 2 }- \frac{ \pi }{ 3 } - \left( -\frac{ 2\pi }{ 3 } -\frac{ \sqrt{ 3 }  }{ 2 }-\left( -\frac{ \pi }{ 3 }  \right)  \right) \right] 
+.\] 
+\[
+=\frac{ 1 }{ 2 } \left[ \frac{ 2\pi }{ 3 } + \frac{ 2\sqrt{ 3 }  }{ 2 } \right] = \frac{ \pi }{ 3 } + \frac{ \sqrt{ 3 }  }{ 2 }
+.\] 
+
+} 
+Just as a side note you can estimate the integral with a calc by putting it back into $ x,y $ terms you can estimate it. Just let $ \theta = x$.
+\subsection{Arc length in polar}%
+\label{sub:Arc length in polar}
+For this we just use the parametric version,
+\[
+L=\int_{ t_0 }^{ t_1 } \sqrt{ \left( x'\left( t \right)  \right) ^2+\left( y'\left( t \right)  \right) ^2 } dt
+.\] 
+and let $ x\left( \theta \right) =r\cos^{  } \left( \theta \right)  $ and $ y\left( \theta \right) =r\sin^{  } \left( \theta \right)  $ which goes into
+\[
+L=\int_{ \alpha }^{ \beta } \sqrt{ \left( r'\left( \theta \right)  \right) ^2+\left( r\left( \theta \right)  \right) ^2 } 
+.\] 
