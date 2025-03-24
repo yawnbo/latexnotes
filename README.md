@@ -1,2 +1,4 @@
-## Personal lecture notes for classes compiled with latexmk -pdf.
-### Currently calc3/phys121
+## Personal lecture notes and quizzes done in latex
+---
+Written using VimTex/nvim with config in dots repo and using custom commands in ./pkgs
+### Currently calc4/linear algebra (don't know if I'll take notes on these or not) 
