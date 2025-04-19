@@ -1,0 +1,25 @@
+\documentclass{report}
+
+\input{../../pkgs/preamble}
+\input{../../pkgs/macros}
+\input{../../pkgs/letterfonts}
+
+\title{\Huge{Linear Alg.}\\ Conceptual Practice 1 }
+\author{\huge{yawnbo}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+
+\pagebreak
+\paragraph{If the linear system corresponding to an augmented matrix $ \begin{bmatrix} \vec{ a_1 }& \vec{ a_2 }& \vec{ a_3 } & \bigg| & \vec{ b } \end{bmatrix}  $ is consistent, is $ \vec{ b } $ in the set Span$ \left\{ \vec{ a_1 },\vec{ a_2 },\vec{ a_3 } \right\}  $? Why or why not? \\ \\}
+
+Firstly, we know a linear system is consistent if there exists a singular triple of scalars $ \left( x_1, x_2, x_3 \right)  $ that makes the set $ x_1 \vec{ a_1 } + x_2 \vec{ a_2 }+ x_3 \vec{ a_3 } = \vec{ b } $ true. Secondly, the span of a vector set is defined as all possible linear combinations of the vectors in the set and is defined as,
+\[
+Span\left\{ \vec{ a_1 },\vec{ a_2 },\vec{ a_3 } \right\} = \left\{ x_1 \vec{ a_1 } + x_2 \vec{ a_2 }+ x_3 \vec{ a_3 } : x_1,x_2,x_3 \in \mathbb{R} \right\}
+.\] 
+By definition, we know there exists a scalar triple $ \left( x_1, x_2, x_3 \right)  $ such that $ x_1 \vec{ a_1 } + x_2 \vec{ a_2 }+ x_3 \vec{ a_3 } = \vec{ b } $, which means that $ \vec{ b } $ is in the span of the set $ \left\{ \vec{ a_1 },\vec{ a_2 },\vec{ a_3 } \right\}  $. Therefore, if the linear system corresponding to an augmented matrix is consistent, then $ \vec{ b } $ is in the set Span$ \left\{ \vec{ a_1 },\vec{ a_2 },\vec{ a_3 } \right\}  $.
+\end{document}
