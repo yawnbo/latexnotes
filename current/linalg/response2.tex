@@ -1,0 +1,22 @@
+\documentclass{report}
+
+\input{../../pkgs/preamble}
+\input{../../pkgs/macros}
+\input{../../pkgs/letterfonts}
+
+\title{\Huge{Linalg}\\ Discussion 2}
+\author{\huge{Yan Bogdanovskyy}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+
+\paragraph{3. If A is an $ m\times n  $ matrix whose columns do not span $ \mathbb{R}^{ m } $, is the equation $ A \vec{ x }= \vec{ b } $ inconsistent for some $ \vec{ b } $ in $ \mathbb{R}^{ m } $? Why or why not? \\ \\}
+Given an $ m \times n $ matrix whose columns do NOT span $\mathbb{R} $, know there must exist some $ \vec{ b} $ in $ \mathbb{R}^{ m } $ such that the equation $ A \vec{ x } = \vec{ b } $ is inconsistent. This is because if the columns of $ A $ do not span $ \mathbb{R}^{ m } $, then there exists a vector in $ \mathbb{R}^{ m } $ that cannot be expressed as a linear combination of the columns of $ A $. Therefore, there will be some vector $ \vec{ b} $ for which the equation has no solution which means that the equation is inconsistent.
+\paragraph{4. If A is an $ m \times n $ matrix and if the equation $ A \vec{ x } = \vec{ b } $ is inconsistent for some $ \vec{ b } $ in $ \mathbb{R}^{ m } $, does A have a pivot in every row? Why or why not? \\ \\}
+If the given matrix is inconsistent for some $ \vec{ b } \in \mathbb{R}$ then there exists no linear combination of columns such that $ \vec{ b } $ exists in the column space of $ A $. This means that the matrix $ A $ does not have a pivot in every row. If it did, then the columns of $ A $ would span $ \mathbb{R}^{ m } $, and there would be a solution for every $ \vec{ b} \in \mathbb{R}^{ m }$. Therefore, if the equation is inconsistent for some $ \vec{ b} $, then A does not have a pivot in every row.
+\end{document}
