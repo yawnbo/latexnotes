@@ -1,0 +1,39 @@
+\documentclass{report}
+
+\input{../../pkgs/preamble}
+\input{../../pkgs/macros}
+\input{../../pkgs/letterfonts}
+
+\title{\Huge{Lin alg}\\ Notes }
+\author{\huge{yawnbo}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\paragraph{Let $ A = \begin{bmatrix} 2 & -4 \\ -2 & 4 \end{bmatrix}  $. Construct a $ 2 \times 2 $ matrix B such that AB is the zero matrix. Use two different nonzero columns for b. \\ \\}
+We essentially want to set each entry in the resultant vector to zero, so we simplify into our matrix with variables and set each one equal to zero. 
+\[
+	\begin{bmatrix} 2 & -4 \\ -2 & 4 \end{bmatrix} \begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} 
+.\] 
+Simplifying,
+\[
+	\begin{bmatrix} 2a - 4c & 2b -4d \\ -2a + 4c & -2b +4d \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}
+.\] 
+Writing this out will give us something we are more used to,
+\begin{align*}
+2a + 0b - 4c + 0d &= 0 \\
+0a + 2b + 0c - 4d &= 0 \\
+-2a + 0b + 4c + 0d &= 0 \\
+0a + -2b + 0c + 4d &= 0 \\
+.\end{align*}
+Where now you can either just use algebra or find the rref, im showing the rref because I don't wanna do algebra,
+\[
+	\begin{bmatrix} 2 & 0 & -4 & 0 & \big| & 0 \\ 0 & 2 & 0 & -4 & \big| & 0 \\ -2 & 0 & 4 & 0 & \big| & 0 \\ 0 & -2 & 0 & 4 & \big| & 0 \\ \end{bmatrix} \approx \begin{bmatrix} 1 & 0 & -2 & 0 & 0 \\ 0 & 1 & 0 & -2 & 0 \\ 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 \end{bmatrix} 
+.\] 
+Here we now know that c and d (or $ x_1 $ and $ x_2 $) are free and $ a= -2c $ and $ b=-2d $ so we write our mat as
+\[
+	\begin{bmatrix} -2c & -2d \\ c & d \end{bmatrix} 
+.\] 
+Where we can now choose some values like 1 and 2 to check if it's true but I don't wanna write it out so take my word for it and submit any solution matrix that fits the above. I submitted using $ c=1 $ and $ d=2 $ but up to you, good luck!
+\end{document}
