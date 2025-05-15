@@ -1,0 +1,102 @@
+\documentclass{report}
+
+\input{../../pkgs/preamble}
+\input{../../pkgs/macros}
+\input{../../pkgs/letterfonts}
+\title{\Huge{Linear Algebra}\\ Exam 1 Review }
+\author{\huge{yawnbo}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+\chapter{Concepts}
+\section{Given any linear system}%
+\label{sec: Given any linear system }
+
+\[
+a_{ 11 }x_1 a_{ 12 }x_2 + \ldots + a_{ 1n }x_n = b_1
+.\] 
+\[
+a_{ 21 }x_1+1_{ 22 }x_2+\ldots+a_{ 2n }x_n=b_2
+.\] 
+We can write this as a matrix 
+\[
+	A = \begin{bmatrix} a_{ 11 } & a_{ 12 } & \ldots & a_{ 1n } \\ a_{ 21 } & a_{ 22 } & \ldots & a_{ 2n } \\ \vdots &  \vdots & \vdots & \vdots \\ a_{ m_1 } & a_{ m_2 } & \ldots & a_{ mn }\end{bmatrix}, \vec{ b } = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{bmatrix} , \vec{ x } = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} 
+.\] 
+With a standard number of n columns and m + 1 rows for the augmented matrix equal to the vector b. This can be written as the simple matrix equztion $ A \vec{ x } = \vec{ b } $ and the matrix will be written as below. 
+\[
+	A = \begin{bmatrix} a_{ 11 }x_1 & a_{ 12 }x_2 & \ldots & a_{ 1n }x_n & \bigg| & b_1 \\ a_{ 21 }x_1 & a_{ 22 }x_2 & \ldots & a_{ 2n }x_n & \bigg| & b_2 \\ \vdots &  \vdots & \vdots & \vdots & \bigg| & \vdots \\ a_{ m_1 }x_1 & a_{ m_2 }x_2 & \ldots & a_{ mn }x_n & \bigg| & b_m \end{bmatrix}
+.\] 
+The actual matrix should be used without the x variables but the concept remains the same when performing row operations.
+
+\section{Linear system consistency}%
+\label{sec: Linear system consistency }
+\paragraph{A linear system is consistent if the augmented matrix (RREF) has no rows of the form $ \begin{bmatrix} 0 & 0 & \ldots & 0 & \bigg| & b \end{bmatrix}  $ with b non-zero. If the system was all zeroes, the system is considered consistent, but does NOT have a unique solution because the row (m) that is all zeroes is not a pivot row (defined as a row which contains a non-zero number b which is preceded by all zeroes.)}
+
+\paragraph{On the last point, a linear system has an infinite amount of solutions if the system is consistent and has at least one free variable(s).}
+\section{Linear combinations and Spanning }%
+\label{sec: Linear combinations and Spanning  }
+\subsection{Combinations}%
+\label{sub: Combinations }
+
+\paragraph{Given the coefficient matrix $ \vec{ a }_1 , \ldots , \vec{ a }_P$ and $ \vec{ b } $ in $ \mathbb{R}^{ n } $. $ \vec{ b } $ is a linear combination of $ \vec{ a }_1 , \ldots , \vec{ a }_P$if the vector equation	}
+\[
+x_1 \vec{ a }_1 + x_2 \vec{ a }_2 + \ldots + x_P \vec{ a }_P = \vec{ b }
+.\] 
+\paragraph{This is simply saying that if our system is consistent in the column space of $ \mathbb{R} $ then we can represent our vector $ \vec{ b } $ as as some linear combination of the system, or in other words, there is some combination of coefficients $ x_1 , \ldots , x_P$ such that the equation holds true.}
+
+\subsection{Spanning}%
+\label{sub: Spanning }
+\paragraph{When given the same system as above, we can say that $ \vec{ b } $ is in the span of our system if $ \vec{ b } $ is a linear combination of the system. This is because the span is defined as the total area that the system will cover and if we have a vector that is a linear combination of the system, then we have a singular vector within our area, so it is included in the span. \\ \\}
+
+\subsubsection{Important spanning note}
+\paragraph{If we have a system $ \vec{ a }_1, \ldots, \vec{ a }_P $ in $ \mathbb{R}^{ n } $, then the $ \text{ Span}\left\{\vec{ a }_1, \ldots, \vec{ a }_P \right\}$ refers to all possible linear combinations of the system. This span can be found by finding the RREF of the matrix and establishing if there is a pivot in each row. If a pivot is present in each row, then our system will span $ \mathbb{R}^{ n } $, and any vector in the subspace can be created with a linear combination of real numbers.}
+\subsection{Example}%
+\label{sub: Example }
+\paragraph{Given a $ \vec{ v } $ in $ \mathbb{R}^{ 3 } $, what does the Span$ \{\vec{ v }\} $ represent? \\ \\}
+If our vector is the zero vector, or $ \vec{ v } = \vec{ 0 } $, then our span simply represents the origin or zero vector $ \vec{ 0 } $. If $ \vec{ v } $ is instead non-zero, then the span will represent the line passing through the origin and our vector $ \vec{ v } $. 
+
+\subsection{Example 2, double vectors}%
+\label{sub: Example 2, double vectors }
+If we are instead given vectors $ \vec{ u }, \vec{ v } \text{ in }\mathbb{R}^{ 3 } $, what does the Span of these vectors represent? If both vectors are 0, we simply have the span of the zero vector as before. If one of the vectors is the zero vector then we have a span of the non-zero vector through the origin. If both are non-zero and are scalars of each other, then the span will represent the line passing through the origin and both vectors. Finally, if both vectors are non-zero and are not scalars of each other, we will have a plane passing through the origin.
+
+\section{Matrix equations}%
+\label{sec: Matrix equations }
+\paragraph{Given an $ m \times n $ matrix A and $ \vec{ b } $ in $ \mathbb{R}^{ m } $, our vector $ \vec{ b }  $ is in the span of the columns of A if the matrix equation $ A \vec{ x }= \vec{ b } $ is consistent. \\ \\}
+\paragraph{Given the same $ m \times n  $ matrix A, we know that the columns (individual vectors) of A span $ \mathbb{R}^{ m } $ if each row in A has a pivot. This can be though of having some number for each dimension that will give you your desired output, so if we have an m dimension, we can create any one dimension because we have a pivot in that row. }
+
+\section{Linear independence}%
+\label{sec: Linear independence }
+\paragraph{The vectors, $ \vec{ v_1 }, \ldots, \vec{ v_P } $ in $ \mathbb{R}^{ n } $ are linearly independent if the vector equation }
+\[
+x_1 \vec{ v_1 } + x_2 \vec{ v_2 } + \ldots + x_P \vec{ v_P } = \vec{ 0 }
+.\] 
+\paragraph{This means that the only way we could create the zero vector would be from the trivial solutino of all vectors being zeroed out. If this was not the only solution, then we would have a free vector somewhere that can be written as a combination of another vector and doesn't contribute anything unique to the system. If this is the case then we are instead linearly dependent. }
+\subsection{Example}%
+\label{sub: Example }
+\paragraph{If we are given two non-zero vectors in $ \mathbb{R}^3 $ (this might need to be squared instead of cubed I don't believe the guide) then we can call these two vectors linearly independent if they do NOT lie on the same line. If they DO lie on the same line then they are dependent as one of them can be considered obsolete as it can easily be made with the other. \\ \\}
+
+\paragraph{If we instead have three vectors in $ \mathbb{R}^3 $, we can say that they are linearly independent if they do not lie on the same plane. If they do lie on the same plane, then we can say that one of them is dependent on the other two and can be made with a combination of the other two. \\ \\}
+
+\section{Linear Transformations}%
+\label{sec: Linear Transformations }
+\paragraph{Given a transformation T: $ \mathbb{R}^{ n } \to \mathbb{R}^{ m } $. T is a linear transformation if it is a matrix transformation (specifically, $ T\left( \vec{ x } \right)  = A \vec{ x } $ for any $ \vec{ x } $ in $ \mathbb{R}^{ n } $), or it satisfies the next requirements }
+\begin{itemize}
+	\item $ T\left( \vec{ u } + \vec{ v } \right) = T\left( \vec{ u } \right) + T\left( \vec{ v } \right)  $ for any $ \vec{ u }, \vec{ v } $ in $ \mathbb{R}^{ n } $. 
+	\item $ T\left( c \vec{ u } \right) = cT\left( \vec{ u } \right)  $ for any real number c and any $ \vec{ u } $ in $ \mathbb{R}^{ n } $.
+\end{itemize}
+\textbf{or just}
+\[
+T\left( \alpha \vec{ u } + \beta \vec{ v } \right)  = \alpha T\left( \vec{ u } \right) + \beta T\left( \vec{ v } \right) \text{ for any scalars alpha or beta}
+.\] 
+\paragraph{2. Given a linear transformation T: $ \mathbb{R}^{ n } \to \mathbb{R}^{ m } $, its standard matrix will be some $ m \times n $ matrix defined by}
+\[
+	A = \begin{bmatrix} T\left( \vec{ e_1 } \right) & T\left( \vec{ e_2 } \right) & \ldots & T\left( \vec{ e_n } \right)  \end{bmatrix} 
+.\] 
+\paragraph{Where $ \vec{ e_j } $ is the jth columns of the $ n \times n $ identity matrix. Finally, if a linear transformation T is one-to-one, that means the standard matrix has a pivot in each column. If the transformation T is onto, that means its standard matrix has a pivot in each row. }
+
+\newpage
+\end{multicols}
+\end{document}
