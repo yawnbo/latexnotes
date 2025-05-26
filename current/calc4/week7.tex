@@ -1,0 +1,93 @@
+\section{Question 1}%
+\label{sec: Question 1 }
+\paragraph{If $ z=x^2y+3xy^{ 4 } $ , where $ x=\sin^{  } \left( 2t \right)  $ and $ y=\cos^{  } \left( t \right)  $, find $ \frac{ dz }{ dt }  $ when t=0.\\ \\}
+By chain rule we can find $ \frac{ dz }{ dt }  $ as $ \frac{ \partial z}{\partial x} \cdot \frac{ dx }{ dt } + \frac{ \partial z}{\partial y} \cdot \frac{ dt }{ dt }  $ so,
+\[
+\frac{ dz }{ dt } = \left( 2xy+3y^{ 4 } \right) \left( \frac{ dx }{ dt }  \right) + \left( x^2+12xy^3 \right) \left( \frac{ dy }{ dt }  \right) 
+.\] 
+As a shortcut we can evaluate everything at $ t=0 $ here without expanding, so,
+\begin{align*}
+x\left( 0 \right) &= \sin^{  } \left( 0 \right) = 0 \\
+y\left( 0 \right) &= \cos^{  } \left( 0 \right) =1 \\
+\frac{ dx }{ dt } \left( 0 \right) &= 2\cos^{  } \left( 0 \right) =2 \\
+\frac{ dy }{ dt } \left( 0 \right) &= -\sin^{  } \left( 0 \right) = 0 \\
+\end{align*}
+Plugging in we find,
+\[
+\frac{ dz }{ dt } = \left( 2\left( 0 \right) \left( 1 \right) + 3\left( 1 \right) ^{ 4 } \left( 2 \right) \right) + \left( 0^2+12\left( 0 \right) \left( 1 \right) ^3 \right) = 6
+.\] 
+\section{Question 2}%
+\label{sec: Question 2 }
+\paragraph{$ z=\left( x-y \right) ^{ 5 } $, $ x=s^2t,y=s t^2 $. Find $ \frac{ \partial z}{\partial s}  $ and $ \frac{ \partial z}{\partial t}  $. \\ \\}
+Let's simply find the regular derivative and write it out with partials, so by chain rule,
+\[
+\frac{ \partial z}{\partial s} = 5\left( x-y \right) ^{ 4 } \cdot \left( \frac{ \partial x}{\partial s} - \frac{ \partial y}{\partial s}  \right)
+.\] 
+\[
+\frac{ \partial z}{\partial t} = 5\left( x-y \right) ^{ 4 } \cdot \left( \frac{ \partial x}{\partial t} - \frac{ \partial y}{\partial t}  \right) 
+.\] 
+Solving our unknowns,
+\begin{gather*}
+\frac{ \partial x}{\partial s} = 2st\text{ and } \frac{ \partial x}{\partial t} = s^2\\
+\frac{ \partial y}{\partial s} = t^2 \text{ and }\frac{ \partial y}{\partial t} = 2st
+\end{gather*}
+Plugging in we find,
+\[
+\frac{ \partial z}{\partial s} = 5t\left( s ^2 - st \right) ^{ 4 }\left( 2s-t \right) 
+.\] 
+and
+\[
+\frac{ \partial z}{\partial t} = 5s\left( st-t^2 \right) ^{ 4 }\left( s-2t \right) 
+.\] 
+\section{Question 3}%
+\label{sec: Question 3 }
+\paragraph{Find $ \frac{ dy }{ dx }  $ if $ x^3+y^3=6xy $. \\ \\}
+\[
+\frac{ d }{ dx } x^3 + \frac{ d }{ dx } y^3 = \frac{ d }{ dx } 6xy \to 3x^2+\frac{ dy }{ dx } 3y^2= 6x\frac{ dy }{ dx } + 6y
+.\] 
+\[
+\to \frac{ dy }{ dx } 3y^2 - 6x \frac{ dy }{ dx }  = 6y -3x^2 \to \frac{ dy }{ dx } \left( 3y^2-6x \right) = 6y-3x^2
+.\] 
+\[
+\frac{ dy }{ dx } = \frac{ 6y-3x^2 }{ 3y^2-6x }
+.\] 
+\section{Question 4}%
+\label{sec: Question 4 }
+\paragraph{Find the directional derivative of $ f\left( x,y \right) = xy^3-x^2 $ at the point $ \left( 1,2 \right)  $ in the direction of the unit vector $ \vec{ u } $ given by angle $ \theta = \frac{ \pi }{ 3 } $ \\ \\}
+Using the formula,
+\[
+D_{ \vec{ u } }f\left( x_0,y_0 \right) = \nabla f\left( x_0,y_0 \right) \cdot \vec{ u } = f_x\left( x,y \right) \cdot a + f_y\left( x_0,y_0 \right) \cdot b
+.\] 
+First find the direction of $ \vec{ u } $ as, $ \vec{ u } = \left( \cos^{  } \left( \frac{ \pi }{ 2 }  \right) , \sin^{  } \left( \frac{ \pi }{ 3 }  \right)  \right) = \left( \frac{ 1 }{ 2 } ,\frac{ \sqrt{ 3 }  }{ 2 } \right)  $, next the gradient of f,
+\[
+\nabla f = \left( \frac{ \partial f}{\partial x} , \frac{ \partial f}{\partial y}  \right) 
+.\] 
+\[
+\frac{ \partial f}{\partial x} = y^3-2x \text{ and } \frac{ \partial f}{\partial y} = 2xy^2
+.\] 
+So, $ \nabla f = \left( y^3-2x, 3xy^2 \right)  $ can be evaluated at $ \left( 1,2 \right)  $,
+\[
+\nabla f\left( 1,2 \right) = \left( \left( 2 \right) ^3 -2\left( 1 \right) ,3\left( 1 \right) \left( 2 \right) ^2\right) = \left( 8-2,12 \right) = \left( 6,12 \right) 
+.\] 
+Now we can just find the dot product of the gradient and unit vector,
+\[
+D_{ \vec{ u } }f\left( 1,2 \right) = 6 \cdot \frac{ 1 }{ 2 } + 12 \cdot \frac{ \sqrt{ 3 }  }{ 2 }= 3+6\sqrt{ 3 } 
+.\] 
+\section{Question 5}%
+\label{sec: Question 5 }
+ \paragraph{(a) Find the gradient of f. \\(b) Evaluate the gradient at the point P.\\(c) Find the rate of change of f at P in the direction of the vector $ \vec{ u } $.}
+\[
+f\left( x,y \right) =x^2 \ln^{  } \left( y \right),P\left( 3,1 \right) ,\vec{ u }=-\frac{ 5 }{ 13 } \hat{ i }+\frac{ 12 }{ 13 } \hat{ j }
+.\] 
+(a) We can find the gradient of f as,
+\[
+\nabla f=\left( \frac{ \partial f}{\partial x} , \frac{ \partial f}{\partial y}  \right) = \left( 2x\ln^{  } \left( y \right) , \frac{ x^2 }{ y } \right) 
+.\] 
+(b) Evaluating the point we find,
+\[
+\nabla f\left( 3,1 \right) = \left( 2\left( 3 \right) \ln^{  } \left( 1 \right) , \frac{ 3^2 }{ 1 } \right) = \left( 0,9 \right) 
+.\] 
+(c) Now finding the rate of change we look at the formula and compute the dot product,
+\[
+D_{ \vec{ u } }f\left( 3,1 \right) = \left( 0,9 \right) \cdot \left( -\frac{ 5 }{ 13 } ,\frac{ 12 }{ 13 }  \right) = 9 \cdot \frac{ 12 }{ 13 } = \frac{ 108 }{ 13 } 
+.\]
