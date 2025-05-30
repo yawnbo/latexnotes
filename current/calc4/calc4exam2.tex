@@ -1,0 +1,325 @@
+\documentclass{report}
+
+%subject to pathing issues, remember to change
+\input{../../pkgs/preamble}
+\input{../../pkgs/macros}
+\input{../../pkgs/letterfonts}
+
+\title{\Huge{Calc4}\\ Exam 2 Review }
+\author{\huge{Yan Bogdanovskyy (yawnbo)}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{multicols}{2}
+\chapter{Exam 2}
+\section{Cengage Question review}%
+\label{sec: Cengage Question review }
+\subsection{Find the length of the curve}%
+\label{sub: Find the length of the curve }
+\[
+\vec{ r }\left( t \right) = \left< 7t, 3\cos^{  } \left( t \right) , 3\sin^{  } \left( t \right)  \right> \text{ over } -3 \le t \le 3
+.\] 
+We can simply apply the formula for arc length by finding the magnitude of derivative of the vector and integrating it over our interval. 
+\[
+	\to \sqrt{ 7^2 + 9\sin^{ 2 } \left( t \right) + 9\cos^{ 2 } \left( t \right)  }  = \sqrt{ 58 } \implies  
+\] 
+\[
+L = \int_{ -3 }^{ 3 } \sqrt{ 58 } dt = \sqrt{ 58 } t \bigg|_{-3}^{ 3 } = \sqrt{ 58 }\left( 3+3 \right)  = 6\sqrt{ 58 }
+.\] 
+
+\subsection{Find the length of the curve}%
+\label{sub: Find the length of the curve }
+ \[
+\vec{ r }\left( t \right) = \left< 3t,3\cos^{  } \left( t \right) , 3\sin^{  } \left( t \right)  \right>\text{ over } -6 \le t \le 6
+.\] 
+\paragraph{i decided i don't want to do this so look at rhys' answers instead}
+
+\section{Exam review}%
+\label{sec: Exam review }
+\subsection{Section 1}%
+\label{sub: Section 1 }
+\paragraph{Given a curve $ \vec{ r }\left( t \right)  $ find the arc length for the curve measured from the point P and then reparametrize the curve with respect to arc length from P.\\ \\}
+Find the unit tangent and unit normal vectors T(t) and N(t) given the below vectors.
+\[
+\vec{ r }\left( t \right) = \left< t, t^2,4 \right>
+.\] 
+Finding our tangent vector can be done by taking the derivative and dividing it by the magnitude of our derivative (normalizing it).
+\begin{equation}
+T\left( \vec{ r }\left( t \right)  \right) = \frac{ r'\left( t \right)  }{ \left\| \vec{ r }'\left( t \right)  \right\| }
+.\end{equation}
+So finding our derivative we get a new vector,
+\[
+\vec{ r }'\left( t \right) = \left<1,2t,0 \right>
+.\] 
+and our magnitude,
+\[
+\left\| \vec{ r }'\left( t \right)  \right\| = \sqrt{ 1^2 + \left( 2t \right) ^2 + 0^2 } = \sqrt{ 1+4t^2 }
+.\] 
+Writing it with our formula we find our tangent vector as
+\[
+\vec{ T }\left( t \right) = \left< \frac{ 1 }{ \sqrt{ 1+4t^2 }  }, \frac{ 2t }{ \sqrt{ 1+4t^2 }  }, 0 \right>
+.\] 
+Now finding our normal vector we need to use the tangent vector and use the formula,
+\begin{equation}
+	\vec{ N }\left( t \right) = \frac{ \vec{ T }'\left( t \right)  }{ \left\| \vec{ T }'\left( t \right)  \right\| }
+.\end{equation}
+So first we find the d/dx of our tangent vector as,
+\[
+\vec{ T }'\left( t \right) = \left< \frac{ -4t }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } }, \frac{ 2 }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } }, 0 \right>
+.\] 
+and our magnitude as,
+\[
+\left\| \vec{ T }'\left( t \right)  \right\| = \sqrt{ \left( \frac{ -4t }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } } \right) ^2 + \left( \frac{ 2 }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } }  \right) ^2 + 0} 
+.\] 
+\[
+= \sqrt{ \frac{ 16t^2 }{ \left( 1+4t^2 \right) ^3 } + \frac{ 4 }{ \left( 1+4t^2 \right)^{ 3 }  } } 
+.\] 
+\[
+= \sqrt{ \frac{ 4\left( 4t^2+1 \right)  }{ \left( 4t^2+1 \right) ^3 } } 
+.\] 
+\[
+= \frac{ 2\sqrt{ 4t^2+1 }  }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } }
+.\] 
+Sure hope this isn't on the exam :), you finish with plugging the values into our formula and not simplifying it further. at all. unless you have time or @diabetesenpai does it for you \\
+actually this isn't bad so i'll write it out
+\[
+\vec{ N }\left( t \right) = \left< \frac{ \frac{ -4t }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } } }{ \frac{ 2\sqrt{ 4t^2+1 }  }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } } } , \frac{ \frac{ 2 }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } } }{ \frac{ 2\sqrt{ 4t^2+1 }  }{ \left( 1+4t^2 \right) ^{ \frac{ 3 }{ 2 }  } } }, 0\right>
+.\] 
+Flipping the fraction and multiplying we cancel the top denom and are left with just
+\[
+\vec{ N }\left( t \right) = \left< \frac{ -2t }{ \sqrt{ 4t^2+1 }  }, \frac{ 1 }{ \sqrt{ 4t^2+1 }  }, 0  \right>
+.\] 
+\paragraph{Find the arc length of the curve $ \vec{ r }\left( t \right) = \left( 5-t \right) \hat{ i }, \left( 4t-3 \right) \hat{ j }, +3t \hat{k} $ measured from the point $ P\left( 4,1,3 \right)  $ in the direction of increasing t and then reparametrize the curve with respect to arc length starting from point P. \\ \\}
+Our arc length formula is just
+\begin{equation}
+L=\int_{ a }^{ b } \left\| \vec{ r }'\left( t \right)  \right\|
+.\end{equation}
+So we find our magnitude of the $ \frac{ d }{ dx }  $ as,
+\[
+\left\| \vec{ r }'\left( t \right)  \right\| = \sqrt{ \left( -1 \right) ^2 + \left( 4 \right) ^2 + \left( 3 \right) ^2 } = \sqrt{ 26 } 
+.\] 
+Now we can use our point to find where our arc should start, so we find our t value,
+\begin{align*}
+	x=5-t = 4 &\implies t=1,\\
+	y=4t-3 = 1 &\implies t=1,\\
+	z=3t=3 &\implies t=1
+.\end{align*}
+Now that we know our value of t we plug it into the start of our integral because the question says "measured FROM point P" and solve for our value of t in terms of L.
+\[
+L = \int_{ 1 }^{ t } \sqrt{ 26 } dt = \sqrt{ 26 } t \bigg|_{ 1 }^{ t } = \sqrt{ 26 }\left( t-1 \right) \implies
+.\] 
+\[
+t = \frac{ L }{ \sqrt{ 26 }  } + 1
+.\] 
+Now we can reparametrize our curve with respect to arc length by plugging in our t value into the original vector equation,
+\[
+\vec{ r }\left( L \right) = \vec{ r }\left( \frac{ L }{ \sqrt{ 26 } } +1 \right) 
+.\] 
+\[
+= \left( 5 - \left( \frac{ L }{ \sqrt{ 26 } } +1 \right)\right)\hat{i} + \left( 4\left( \frac{ L }{ \sqrt{ 26 } } +1 \right) - 3 \right)\hat{ j } + 3\left( \frac{ L }{ \sqrt{ 26 } } +1 \right) \hat{k}
+.\] 
+\[
+= \left( 4-\frac{ L }{ \sqrt{ 26 }  }  \right) \hat{i} + \left( \frac{ 4L }{ \sqrt{ 26 }  }+1 \right) \hat{j} + \left( \frac{ 3L }{ \sqrt{ 26 }  }+3 \right) \hat{k}
+.\] 
+\subsection{Section 2}%
+\label{sub: Section 2 }
+\paragraph{Given acceleration vector $ \vec{ a }\left( t \right)  $, initial velocity $ \vec{ v }\left( 0 \right)  $ and initial position $ \vec{ i }\left( 0 \right)  $ find the position vector $ \vec{ r }\left( t \right)  $. \\}
+\paragraph{Ex. Find the velocity and position vectors of a particle that has the given acceleration and the given initial velocity and position.}
+
+\[
+a\left( t \right) = 2\hat{i} + 2t\hat{k}\text{, }v\left( 0 \right) = 3\hat{ i }-\hat{ j }\text{, }r\left( 0 \right) = \hat{j} + \hat{k}
+.\] 
+Because acceleration is the second derivative of position and velocity is the first, we just integrate twice. So,
+\[
+v\left( t \right) = \int_{  }^{  } 2\hat{ i }+2\hat{t}k dt = 2t\hat{i} + t^2\hat{k} + \vec{ C }_1
+.\] 
+Because integrating leaves variables in each term we know our C value will just be the vector provided in the equation so,
+\[
+\vec{ C }_1 = 3\hat{ i }-\hat{ j } \implies v\left( t \right) = \left( 2t+3 \right) \hat{ i } + \left( -1 \right) \hat{ j } + \left( t^2 \right) \hat{ k }
+.\]  
+Which we can now integrate again to find the general position vector as,
+\[
+\vec{ r }\left( t \right) = \int_{  }^{  } \left( 2t+3 \right) \hat{i} + \left( -1 \right) \hat{j} + \left( t^2 \right) \hat{k} dt
+.\] 
+\[
+= \left( t^2+3t \right) \hat{i} + \left( -t \right) \hat{j} + \left( \frac{ 1 }{ 3 } t^3 \right) \hat{k} + \vec{ C }_2
+.\] 
+Same thing with pos vector, we just make our constant the given vector so our solution will be,
+\[
+\vec{ r }\left( t \right) = \left( t^2+3t \right) \hat{ i } + \left( -t+1 \right) \hat{j} + \left( \frac{ 1 }{ 3 } t^2+1 \right) \hat{k}
+.\] 
+\paragraph{Ex.2 Same question but with different vectors.}
+\[
+\vec{ a }\left( t \right) = 2t\hat{i} + \sin^{  } \left( t \right) \hat{j} + \cos^{  } \left( 2t \right) \hat{k}\text{, } \vec{ v }\left( 0 \right) = \hat{i}\text{, } \vec{ r }\left( 0 \right) = \hat{j}
+.\] 
+Integrating!!!!111!!
+\[
+\vec{ v }\left( t \right) = \int_{  }^{  } 2t\hat{i} + \sin^{  } \left( t \right) \hat{j}+ \cos^{  } \left( 2t \right) \hat{k}dt
+.\] 
+\[
+=t^2\hat{i} + \left( -\cos^{  } \left( t \right)  \right) \hat{ j } + \frac{ \sin^{  } \left( 2t \right)  }{ 2 }\hat{k} + i
+.\] 
+Again,
+\[
+\vec{ r }\left( t \right) = \int_{  }^{  } \left( t^2+1 \right) \hat{i} + \left( -\cos^{  } \left( t \right)  \right) \hat{j} + \frac{ \sin^{  } \left( 2t \right)  }{ 2 }\hat{k}dt
+.\] 
+\[
+=\left( \frac{ 1 }{ 3 } t^3 + t \right) \hat{i} + \left( -\sin^{  } \left( t \right)  \right) \hat{j} + \frac{ -\cos^{  } \left( 2t \right)  }{ 4 }\hat{k} + j
+.\] 
+Which simplifies to
+\[
+\vec{ r }\left( t \right) = \left( \frac{ 1 }{ 3 } t^3 + t \right) \hat{i} + \left( -\sin^{  } \left( t \right) +t+1 \right) \hat{j} + \left( \frac{ 1 }{ 4 } + \frac{ -\cos^{  } \left( 2t \right)  }{ t } \right) \hat{k}
+.\] 
+Note that the above may be wrong because i forgot to check the $ c_2 $ and $ c_1 $ values because cos and sin are complex functions so I stole ryhs' answer so pray that he's right.
+\subsection{Section 3}%
+\label{sub: Section 3 }
+\paragraph{Given a function $ f\left( x,y \right)  $ find the limit or show it does not exist. \\ \\}
+\[
+\lim_{ \left( x,y \right)  \to \left( 0,0 \right)} \frac{ y^2 }{ x^2+y^2 }
+.\] 
+A limit will exist for this if the partials of the limit and the limit at some constant are equal to each other. So we take the limit with one at the specified limit point and leave the other as a variable.
+\[
+f\left( x,0 \right) = \frac{ 0 }{ x^2+0 } = 0
+.\] 
+\[
+f\left( 0,y \right) = \frac{ y^2 }{ 0+y^2 }=1
+.\] 
+Now because $ 0 \neq 1 $  we cannot have a limit for this function so we say it DNE without checking our last path. 
+\[
+\lim_{ \left( x,y \right)  \to \left( 0,0 \right) } \frac{ 2xy }{ x^2+3y^2 }
+.\] 
+Again,
+\[
+f\left( 0,y \right) = \frac{ 0 }{ 0+3y^2 } = 0
+.\] 
+\[
+f\left( x,0 \right) = \frac{ 0 }{ x^2+0 } = 0
+.\] 
+These match so far, but we should still check the last path to be sure. This is done by either plugging in $ y=x $ or $ y=kx $ where k is some constant. This makes sure that the limit is the same no matter what teh value of one variable is. I'll do kx because it's more complex but the general way is with $ y=x $.
+\[
+f\left( x,kx \right) = \frac{ 2kx^2 }{ x^2+3k^2x^2 } = \frac{ 2k }{ 1+3k^2 }
+.\] 
+Here the problem is that the equation is dependent on k so our limit will not exist. This is because as you approach the limit from different slopes, you will have a different limit each time. This means that it will not be the same for all values of x,y and is instead dependent on a constant k which leaves the limit undefined.
+
+\[
+\lim_{ \left( x,y \right)  \to \left( 0,0 \right) } \frac{ \left( x+y \right) ^2 }{ x^2+y^2 }
+.\] 
+Checking the first two paths we get,
+\[
+f\left( 0,y \right) = \frac{ \left( 0+y \right) ^2 }{ 0^2+y^2 } = 1
+.\] 
+\[
+f\left( x,0 \right) = \frac{ \left( x+0 \right) ^2 }{ x^2+0 } = 1
+.\] 
+These look ok so we check our last path,
+\[
+f\left( x,kx \right) = \frac{ \left( x+kx \right) ^2 }{ x^2+k^2x^2 } = \frac{ \left( 1+k \right) ^2 x^2 }{ \left( 1+k^2 \right) x^2 } = \frac{ \left( 1+k \right) ^2 }{ 1+k^2 }
+.\] 
+Where we are again dependent on k and if we set our k as 1 we get a limit of 2 which won't match the other two paths and leaves us with a non-existing limit. 
+\subsection{Section 4}%
+\label{sub: Section 4 }
+\paragraph{Use chain rule to find the partial derivatives \\ }
+\paragraph{Find $ \frac{ \partial z}{\partial s}  $ and $ \frac{ \partial z}{\partial t}  $ where $ z=x^2+y^2 $, $ x=2s+3t $, $ y=s+t $ \\ \\}
+These can get somewhat complex so I would think of it as a tree. We want to find the partial z with respect to s first. So what paths do we take? We want to find each path that leads to a partial of s and add them up. Our first branch comes from z where we can derive with repect to x or y. \\ \\ Looking at x first, we a branch that leads us down s or t. Since we just want z with respect to s, we can derive x with respect to s. Now we want to derive back up the tree to z (our base function), and since we just did the branch at x, we can now derive z with respect to x to get to where we are. This same method applies to y and our equation will look like this:
+\begin{equation}
+\frac{ \partial z}{\partial s} = \frac{ \partial z}{\partial x} \cdot \frac{ \partial x}{\partial s} + \frac{ \partial z}{\partial y} \cdot \frac{ \partial y}{\partial s} 
+\end{equation}
+This can be somewhat matched to what i explained above, where the base function have a total of 2 ways to reach s, one through x and one through y represented by our term count, and the actual paths to get there. To get to the x node we derive z with respect to x and then to get to the s node we derive x with respect to s. The same applies for y and our equation will look like this:
+\[
+2x\cdot 2 + 2y \cdot 1
+.\] 
+Where we can now plug in our known values of x and y to get,
+\[
+4\left( 2s+3t \right) +2\left( s+t \right) = 10s+14t
+.\] 
+This is just the pathing for s, so we now do the same for t. Because we have a total of 2 paths to t we use 2 terms and because each x and y respectively have 1 path to t, we can write our equation as the last one but with a different final step. 
+\begin{equation}
+\frac{ \partial z}{\partial t} = \frac{ \partial z}{\partial x} \cdot \frac{ \partial x}{\partial t} + \frac{ \partial z}{\partial y} \cdot \frac{ \partial y}{\partial t} 
+\end{equation}
+\[
+=2x\cdot 3+2y\cdot 1 = 6x+2y
+.\] 
+\[
+=6\left( 2s+3t \right) +2\left( s+t \right) = 14s+20t
+.\] 
+The other examples are very similar to this one with different constants so I'll just do the interesting one. 
+\[
+z=\ln^{  } \left( 3x+2y \right) \text{, }x=s \sin^{  } \left( t \right) \text{, }y=t\cos^{  } \left( s \right) 
+.\] 
+Plugging into our formulas,
+\[
+\frac{ \partial z}{\partial s} = \frac{ 3 }{ 3x+2y } \cdot \sin^{  } \left( t \right) + \frac{ 2 }{ 3x+2y } \cdot -t\sin^{  } \left( s \right) 
+.\] 
+\[
+=\frac{ 1 }{ 3x+2y } \left( 3\sin^{  } \left( t \right) -2t\sin^{  } \left( s \right)  \right) 
+.\] 
+\[
+\frac{ \partial z}{\partial t} = \frac{ 3 }{ 3x+2y } \cdot s\cos^{  } \left( t \right) +\frac{ 2 }{ 3x+2y } \cdot \cos^{  } \left( s \right) 
+.\] 
+\[
+= \frac{ 1 }{ 3x+2y } \left( 3s\cos^{  } \left( t \right) +2\cos^{  } \left( s \right)  \right) 
+.\] 
+\subsection{Section 5}%
+\label{sub: Section 5 }
+\paragraph{Given $ f\left( x,y \right)  $ find the directional derivative in the given direction at the point. \\}
+Use the below scary formula (I'm joking but this works if you get it)
+\[
+D_{ \vec{ u } }f\left( \frac{ \partial f}{\partial x} , \frac{ \partial f}{\partial y}  \right) = \nabla f\left( \frac{ \partial f}{\partial x} , \frac{ \partial f}{\partial y}  \right) \cdot \vec{ u } = f_x\left( x,y \right) \cdot a + f_y\left( x,y \right) \cdot b
+.\] 
+\[
+	f\left( x,y \right) = \frac{ x }{ y }\text{, }P=\left( 2,1 \right)\text{, } \vec{ u } = \frac{ 3 }{ 5 } \hat{i} + \frac{ 4 }{ 5 } \hat{j}
+.\] 
+\paragraph{a) Find the gradient of $ f $}
+The gradient is just the partial derivatives of the function as a vector, so for x and y it would look like,
+\begin{equation}
+\nabla f = \left( \frac{ \partial f}{\partial x} , \frac{ \partial f}{\partial y}  \right) 
+.\end{equation}
+Using this we find our gradient as,
+\[
+\nabla f\left( x,y \right) = \left< \frac{ 1 }{ y } , -\frac{ x }{ y^2 }  \right>
+.\] 
+\paragraph{b) Evaluate at point P}
+For this we just plug in the values of the point into our gradient vector,
+\[
+\nabla f\left( 2,1 \right) = \left< \frac{ 1 }{ 1 } , \frac{ -2 }{ 1 } \right> = \left<1,-2 \right>
+.\] 
+\paragraph{c) Find the rate of change at P in direction of $ \vec{ u } $}
+Here we simply just take the dot product of the gradient vector and the unit vector,
+\[
+D_{ \vec{ u } }\nabla f\left( 2,1 \right) = \left< 1,-2 \right> \cdot \left< \frac{ 3 }{ 5 } , \frac{ 4 }{ 5 }  \right> = \frac{ 3 }{ 5 } -\frac{ 8 }{ 5 } = -1
+.\] 
+And that is your directional derivative at point p in the direction of $ \vec{ u } $. Other examples use this same method but with more variables so I won't be doing them but the process is exactly the same. 
+
+\paragraph{Find the directional derivative of the function at the point P in the direction of the point Q.}
+\[
+f\left( x,y \right) = x^2y^2 - y^3\text{, }P\left( 1,2 \right) \text{, }Q\left( -3,5 \right) 
+.\] 
+Again, partials first,
+\[
+\nabla f\left( x,y \right) = \left< 2xy^2, 2x^2y - 3y^2 \right>
+.\] 
+and eval at the point p,
+\[
+\nabla f\left( 1,2 \right) = \left<8,-8 \right>
+.\] 
+Now because we aren't given a unit vector, we need to create one! This is just done by taking the point you are evaling at and subtracting it from the other point. So because i evaled at P and am given Q, I will subtract P from Q to get the vector,
+\[
+\vec{ v }= Q - P = \left< -3-1, 5-2 \right> = \left< -4,3 \right>
+.\] 
+Where we now do the normalization process to get the unit vector and not the normal vector,
+\[
+\vec{ u }= \frac{ \vec{ v } }{ \left\| \vec{ v } \right\| }= \frac{ \left( 4,3 \right)  }{ \sqrt{ 25 }  }= \left< -\frac{ 4 }{ 5 } , \frac{ 3 }{ 5 }  \right>
+.\] 
+Now we do the normal process because we have the unit vector,
+\[
+D_{ \vec{ u } }f\left( 1,2 \right) = \nabla f\left( 1,2 \right) \cdot \vec{ u } = \left( 8,-8 \right) \cdot \left( -\frac{ 4 }{ 5 } ,\frac{ 3 }{ 5 }  \right) 
+.\] 
+\[
+= -\frac{ 56 }{ 5 } 
+.\] 
+Thank you rhys I will be watching reels now!!!
+\end{multicols}
+\end{document}
