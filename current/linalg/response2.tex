@@ -19,4 +19,18 @@
 Given an $ m \times n $ matrix whose columns do NOT span $\mathbb{R} $, know there must exist some $ \vec{ b} $ in $ \mathbb{R}^{ m } $ such that the equation $ A \vec{ x } = \vec{ b } $ is inconsistent. This is because if the columns of $ A $ do not span $ \mathbb{R}^{ m } $, then there exists a vector in $ \mathbb{R}^{ m } $ that cannot be expressed as a linear combination of the columns of $ A $. Therefore, there will be some vector $ \vec{ b} $ for which the equation has no solution which means that the equation is inconsistent.
 \paragraph{4. If A is an $ m \times n $ matrix and if the equation $ A \vec{ x } = \vec{ b } $ is inconsistent for some $ \vec{ b } $ in $ \mathbb{R}^{ m } $, does A have a pivot in every row? Why or why not? \\ \\}
 If the given matrix is inconsistent for some $ \vec{ b } \in \mathbb{R}$ then there exists no linear combination of columns such that $ \vec{ b } $ exists in the column space of $ A $. This means that the matrix $ A $ does not have a pivot in every row. If it did, then the columns of $ A $ would span $ \mathbb{R}^{ m } $, and there would be a solution for every $ \vec{ b} \in \mathbb{R}^{ m }$. Therefore, if the equation is inconsistent for some $ \vec{ b} $, then A does not have a pivot in every row.
+\section{Response 3}%
+\label{sec: Response 3 }
+
+\paragraph{11. If $ A $ and $ B $ are $ n \times n $ and invertible the $ A^{ -1 }B^{ -1 } $ is the inverse of $ AB $. Is this true or false? Explain why. \\ \\}
+The inverse of a matrix is defined as some matrix M that can be multiplied by another matrix (in this case AB) to result in the identity matrix. Solving for this inverse we find that,
+\[
+AB \cdot M = I \implies M = B^{ -1 }A^{ -1 }
+.\] 
+Which will contradict what the statement is saying and since each matrix has a unique inverse, our statement is false. \\
+
+\paragraph{12. If A is an invertible $ n \times n $ matrix, then the equation $ A \vec{ x }= \vec{ b } $ is consistent for each $ \vec{ b }  $ in $ \mathbb{R}^{ n } $. Is this true or false? Explain why. \\ \\}
+The statement is true. This is because if we have a matrix A that is invertible, we are implying that the equation $ \vec{ x } = A^{ -1 }\vec{ b } $ is also true. This means that for every vector b in the space $ \mathbb{R}^{ n } $, there exists a unique solution $ \vec{ x } $ such that the equation is consistent because $ \vec{ x } $ is a linear combination of the columns of $ A $. Thus our equation is consistent for each $ \vec{ b } \in \mathbb{R}^{ n }$.
+
+
 \end{document}
