@@ -1,0 +1,151 @@
+\section{Question 1}%
+\label{sec: Question 1 }
+\paragraph{Find an equation of the tangent plane to the given surface at the specified point.}
+\[
+	\left( 1 \right) z=\left( x+2 \right) ^2-2\left( y-1 \right) ^2-5, \left( 2,3,3 \right) 
+.\] 
+\[
+f_x = 2\left( x+2 \right) \text{ and }f_y = -4\left( y-1 \right)
+.\] 
+\[
+f_x\left( 2,3 \right) = 8 \text{ and }f_y\left( 2,3 \right) = -8\text{ and }f\left( 2,3 \right) = 3
+.\] 
+So because the equation of the tangent plane is,
+\[
+f_x\left( a,b \right) \left( x-a \right) +f_y\left( a,b \right) \left( y-b \right) +f\left( a,b \right) 
+.\] 
+We simplify and are left with,
+\[
+z=8x-8y+11
+.\] 
+\[
+	\left( 2 \right) x^2+y^3+z^{ 4 }=2, \left( 1,0,1 \right) 
+.\] 
+Same thing here but we can skip writing out everything,
+\[
+\nabla f\left( x,y,z \right) = \left< 2x,3y^2, 4z^3 \right>
+.\] 
+\[
+\nabla f\left( 1,0,1 \right) = \left< 2,0,4 \right>
+.\] 
+And our final equation is,
+\[
+2x+4z=6
+.\] 
+\section{Question 2}%
+\label{sec: Question 2 }
+\paragraph{Find the linear approximation to the function at the given point. Use the linear approximation to estimate the given function value.}
+\[
+f\left( x,y \right) = xy+x-y;\left( 2,3 \right) ;\text{ Estimate }f\left( 2.1,2.99 \right) 
+.\] 
+Find the $ \nabla f $,
+\[
+\nabla f\left( x,y \right) = \left< y+1, x-1 \right> 
+.\] 
+Eval at point,
+\[
+f_x\left( 2,3 \right) =4\text{ and }f_y\left( 2,3 \right) =1\text{ and }f\left( 2,3 \right) = 5
+.\] 
+\[
+\implies L\left( x,y \right) = 4\left( x-2 \right) +1\left( y-3 \right) +5
+.\] 
+\[
+\to L\left( 2.1,2.99 \right) = 4\left( 2.1-2 \right) +\left( 2.99-3 \right) +5 = 5.39
+.\] 
+\section{Question 3}%
+\label{sec: Question 3 }
+\paragraph{Find the local maximum and minimum values and saddle points of the function.}
+\[
+f\left( x,y \right) = x^3-3x+3xy^2
+.\] 
+First find critical points,
+\[
+f_x= 3x^2-3+3y^2\text{ and }f_y=6xy
+.\] 
+\[
+3x^2-3+3y^2=0 \implies x^2+y^2=1 \implies y = \pm 1\text{ and }x= \pm 1
+.\] 
+Take second orders,
+\[
+f_{ xx }= 6x\text{ and }f_{ yy }=6x\text{ and }f_{ xy }=6y
+.\] 
+Plug into the general formua to get,
+\[
+6x\cdot 6x-\left( 6y \right) ^2=36x^2-36y^2
+.\] 
+Now test points again the above,
+\[
+D\left( 0,1 \right) = -36 < 0 \implies f\left( x,y \right) \text{ has a saddle point }D\left( 0,1 \right) 
+.\] 
+\[
+D\left( 0,-1 \right) = -36 < 0 \implies f\left( x,y \right) \text{ has a saddle point }D\left( 0,-1 \right)
+.\] 
+\[
+D\left( 1,0 \right) = 36 > 0\text{ and }f_{ xx }\left( 1,0 \right) = 6 > 0 
+\] 
+\[
+\implies f\left( x,y \right) \text{ has a local minimum at }D\left( 1,0 \right)
+.\] 
+\[
+D\left( -1,0 \right) = 36 > 0\text{ and }f_{ xx }\left( -1,0 \right) = -6 < 0 
+\] 
+\[
+\implies f\left( x,y \right) \text{ has a local maximum at }D\left( -1,0 \right)
+.\] 
+\section{Question 4}%
+\label{sec: Question 4 }
+\paragraph{Find the absolute maximum and minimum values of $ f $ on the set D}
+\[
+f\left( x,y \right) x^2+2y^2-2x-4y+1
+.\] 
+\[
+D=\left\{ \left( x,y \right) \big| 0 \le x \le 2, 0 \le y \le 3 \right\} 
+.\] 
+Take partials and set to zero,
+\[
+\frac{ \partial f}{\partial x} =2x-2 \implies 2x-2 = 0 \implies x=1
+.\] 
+\[
+\frac{ \partial f}{\partial y} =4y-4 \implies 4y-4 = 0 \implies y=1
+.\] 
+Which gives the point $ \left( 1,1 \right) \in D $ where we eval at that point,
+\[
+f\left( 1,1 \right) = -2
+.\] 
+Now we check the boundaries starting with the left wall or $ x=0,0\le y \le 3 $
+\[
+f\left( 0,y \right) = 2y^2-4y+1 
+.\] 
+Take the derivative and set to zero,
+\[
+\frac{ d }{ dy } = 4y-4 \implies 4y-4 = 0 \implies y=1
+.\] 
+So eval at points,
+\begin{align}
+	f\left( 0,0 \right) &= 1 \\
+	f\left( 0,1 \right) &= -1 \\
+	f\left( 0,3 \right) &= 7
+.\end{align}
+Do the same thing for the other walls and floors, edge2, $ x=2,0\le y \le 3 $,
+\[
+f\left( 2,y \right) = 2y^2-4y+1
+.\] 
+Same as before min at $ y=1 $, edge3, $ 0\le x \le 2,y=0 $,
+\[
+f\left( x,0 \right) = x^2-2x+1 \implies 2x-2 = 0 \implies x=1
+.\] 
+\begin{align}
+	f\left( 0,0 \right) &= 1 \\
+	f\left( 1,0 \right) &= 0 \\
+	f\left( 2,0 \right) &= 1
+.\end{align}
+and finally edge4, $ 0\le x \le 2,y=3 $,
+\[
+f\left( x,3 \right) = x^2-2x+7 \implies 2x-2 = 0 \implies x=1
+.\] 
+\begin{align}
+	f\left( 0,3 \right) &= 7 \\
+	f\left( 1,3 \right) &= 6 \\
+	f\left( 2,3 \right) &= 7
+.\end{align}
+Now comparing all values that we got, we find that the absolute maximum is $ 7 $ at $ \left( 0,3 \right) $ and $ \left( 2,3 \right) $ and the absolute minimum is $ -2 $ at $ \left( 1,1 \right) $.
