@@ -1,0 +1,88 @@
+\section{Question 1}%
+\label{sec: Question 1 }
+\paragraph{Use Lagrange multipliers to find the extreme values of the function subject to the given constraint.}
+\[
+f\left( x,y \right) = 3x+y; x^2+y^2=10
+.\] 
+First let's find the gradients of the function and constraint,
+\begin{gather*}
+\nabla f = \left( \frac{ \partial f}{\partial x} , \frac{ \partial f}{\partial y}  \right) = \left( 3,1 \right) \\
+\nabla g = \left( \frac{ \partial g}{\partial x} , \frac{ \partial g}{\partial y}  \right) = \left( 2x,2y \right) 
+\end{gather*}
+Lagrange multipliers are given as,
+\[
+\nabla f = \lambda \nabla g
+.\] 
+So we have the system,
+\begin{align*}
+3&= \lambda \cdot 2x \\
+1&= \lambda \cdot 2y \\
+10 &= x^2 + y^2
+.\end{align*}
+Solving the first two equations in terms of $ \lambda $ gives us,
+\[
+x= \frac{ 3 }{ 2\lambda } \text{ and }y=\frac{ 1 }{ 2\lambda } 
+.\] 
+Now plugging into the third,
+\[
+	\left( \frac{ 3 }{ 2\lambda }  \right) ^2+\left( \frac{ 1 }{ 2\lambda }  \right) ^2 = 10 = \frac{ 10 }{ 4\lambda^2 } = 10 \implies \lambda = \pm \frac{ 1 }{ 2 } 
+.\] 
+Now plugging into our equations of x and y we find our critical points,
+\begin{align*}
+	x_1&= \frac{ 3 }{ 2 \cdot  \frac{ 1 }{ 2 }  } = 3 \\
+	y_1&= \frac{ 1 }{ 2 \cdot \frac{ 1 }{ 2 }  } = 1 \\
+	x_2 &= \frac{ 3 }{ 2\cdot -\frac{ 1 }{ 2 }  } -3 \\
+	y_{ 2 } &= \frac{ 1 }{ 2 \cdot -\frac{ 1 }{ 2 }  } =-1
+.\end{align*}
+Which gives us the points $ \left( 3,1 \right) $ and $ \left( -3,-1 \right) $ and evaluating the functions gives us,
+\[
+f\left( x_1, y_1 \right) = 3 \cdot  3 + 1 = 10
+.\] 
+\[
+f\left( x_2, y_2 \right) = 3 \cdot -3 + -1 = -10
+.\] 
+Thus we know our extreme values to be $ 10 $ and $ -10 $ at the points $ \left( 3,1 \right) $ and $ \left( -3,-1 \right) $ respectively. This can also be verified by looking at the function and realizing it's just a circle but whatever
+\section{Question 2}%
+\label{sec: Question 2 }
+\paragraph{A rectangular box without a lid is to be made from $ 12m^2 $ of cardboard. Find the maximum volume of such a box.}
+Let's start by finding our surface volume and setting it equal to 12. We need the base $ \left( xy \right)  $, two walls $ \left( 2xz \right)  $ and two more walls $ \left( 2yz \right)  $ which leaves us with
+\[
+xy+2xz+2yz=12
+.\] 
+Now because we want to maximize the volume $ V=xyz $  we treat our surface area as a constraint and use Lagrange again. So, find our gradients,
+\[
+\nabla V = \left( yz, xz, xy \right) 
+.\] 
+\[
+\nabla g = \left( y+2z, x+2z, 2x+2y \right) 
+.\] 
+And write our system,
+\begin{align*}
+yz &= \lambda\left( y+2z \right)  \\
+xz &= \lambda\left( x+2z \right)  \\
+xy &= \lambda\left( 2x+2y \right)
+.\end{align*}
+These are weirder than the last but just know that we can solve for $ \lambda $ by just dividing the equations with each other to first find our $ x,y,z $ . So, divide equation 1 by 2 to eliminate the $ \lambda $,
+\[
+\frac{ yz }{ xz }= \frac{ \lambda\left( y+2z \right)  }{ \lambda\left( x+2z \right)  } \implies \frac{ y }{ x } = \frac{ y+2z }{ x+2z } 
+\] 
+\[
+\implies xy+2yz = xy+2xz \implies 2yz=2xz \implies y=x
+.\] 
+This implies that our box with have a square base because we found the relation of y to x, and now we plug this into the constraint to simplify it,
+\[
+x^2+2xz+2xz = 12 \implies x^2+4xz = 12 \implies z = \frac{ 12-x^2 }{ 4x }
+.\] 
+Now that we have all terms in terms of x we plug it into the volume equation $ V=xyz $ ,
+\[
+V= x^2\left( \frac{ 12-x^2 }{ 4x } \right) = 3x-\frac{ x^3 }{ 4 } 
+.\] 
+Now let's just take the derivative and set to zero,
+\[
+\frac{ dV }{ dx }= 3-\frac{ 3x^2 }{ 4 }=0 \implies x^2=4 \implies x= \pm 2
+.\] 
+We can ignore the negative because we have a real box, and now we can find the to be 2 as well due to the square base, and we can find our z as
+\[
+z=\frac{ 12-\left( 2 \right) ^2 }{ 4\cdot 2 }= \frac{ 12-4 }{ 8 }= 1
+.\] 
+Which will finally give us the dimensions of $ 2m,2m,1m $ and a volume of $ V=xyz=4m^3 $
